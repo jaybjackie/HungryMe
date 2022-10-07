@@ -5,4 +5,4 @@ Recommendations using search box. However, if you have no clue about the dish yo
 
 ## Project Documents
 - [Project Proposal](https://docs.google.com/document/d/1DW7tv5Bpf5_tJoBKPRP4io66zMDQzeJHZ7YWnl435PU/edit?usp=sharing)
-
+- [User Stories](../../wiki/User-Stories)<br>

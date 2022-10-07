@@ -1,0 +1,21 @@
+__pycache__
+*.py[cod]
+build/
+db.sqlite3
+# Virtualenv is recreated as needed. Don't commit.
+venv/
+env/
+
+# code coverage
+.coverage
+htmlcov/
+/coverage
+.mypy_cache
+
+# IDE and MacOS files
+.idea/
+*.iml
+.project
+.pydevproject
+.vscode/
+.DS_Store

@@ -1,0 +1,8 @@
+<h1>Menu For You</h1>
+{% if menu_list%}
+    {% for menu in menu_list %}
+        <li>
+            {{ menu.menu_name }} | by {{ menu.creator_name}} | {{ menu.id}}
+        </li>
+    {% endfor %}
+{% endif %}

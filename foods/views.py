@@ -1,6 +1,6 @@
 import requests
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render, get_object_or_404
 
 from foods.models import Menu
 
@@ -76,6 +76,10 @@ def index(request):
         if menu not in Menu.objects.all() and menu.menu_name != 'missing menu name':
             menu.save()
 
-    menu_list = Menu.objects.all().order_by('-id')
+    menu_list = Menu.objects.all().order_by('-id')[:24]
     return render(request, 'foods/index.html', {"menu_list": menu_list,
                                                 "feed": feed})
+
+def detail(request, menu_id):
+    menu = get_object_or_404(Menu, pk=menu_id)
+    return render(request, 'foods/detail.html', {"menu": menu})

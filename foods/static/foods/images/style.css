@@ -1,0 +1,10 @@
+body {
+    background: rgb(255, 255, 255);
+    background-size: auto;
+}
+
+#logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+}

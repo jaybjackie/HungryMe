@@ -1,25 +1,12 @@
 import requests
 from django.shortcuts import render, get_object_or_404
+from foods.get_data import api_response
 
 from foods.models import Menu
 
 def index(request):
-    """Fetch the data from api and display lists of menu."""
-    url = "https://yummly2.p.rapidapi.com/feeds/list"
-
-    querystring = {"limit":"25","start":"0"}
-
-    headers = {
-        "X-RapidAPI-Key": "8c2fbd63b6msh0cb0f06d6eefb0bp195126jsn7230d0695123",
-        "X-RapidAPI-Host": "yummly2.p.rapidapi.com"
-    }
-    # get json 
-    response = requests.request("GET", url, headers=headers, params=querystring).json()
-    # feed contains 23 entrys of menu
-    feed = response['feed']
+    feed = api_response()
     for entry in feed:
-        display_info = entry['display']
-        content_info = entry['content']
 
         try:
             get_menu_name = entry['display']['displayName']
@@ -27,12 +14,12 @@ def index(request):
             get_menu_name = 'missing menu name'
 
         try:
-            get_difficulty = content_info['tags']['difficulty']
+            get_difficulty = entry['content']['tags']['difficulty'][0]['display-name']
         except:
             get_difficulty = 'No information'
 
         try:
-            get_kcal = content_info['nutrition']['nutritionEstimates'][0].get('value')
+            get_kcal = entry['content']['nutrition']['nutritionEstimates'][0].get('value')
         except:
             get_kcal = -99
 
@@ -42,7 +29,7 @@ def index(request):
             get_description = 'No information'
 
         try:
-            get_number_ingredients = len(content_info['ingredientLines'])
+            get_number_ingredients = len(entry['content']['ingredientLines'])
         except:
             get_number_ingredients = -99
 
@@ -55,24 +42,38 @@ def index(request):
             get_rating = entry['content']['details']['rating']
         except:
             get_rating = 0.0
-        
+
         try:
-            get_picture_url = display_info['images'][0]
+            get_picture_url = entry['display']['images'][0]
         except:
             get_picture_url = ''
 
+        try:
+            get_ingredients = entry['content']['ingredientLines']
+        except:
+            get_ingredients = 'No information'
+
+        try:
+            get_nutrition = entry['content']['nutrition']
+        except:
+            get_nutrition = 'No information'
+            
         menu = Menu(
             menu_name= get_menu_name,
             creator_name = 'Official HungryMe',
             number_of_ingredients = get_number_ingredients,
             total_cooking_time = get_cooking_time,
-            kcal = get_kcal,
+            energy_kcal = get_kcal,
             picture_url = get_picture_url,
             rating = get_rating,
             difficulty = get_difficulty,
-            description = get_description
+            description = get_description,
+            ingredients = get_ingredients,
+            nutrition = get_nutrition
         )
-        if menu not in Menu.objects.all() and menu.menu_name != 'missing menu name':
+        if menu not in Menu.objects.all() \
+            and menu.menu_name != 'missing menu name'\
+            and menu.ingredients != 'No information':
             menu.save()
 
     menu_list = Menu.objects.all().order_by('-id')[:24]

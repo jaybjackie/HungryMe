@@ -2,4 +2,14 @@
 {% block content %}
 <legend><h1>{{ menu.menu_name }}</h1></legend>
 <small>{{ menu.creator_name}}</small>
+<img src= "{{menu.picture_url}}" alt=menu.id>
+<p>{{ menu.description }}<p>
+<p>{{ menu.number_of_ingredients }} Ingredients | 
+    {{ menu.total_cooking_time }} |
+    {{ menu.energy_kcal }} calories 
+</p><br>
+<h3> Nutrition</h3>
+{{ menu.nutrition }}
+<h3> Ingredients </h3>
+{{ menu.ingredients}}
 {% endblock %}

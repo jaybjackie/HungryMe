@@ -11,8 +11,8 @@ class Menu(models.Model):
     rating = models.FloatField(default=0.0, null=True)
     difficulty = models.CharField(max_length=30, default="None", null=True)
     description = models.CharField(max_length=250, default='No description', null=True)
-    ingredients = models.TextField(max_length=None, null=True)
-    nutrition = models.TextField(max_length=None, null=True)
+    ingredients = models.JSONField(null=True, default=None)
+    nutrition = models.JSONField(null=True, default=None)
 
     def __str__(self) -> str:
         return f"{self.menu_name} by {self.creator_name}"

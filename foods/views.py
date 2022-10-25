@@ -54,7 +54,7 @@ def index(request):
             get_ingredients = 'No information'
 
         try:
-            get_nutrition = entry['content']['nutrition']
+            get_nutrition = entry['content']['nutrition']['nutritionEstimates']
         except:
             get_nutrition = 'No information'
             

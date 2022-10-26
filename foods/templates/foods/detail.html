@@ -1,15 +1,52 @@
 {% extends "foods/base.html" %}
 {% block content %}
-<legend><h1>{{ menu.menu_name }}</h1></legend>
-<small>{{ menu.creator_name}}</small>
-<img src= "{{menu.picture_url}}" alt=menu.id>
-<p>{{ menu.description }}<p>
-<p>{{ menu.number_of_ingredients }} Ingredients | 
-    {{ menu.total_cooking_time }} |
-    {{ menu.energy_kcal }} calories 
-</p><br>
-<h3> Nutrition</h3>
-{{ menu.nutrition }}
-<h3> Ingredients </h3>
-{{ menu.ingredients}}
+<link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<style>
+h1 {
+    font-family: 'Lemon';font-size: 32px;
+}
+body {font-family: 'Roboto';}
+</style>
+
+<h1 style="padding: 10px 0px 0px 20px;"><b>{{ menu.menu_name }}</b></h1>
+<h5 style="padding: 5px 0px 0px 20px; color:slategrey;"><b>By {{ menu.creator_name}}</b></h5>
+
+<img src= "{{menu.picture_url}}" alt=menu.id 
+style="float: right; padding: 10px 50px 50px 50px;">
+
+<p style="padding: 20px 0px 0px 20px;">{{ menu.description }}<p>
+
+<h6 style="text-align: center;
+padding-top: 30px;">{{ menu.number_of_ingredients }} Ingredients    | 
+        {{ menu.total_cooking_time }}   |
+        {{ menu.energy_kcal }} calories 
+</h6><br>
+
+<hr style="border-top: 2px solid rgb(0, 0, 0);
+border-radius: 5px;" class="rounded">
+
+<h3 style="padding: 0px 0px 10px 20px;"><b>Ingredients</b></h3>
+{% for ingredients in menu.ingredients %}
+    <p style="padding: 0px 0px 0px 20px;">
+        {{ingredients.ingredient}}
+        {{ingredients.wholeLine}}
+    </p>
+{% endfor %} 
+<hr style="border-top: 2px solid rgb(0, 0, 0);
+border-radius: 5px;" class="rounded">
+<h3 style="padding: 0px 0px 10px 20px;"><b>Nutrition</b></h3>
+    <h6 style="padding: 0px 0px 10px 20px;"><b>
+    {% if menu.energy_kcal != -99 %}
+        Energy {{ menu.energy_kcal}} calories |
+    {% endif %}
+
+    {% if menu.fat_kcal != -99 %}
+    Fat {{menu.fat_kcal}} calories | 
+    {% endif %}
+
+    {% if menu.sugar != -99 %}
+    Sugar {{ menu.sugar }} grams
+    {% endif %}
+    </b></h6>
 {% endblock %}

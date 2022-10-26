@@ -1,4 +1,3 @@
-import requests
 from django.shortcuts import render, get_object_or_404
 from foods.get_data import api_response
 
@@ -7,7 +6,6 @@ from foods.models import Menu
 def index(request):
     feed = api_response()
     for entry in feed:
-
         try:
             get_menu_name = entry['display']['displayName']
         except:
@@ -19,10 +17,23 @@ def index(request):
             get_difficulty = 'No information'
 
         try:
-            get_kcal = entry['content']['nutrition']['nutritionEstimates'][0].get('value')
+            get_kcal = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'ENERC_KCAL'][0]
         except:
             get_kcal = -99
-
+        try:
+            get_fat = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'FAT_KCAL'][0]
+        except:
+            get_fat = -99
+        try:
+            get_sugar = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'SUGAR'][0]
+        except:
+            get_sugar = -99
         try:
             get_description = entry['seo']['web']['meta-tags']['description']
         except:
@@ -52,11 +63,6 @@ def index(request):
             get_ingredients = entry['content']['ingredientLines']
         except:
             get_ingredients = 'No information'
-
-        try:
-            get_nutrition = entry['content']['nutrition']
-        except:
-            get_nutrition = 'No information'
             
         menu = Menu(
             menu_name= get_menu_name,
@@ -64,12 +70,13 @@ def index(request):
             number_of_ingredients = get_number_ingredients,
             total_cooking_time = get_cooking_time,
             energy_kcal = get_kcal,
+            fat_kcal = get_fat,
+            sugar = get_sugar,
             picture_url = get_picture_url,
             rating = get_rating,
             difficulty = get_difficulty,
             description = get_description,
-            ingredients = get_ingredients,
-            nutrition = get_nutrition
+            ingredients = get_ingredients
         )
         if menu not in Menu.objects.all() \
             and menu.menu_name != 'missing menu name'\

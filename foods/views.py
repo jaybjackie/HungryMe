@@ -90,3 +90,8 @@ def index(request):
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
     return render(request, 'foods/detail.html', {"menu": menu})
+
+def search_bar(request):
+    return render(request, 
+    'foods/search_bar.html',
+    {})

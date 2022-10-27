@@ -8,7 +8,7 @@ def api_response():
     querystring = {"limit":"24","start":"0"}
 
     headers = {
-        "X-RapidAPI-Key": "8c2fbd63b6msh0cb0f06d6eefb0bp195126jsn7230d0695123",
+        "X-RapidAPI-Key": "5a76c79e3fmsh1f6d490c33d0eabp1033fejsnf4b585450f20",
         "X-RapidAPI-Host": "yummly2.p.rapidapi.com"
     }
     # get json 

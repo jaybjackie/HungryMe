@@ -70,6 +70,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mysite.wsgi.application"
 
+AUTHENTICATION_BACKENDS = [
+    # username/password authentication
+    'django.contrib.auth.backends.ModelBackend',  
+]
+
+LOGIN_REDIRECT_URL = '/foods/' # show list of menus
+LOGOUT_REDIRECT_URL = '/accounts/login/'        
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

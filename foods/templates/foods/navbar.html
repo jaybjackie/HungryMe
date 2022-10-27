@@ -1,21 +1,83 @@
+<style>
+p1 {
+    font-family: 'Lemon';font-size: 21px;
+}
+.menu-bar {
+    position: absolute;
+    top: 20px;    
+    left: 50%;
+    height: 14px;
+    margin-left: -10px;
+}
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;    
+    background-color: #333;
+    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
+}
+
+.menu {
+    display: none; 
+    width: 100%;
+    padding: 30px 10px 50px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+.menu ul {
+    margin-bottom: 0;
+}
+.menu a {
+    color: #333; 
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+.menu a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FFB21E;">
     <div class="container-fluid">
         <div class="navbar-header" >
-            <a class ="navbar-brand" href="#"><img src ="static/foods/images/logo.png"  width="80" class="img-responive"></a>
+            <a class ="navbar-brand" href=#><img src ="static/foods/images/logo.png"  width="80" class="img-responive"></a>
         </div>
-        <div id="h1" aria-current="page"style="color:black"><h1>{{ user.username }} is Hungry!</h1></div>
+        <div id="p1" aria-current="page"style="color:black"><p1>{{ user.username }} is Hungry!</p1></div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-                    <button style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
-                        <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" class="btn btn-light" aria-current="page" href="#">About us</a>
-                    </button>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Login</a>
-                    </li>
-                    <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                        <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
-                    </button>
+                <a class="menu-bar" data-bs-toggle="collapse" href="#">
+                    <span class="bars"></span>            
+                </a>
+                <div class="collapse menu" id="menu">
+                    <ul class="list-inline">
+                        <li><a href="#">Top Rated-Dishes</a></li>
+                        <li><a href="#">What should I eat ?</a></li>
+                        <li><a href="#">Community's recipe</a></li>
+                        <li><a href="#">Add my menu</a></li>
+                        <li><a href="#">My cookbook</a></li>
+                        <li><a href="#">My history</a></li>
+                    </ul>   
+                </div>
+                <form class="form-inline my-2 my-lg-0" method= POST action="{% url 'search-bar' %}">
+                    {% csrf_token %}
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search for Menus!" aria-label="Search">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <button type="button" class="btn btn-light" style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
+                    <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" class="btn btn-light" aria-current="page" href="#" width="20" >About us</a>
+                </button>
+                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
+                    <a class="nav-link active" aria-current="page" href="#">Login</a>
+                </button>
+                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
+                    <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                </button>
             </ul>
         </div>
     </div>
 </nav>
+

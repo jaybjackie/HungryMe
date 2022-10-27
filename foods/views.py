@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 from foods.models import Menu
 
@@ -92,6 +94,29 @@ def detail(request, menu_id):
     return render(request, 'foods/detail.html', {"menu": menu})
 
 def search_bar(request):
-    return render(request, 
-    'foods/search_bar.html',
-    {})
+    if request.method == "POST":
+        searched = request.POST.get('searched')
+        menus = Menu.objects.filter(menu_name__contains = searched)
+        return render(request, 
+        'foods/search_bar.html',
+        {'searched':searched,
+        'menu' : menus})
+    else:
+        return render(request, 
+        'foods/search_bar.html',
+        {})
+
+def signup(request):
+    """Register a new user."""
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = form.save()
+            login(request, user)
+            return redirect('foods:index')
+        # what if form is not valid?
+        # we should display a message in signup.html
+    else:
+        form = UserCreationForm()
+    return render(request, 'authentication/signup.html', {'form':form})

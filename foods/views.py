@@ -1,12 +1,19 @@
+from re import search
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
-
+from django.db.models import Q
 from foods.models import Menu
 
 def index(request):
     feed = api_response()
+    search_post = request.GET.get('search')
+    if search_post:
+        menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
+            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))
+    else:
+        menu_list = Menu.objects.all().order_by('-id')[:24]
     for entry in feed:
         try:
             get_menu_name = entry['display']['displayName']
@@ -85,10 +92,12 @@ def index(request):
             and menu.ingredients != 'No information':
             menu.save()
 
-    menu_list = Menu.objects.all().order_by('-id')[:24]
-    return render(request, 'foods/index.html', {"menu_list": menu_list,
-                                                "feed": feed})
-
+    
+    
+    # return render(request, 'foods/index.html', {"menu_list": menu_list,
+    #                                             "feed": feed})
+    return render(request, 'foods/index.html', {"menu_list": menu_list})
+    
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
     return render(request, 'foods/detail.html', {"menu": menu})

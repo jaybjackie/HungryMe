@@ -1,0 +1,12 @@
+{% extends 'foods/base.html' %}
+<style>
+    h1 {
+        font-family: 'Lemon';font-size: 21px;
+    }
+</style>
+
+
+{% block content %}
+    <h1>You have been logged out!</h1>
+    <a href="{% url 'login' %}">Login again</a>
+{% endblock %}

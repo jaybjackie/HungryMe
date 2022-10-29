@@ -66,6 +66,8 @@ button:hover {
 button.signup_btn {
 	background-color: transparent;
 	border-color: #FFFFFF;
+	padding: 0px 40px;
+	cursor: pointer;
 }
 
 form {
@@ -195,7 +197,9 @@ input {
 			<div class="overlay-panel overlay-right">
 				<h1>Sign Up</h1>
 				<p>Sign up here if you don't have account.</p>
-				<button class="signup_btn">Sign Up</button>
+				<button class="signup_btn">
+					<a class="nav-link" aria-current="page" href="{% url 'signup' %}">Sign up</a>
+				</button>
 			</div>
 		</div>
 	</div>

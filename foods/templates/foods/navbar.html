@@ -38,6 +38,16 @@ p1 {
     text-decoration: none;
     opacity: 1;
 }
+button {
+        border-radius: 20px;
+        background-color: #8735b7;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
 </style>
 
 
@@ -70,10 +80,10 @@ p1 {
                     <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" class="btn btn-light" aria-current="page" href="#" width="20" >About us</a>
                 </button>
                 <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
                 </button>
                 <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Sign Up</a>
                 </button>
             </ul>
         </div>

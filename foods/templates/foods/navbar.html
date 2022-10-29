@@ -62,10 +62,9 @@ p1 {
                         <li><a href="#">My history</a></li>
                     </ul>   
                 </div>
-                <form class="form-inline my-2 my-lg-0" method= POST action="{% url 'search-bar' %}">
-                    {% csrf_token %}
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search for Menus!" aria-label="Search">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}">
+                    <input class="form-control mr-sm-2" type="search"   placeholder="Search for Menus!" aria-label="Search" name="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 <button type="button" class="btn btn-light" style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
                     <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" class="btn btn-light" aria-current="page" href="#" width="20" >About us</a>

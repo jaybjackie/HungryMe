@@ -1,14 +1,19 @@
 from re import search
+from time import timezone
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.db.models import Q
-from foods.models import Menu
+import datetime
+from foods.models import Menu ,FoodOfDay
+import random
+
 
 def index(request):
     feed = api_response()
     search_post = request.GET.get('search')
+    feeds = random.choice(Menu.objects.all())
     if search_post:
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
             Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))
@@ -92,11 +97,16 @@ def index(request):
             and menu.ingredients != 'No information':
             menu.save()
 
-    
-    
+    food_of_day  = FoodOfDay.objects.first()
+    if food_of_day.was_end():
+        food_of_day.menu = feeds
+        food_of_day.range_date = timezone.now() +  datetime.timedelta(days=1)
+        food_of_day.save()
+        
     # return render(request, 'foods/index.html', {"menu_list": menu_list,
     #                                             "feed": feed})
-    return render(request, 'foods/index.html', {"menu_list": menu_list})
+    return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
+
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
@@ -129,3 +139,4 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form':form})
+

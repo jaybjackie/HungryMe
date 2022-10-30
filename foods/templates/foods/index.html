@@ -1,6 +1,10 @@
 {% extends "foods/base.html" %}
 {% block content %}
 
+<h1>Food of the day</h1>
+{% if food_of_day %}
+    <li><a href="{% url 'detail' food_of_day.menu.id %}">{{ food_of_day.menu.menu_name }}</a>
+{% endif %}
 <h1>Menu For You</h1>
 {% if menu_list%}
     {% for menu in menu_list %}

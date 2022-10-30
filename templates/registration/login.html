@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Mochiy Pop P One' rel='stylesheet'>
 <style>
 :root {
 	--primary-color:#FFB21E;
@@ -26,6 +27,7 @@ body {
 h1 {
 	font-weight: bold;
 	margin: 0;
+	font-family: 'Mochiy Pop P One';
 }
 
 h2 {
@@ -178,9 +180,8 @@ input {
 <div class="container">
 	<div class="form sign-in-container">
 		<form action="#">
-			<link rel="stylesheet" href="{% static 'foods/logo.png' %}">
-			<a class ="logo" href=#><img src ="static/foods/images/logo.png"  width="80" class="img-responive"></a>
-			<h1>Login</h1>
+			<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
+			<h1>Login here!</h1>
 			<div class="social-container">
 				<a href="#" class="google btn">
 					<i class="fa fa-google fa-fw"></i> Login with Google+
@@ -198,7 +199,7 @@ input {
 				<h1>Sign Up</h1>
 				<p>Sign up here if you don't have account.</p>
 				<button class="signup_btn">
-					<a class="nav-link" aria-current="page" href="{% url 'signup' %}">Sign up</a>
+					<a class="nav-link" aria-current="page" href="{% url 'signup' %}">Sign up!</a>
 				</button>
 			</div>
 		</div>

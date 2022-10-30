@@ -1,4 +1,3 @@
-from re import search
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
@@ -92,28 +91,11 @@ def index(request):
             and menu.ingredients != 'No information':
             menu.save()
 
-    
-    
-    # return render(request, 'foods/index.html', {"menu_list": menu_list,
-    #                                             "feed": feed})
     return render(request, 'foods/index.html', {"menu_list": menu_list})
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
     return render(request, 'foods/detail.html', {"menu": menu})
-
-def search_bar(request):
-    if request.method == "POST":
-        searched = request.POST.get('searched')
-        menus = Menu.objects.filter(menu_name__contains = searched)
-        return render(request, 
-        'foods/search_bar.html',
-        {'searched':searched,
-        'menu' : menus})
-    else:
-        return render(request, 
-        'foods/search_bar.html',
-        {})
 
 def signup(request):
     """Register a new user."""

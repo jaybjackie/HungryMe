@@ -1,6 +1,36 @@
 {% extends "foods/base.html" %}
 {% block content %}
 
+<style>
+.picture-suggest{
+    width: 100px;
+    height: 15%;
+}
+.container-fluid{
+    border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 100px;
+}
+</style>
+
+
+<h1>Food of the day</h1>
+<div class="container-fluid">
+    <div class="row">
+
+    </div>
+    <div class="picture-suggest">
+        <img src="{{food_of_day.menu.picture_url}}">
+    </div>
+</div>
+
+{% if food_of_day %}
+    <li><a href="{% url 'detail' food_of_day.menu.id %}">{{ food_of_day.menu.menu_name }}</a>
+{% endif %}
 <h1>Menu For You</h1>
 {% if menu_list%}
     {% for menu in menu_list %}

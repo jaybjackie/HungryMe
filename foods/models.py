@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 
 class Menu(models.Model):
@@ -15,5 +17,18 @@ class Menu(models.Model):
     description = models.CharField(max_length=250, default='No description', null=True)
     ingredients = models.JSONField(null=True, default=None)
 
+    
     def __str__(self) -> str:
         return f"{self.menu_name} by {self.creator_name}"
+    
+
+    
+class FoodOfDay(models.Model):
+    range_date = models.DateTimeField('date end', default = timezone.now() + datetime.timedelta(days=1))
+    menu = models.ForeignKey(Menu, on_delete = models.DO_NOTHING)
+    picture_url = models.URLField(max_length=200, default='', null=True)
+    
+    
+    def was_end(self):
+        now = timezone.now()
+        return self.range_date >= now

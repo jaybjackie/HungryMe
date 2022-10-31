@@ -6,6 +6,10 @@ from django.db.models import Q
 from foods.models import Menu
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
+from foods.models import Menu ,FoodOfDay
+import datetime
+import random
+from time import timezone
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -94,6 +98,17 @@ def index(request):
             and menu.menu_name != 'missing menu name'\
             and menu.ingredients != 'No information':
             menu.save()
+    feeds = random.choice(Menu.objects.all())
+    food_of_day  = FoodOfDay.objects.first()
+    if food_of_day.was_end():
+        food_of_day.menu = feeds
+        food_of_day.range_date = timezone.now() +  datetime.timedelta(days=1)
+        food_of_day.save()
+        
+    # return render(request, 'foods/index.html', {"menu_list": menu_list,
+    #                                             "feed": feed})
+    return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
+
 
     return render(request, 'foods/index.html', {"menu_list": menu_list})
     

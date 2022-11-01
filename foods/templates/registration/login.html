@@ -177,34 +177,35 @@ input {
 </style>
 <html>
 <body>
-<div class="container">
-	<div class="form sign-in-container">
-		<form action="#">
-			<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
-			<h1>Login here!</h1>
-			<div class="social-container">
-				<a href="#" class="google btn">
-					<i class="fa fa-google fa-fw"></i> Login with Google+
-				</a>
-			</div>
-			<input type="email" placeholder="Username*">
-			<input type="password" placeholder="Password*">
-			<a href=#>Forgot your password?</a>
-			<button>Login</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-				<h1>Sign Up</h1>
-				<p>Sign up here if you don't have account.</p>
-				<button class="signup_btn">
-					<a class="nav-link" aria-current="page" href="{% url 'signup' %}">Sign up!</a>
-				</button>
+	<div class="container">
+		<div class="form sign-in-container">
+			<form class="login-form" action="#" method="POST">
+				{% csrf_token %}
+				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
+				<h1>Login here!</h1>
+					<div class="social-container">
+						<a href="#" class="google btn">
+							<i class="fa fa-google fa-fw"></i> Login with Google+
+						</a>
+					</div>
+					<input type="text" placeholder="Username*" name="username" required>
+					<input type="password" placeholder="Password*" name="password" required>
+					<a href=#>Forgot your password?</a>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h1>Sign Up</h1>
+					<p>Sign up here if you don't have account.</p>
+					<button onclick="location.href='{% url 'signup' %}'" class="signup_btn">
+						<a class="nav-link" aria-current="page" href="{% url 'signup' %}">Sign up!</a>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>
 {% endblock %}

@@ -81,7 +81,12 @@ button {
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #FFB21E;">
     <a class ="navbar-brand" href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="80" class="img-responive"></a>
+    
+    {% if user.is_authenticated %}
     <div id="p1" aria-current="page"style="color:black"><p1>{{ user.username }} is Hungry!</p1></div>
+    {% else %}
+    <div id="p1" aria-current="page"style="color:black"><p1>Welcome!</p1></div>
+    {% endif %}
     
     <div class="navbar-collapse" id="navbarNavDropdown">
         <ul class="nav-bar">
@@ -106,18 +111,28 @@ button {
             </li>
             <li>
                 <button type="button" class="btn btn-light" style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
-                    <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" class="btn btn-light" aria-current="page" href="#" width="20" >About us</a>
+                    <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" 
+                    class="btn btn-light" aria-current="page" href="https://github.com/jaybjackie/HungryMe/wiki/About-us" width="20" >About us</a>
                 </button>
             </li> 
             <li>
+                {% if user.is_authenticated %}
+                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                </button>
+                {% else %}
                 <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
                     <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
                 </button>
+                {% endif %}
+                
             </li>
             <li>
+                {% if not user.is_authenticated %}
                 <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
                     <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Sign Up</a>
                 </button>
+                {% endif %}
             </li>
         </ul>
     </div>

@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.db.models import Q
 from foods.models import Menu
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
+from .forms import RegisterForm
+from django.contrib import messages
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -13,7 +15,7 @@ def index(request):
     search_post = request.GET.get('search')
     if search_post:
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
-            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))
+            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
     else:
         menu_list = Menu.objects.all().order_by('-id')[:24]
     feed = api_response()
@@ -102,16 +104,24 @@ def detail(request, menu_id):
     return render(request, 'foods/detail.html', {"menu": menu})
 
 def signup(request):
-    """Register a new user."""
+    if request.method == 'GET':
+        form = RegisterForm()
+        return render(request, 'registration/signup.html', {'form': form})
+    
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            user = form.save()
-            login(request, user)
-            return redirect('foods:index')
-        # what if form is not valid?
-        # we should display a message in signup.html
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form':form})
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for' + user)
+            re_user = authenticate(username=form.cleaned_data.get('username'),
+                                    password=form.cleaned_data.get('password1'))
+            if user is not None:
+                login(request, re_user)
+            messages.success(request, "Registration successful.")
+            return redirect('index')
+        else:
+            messages.error(request, 'Error Processing Your Request')
+            return render(request, 'registration/signup.html', {'form': form})
+    
+    return render(request, 'registration/signup.html', {})

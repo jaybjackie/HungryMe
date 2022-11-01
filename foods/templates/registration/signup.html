@@ -177,34 +177,36 @@ input {
 </style>
 <html>
 <body>
-<div class="container">
-	<div class="form sign-in-container">
-		<form action="#">
-			<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
-			<h1>Sign up here!</h1>
-			<div class="social-container">
-				<a href="#" class="google btn">
-					<i class="fa fa-google fa-fw"></i> Signup with Google+
-				</a>
-			</div>
-			<input type="email" placeholder="Username*">
-			<input type="password" placeholder="Password*">
-			<input type="password" placeholder="Repeat password*">
-			<button>Sign up</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-				<h1>Login</h1>
-				<p>Login here if you have account.</p>
-				<button class="signup_btn">
-					<a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
-				</button>
+	<div class="container">
+		<div class="form sign-in-container">
+			<form class='signup-form' action="#" method="POST">
+				{% csrf_token %}
+				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
+				<h1>Sign up here!</h1>
+					<div class="social-container">
+						<a href="#" class="google btn">
+							<i class="fa fa-google fa-fw"></i> Signup with Google+
+						</a>
+					</div>
+					<input type="text" placeholder="Username*" name="username" required>
+					<input type="password" placeholder="Password*" name="password1" required>
+					<input type="password" placeholder="Repeat password*" name="password2" required>
+				<button type="submit">Sign up</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h1>Login</h1>
+					<p>Login here if you have account.</p>
+					<!-- use js to allow click on button area then link to login -->
+					<button onclick="location.href={% url 'login' %}'" class="signup_btn">
+						<a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>
 {% endblock %}

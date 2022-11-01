@@ -8,6 +8,10 @@ from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
+import datetime
+from foods.models import Menu ,FoodOfDay
+import random
+from time import timezone
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -97,7 +101,15 @@ def index(request):
             and menu.ingredients != 'No information':
             menu.save()
 
-    return render(request, 'foods/index.html', {"menu_list": menu_list})
+    feeds = random.choice(Menu.objects.all())
+    food_of_day  = FoodOfDay.objects.first()
+    if food_of_day.was_end():
+        food_of_day.menu = feeds
+        food_of_day.range_date = datetime.datetime.now()+  datetime.timedelta(days=1)
+        food_of_day.save()
+    
+        
+    return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)

@@ -1,8 +1,10 @@
 from django.contrib import admin
 
-from .models import Menu
+from .models import Menu, FoodOfDay
+
 
 admin.site.register(Menu)
+admin.site.register(FoodOfDay)
 
 admin.site.site_header = "HungryMe Admin"
 admin.site.site_title = "Admin Area"

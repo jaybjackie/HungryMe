@@ -1,16 +1,71 @@
+<link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
 {% extends "foods/base.html" %}
 {% block content %}
 
-<h1>Food of the day</h1>
-{% if food_of_day %}
-    <li><a href="{% url 'detail' food_of_day.menu.id %}">{{ food_of_day.menu.menu_name }}</a>
-{% endif %}
+<style>
+.menuImage{
 
-<h1>Menu For You</h1>
-{% if menu_list%}
+}
+h2{
+    font-family: 'Lemon';font-size: 34px;
+}
+.text-title-1{
+    font-family: 'Lemon';font-size: 50px;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+
+    color: #000000
+}
+h3{
+    font-family: 'Lemon';font-size: 24px;
+}
+
+.container-title{
+    display:flex;
+    justify-content: space-between;
+}
+.text-title-2{
+    text-decoration: none;
+    
+
+    font-family: 'Lemon';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+
+color: #000000;
+}
+.text-title-2:hover{
+    text-decoration: none;
+    color: black;
+}
+
+</style>
+<div>
+   
+    {% if food_of_day %}
+    <div class="container-title">
+        <h1 class="text-title-1">Food of the day</h1>
+        <a href="{% url 'detail' food_of_day.menu.id %}" class="text-title-2">
+            <h2 class=>{{ food_of_day.menu.menu_name }} test</h2>
+        </a>
+        <a class="menuImage" href="{% url 'detail' food_of_day.menu.id %}"><img src= "{{food_of_day.menu.picture_url}}" alt=menu.id width="400"></a>
+    </div>
+    {% endif %}
+</div>    
+
+<h3>Menu For You</h3>
+<!-- {% if menu_list%}
     {% for menu in menu_list %}
     <a href="{% url 'detail' menu.id %}"> <img src="{{menu.picture_url}}" height="190px" width="220px"></img></a>
     {% endfor %}
-{% endif %}
+{% endif %}  -->
 
 {% endblock %}

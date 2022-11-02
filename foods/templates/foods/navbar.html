@@ -2,6 +2,39 @@
 p1 {
     font-family: 'Lemon';font-size: 21px;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
 .menu-bar {
     position: absolute;
     top: 20px;    
@@ -48,7 +81,7 @@ button {
         text-transform: uppercase;
         cursor: pointer;
         margin: 2.5px;
-    }
+}
 
 
 .nav-bar {
@@ -105,7 +138,14 @@ button {
             </li>
             <li>   
                 <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}">
-                    <input class="form-control mr-sm-2" type="search"   placeholder="Search for Menus!" aria-label="Search" name="search">
+                    <input id="search-input" class="form-control mr-sm-2" type="search"   placeholder="Search for Menus!" aria-label="Search" name="search">
+                    <div id="myDropdown" class="dropdown-content">
+                        {% if menu_list%}
+                            {% for menu in menu_list %}
+                                <a href= "{% url 'detail' menu.id %}"> {{menu.menu_name}} </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </li>
@@ -125,7 +165,6 @@ button {
                     <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
                 </button>
                 {% endif %}
-                
             </li>
             <li>
                 {% if not user.is_authenticated %}
@@ -136,5 +175,37 @@ button {
             </li>
         </ul>
     </div>
+    <script>
+        /* Get search input a and call it to use function event */
+        document.getElementById("search-input").addEventListener("input", ()=> {
+            myFunction()
+            filterFunction()
+        })
+        /* When the user type,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            console.log("Hello world")
+            if(document.getElementById("myDropdown").classList.contains("show")){
+                return
+            }
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("search-input");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length ; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+            }
+        }
+    </script>
 </nav>
 

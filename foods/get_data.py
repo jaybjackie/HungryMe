@@ -8,10 +8,11 @@ def api_response():
     querystring = {"limit":"24","start":"0"}
 
     headers = {
-        "X-RapidAPI-Key": "5a76c79e3fmsh1f6d490c33d0eabp1033fejsnf4b585450f20",
-        "X-RapidAPI-Host": "yummly2.p.rapidapi.com"
+	"X-RapidAPI-Key": "ba05f816f4mshc4d14643084ca7bp11f8b3jsn8e14dd02719e",
+	"X-RapidAPI-Host": "yummly2.p.rapidapi.com"
     }
     # get json 
     response = requests.request("GET", url, headers=headers, params=querystring).json()
+    print(requests.request("GET", url, headers=headers, params=querystring).text)
     return response['feed']
 

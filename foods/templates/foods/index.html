@@ -42,6 +42,14 @@ h3{
     color: black;
 }
 
+.one_blocks{
+    display: inline-block;
+    max-width: 85px;
+    max-height: 20px;
+    border-radius: 25px;
+    margin: 100px;
+}
+
 </style>
 <div>
     {% if food_of_day %}
@@ -55,11 +63,19 @@ h3{
     {% endif %}
 </div>    
 
+
 <h3>Menu For You</h3>
-{% if menu_list%}
-    {% for menu in menu_list %}
-    <a href="{% url 'detail' menu.id %}"> <img src="{{menu.picture_url}}" height="190px" width="220px"></img></a>
-    {% endfor %}
-{% endif %} 
+<div>
+    <div class="blocks">
+        {% if menu_list%}
+            {% for menu in menu_list %}
+            <div class="one_blocks">
+                <a href="{% url 'detail' menu.id %}"> <img src="{{menu.picture_url}}" height="190px" width="220px"></img></a>
+            </div>
+            {% endfor %}
+        {% endif %} 
+    </div>
+</div>
+
 
 {% endblock %}

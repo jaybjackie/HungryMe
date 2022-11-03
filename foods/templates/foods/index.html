@@ -16,6 +16,7 @@ h2{
     align-items: center;
     color: #000000
 }
+
 h3{
     font-family: 'Lemon';font-size: 24px;
 }
@@ -24,6 +25,7 @@ h3{
     display:flex;
     justify-content: space-between;
 }
+
 .text-title-2{
     text-decoration: none;
     font-family: 'Lemon';
@@ -35,33 +37,36 @@ h3{
     align-items: center;
     color: #000000;
 }
+
 .text-title-2:hover{
     text-decoration: none;
     color: black;
 }
 
-body {
-    height: 100vh;
-    background: linear-gradient(
-        to top,
-        white, 0%
-        white 25%,
-        #FFB21E 25%,
-        #FFB21E 100%);
-}
-
-.one_blocks{
-    display: inline-block;
-    max-width: 85px;
-    max-height: 20px;
-    margin: 100px;
+.one_block{
+    display: inline-table;
+    margin: 30px;
+    width: 289px;
+    height: 266px;
+    border-radius: 25px;
+    box-shadow: -1px 0 10px #000000;
+    background-color: white;
 }
 
 .images{
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 25px 25px 0px 0px;
 }
 
+p {
+    font-family: 'sans-serif';
+    font-size: normal;
+    margin: 5px;
+}
+
+.blocks_zone {
+    background-color: #FEDA94;
+}
 
 </style>
 <div>
@@ -76,19 +81,16 @@ body {
     {% endif %}
 </div>    
 
-
+<div class="blocks_zone">
 <h3>Menu For You</h3>
-<div>
-    <div class="blocks">
-        {% if menu_list%}
-            {% for menu in menu_list %}
-            <div class="one_blocks">
-                <a href="{% url 'detail' menu.id %}"> <img class="images" src="{{menu.picture_url}}" height="190px" width="220px"></img></a>
-            </div>
-            {% endfor %}
-        {% endif %} 
-    </div>
+    {% if menu_list%}
+        {% for menu in menu_list %}
+        <div class="one_block">
+            <a href="{% url 'detail' menu.id %}"> <img class="images" src="{{menu.picture_url}}" height="190px" width="289px"></img></a>
+            <p>{{menu.menu_name}}</p>
+        </div>
+        {% endfor %}
+    {% endif %} 
 </div>
-
 
 {% endblock %}

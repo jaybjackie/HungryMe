@@ -10,11 +10,14 @@ p1 {
 .dropdown-content {
     display: none;
     position: absolute;
+    max-height: 400px;
+    overflow-y: auto;
     background-color: #f6f6f6;
     min-width: 230px;
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
+    top: 100%;
 }
 
 .dropdown-content a {
@@ -31,7 +34,6 @@ p1 {
 
 .show {
     display: block;
-    position: relative;
     margin: auto;
 }
 
@@ -104,10 +106,12 @@ button {
 }
 
 .dropdown-item{
+    position: relative;
     color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
+    display: flex;
 }
 
 </style>

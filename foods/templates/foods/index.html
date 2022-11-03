@@ -1,4 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
 
@@ -18,7 +21,10 @@ h2{
 }
 
 h3{
-    font-family: 'Lemon';font-size: 24px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+    margin-left: 30px;
+    font-weight: bold;
 }
 
 .container-title{
@@ -51,6 +57,11 @@ h3{
     border-radius: 25px;
     box-shadow: -1px 0 10px #000000;
     background-color: white;
+    transition: 0.2s;
+}
+
+.one_block:hover{
+    transform: translateY(-10px);
 }
 
 .images{
@@ -59,13 +70,16 @@ h3{
 }
 
 p {
-    font-family: 'sans-serif';
-    font-size: normal;
+    font-family: 'Roboto Slab', serif;
+    font-size: small;
+    font-weight: bolder;
     margin: 5px;
+    color: #000000;
 }
 
-.blocks_zone {
+.blocks_zone{
     background-color: #FEDA94;
+    text-decoration: none;
 }
 
 </style>
@@ -85,10 +99,10 @@ p {
 <h3>Menu For You</h3>
     {% if menu_list%}
         {% for menu in menu_list %}
-        <div class="one_block">
-            <a href="{% url 'detail' menu.id %}"> <img class="images" src="{{menu.picture_url}}" height="190px" width="289px"></img></a>
+        <a class="one_block" href="{% url 'detail' menu.id %}">
+            <img class="images" src="{{menu.picture_url}}" height="190px" width="289px"></img>
             <p>{{menu.menu_name}}</p>
-        </div>
+        </a>
         {% endfor %}
     {% endif %} 
 </div>

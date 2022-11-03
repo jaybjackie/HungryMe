@@ -22,9 +22,11 @@ h2{
 
 h3{
     font-family: 'Roboto Slab', serif;
-    font-size: 35px;
-    margin-left: 30px;
+    font-size: 30px;
     font-weight: bold;
+    position: relative;
+    left: 57px;
+    top: 25px;
 }
 
 .container-title{
@@ -49,37 +51,56 @@ h3{
     color: black;
 }
 
-.one_block{
+.one-block{
     display: inline-table;
-    margin: 30px;
+    margin: 20px;
     width: 289px;
     height: 266px;
-    border-radius: 25px;
+    border-radius: 18px;
     box-shadow: -1px 0 10px #000000;
     background-color: white;
     transition: 0.2s;
 }
 
-.one_block:hover{
+.one-block:hover{
     transform: translateY(-10px);
+}
+
+.one-block a:hover, a:visited, a:link, a:active, p:hover{
+    text-decoration: none;
+    color: #FFB21E;
 }
 
 .images{
     object-fit: cover;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 18px 18px 0px 0px;
 }
 
 p {
     font-family: 'Roboto Slab', serif;
-    font-size: small;
-    font-weight: bolder;
-    margin: 5px;
+    font-size: 14px;
+    margin-left: 12px;
+    margin-top: 5px;
     color: #000000;
 }
 
-.blocks_zone{
+.menu-text{
+    max-height: 45px;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.blocks-zone{
     background-color: #FEDA94;
-    text-decoration: none;
+}
+
+.blocks{
+    margin: 40px;
 }
 
 </style>
@@ -95,16 +116,20 @@ p {
     {% endif %}
 </div>    
 
-<div class="blocks_zone">
+<div class="blocks-zone">
 <h3>Menu For You</h3>
-    {% if menu_list%}
-        {% for menu in menu_list %}
-        <a class="one_block" href="{% url 'detail' menu.id %}">
-            <img class="images" src="{{menu.picture_url}}" height="190px" width="289px"></img>
-            <p>{{menu.menu_name}}</p>
-        </a>
-        {% endfor %}
-    {% endif %} 
+    <div class="blocks">
+        {% if menu_list%}
+            {% for menu in menu_list %}
+            <a class="one-block" href="{% url 'detail' menu.id %}">
+                <img class="images" src="{{menu.picture_url}}" height="175px" width="289px"></img>
+                <div class="menu-text">
+                    <p>{{menu.menu_name}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

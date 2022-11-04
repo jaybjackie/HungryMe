@@ -6,7 +6,6 @@ class Menu(models.Model):
     menu_name = models.CharField(max_length=50)
     creator_name = models.CharField(max_length=50, default="Official HungryMe")
     number_of_ingredients = models.IntegerField(default=1)
-    total_cooking_time = models.CharField(max_length=25, default='15 minutes', null=True)
     energy_kcal = models.FloatField(default=0.0, null=True)
     fat_kcal = models.FloatField(default=0.0, null=True)
     sugar = models.FloatField(default=0.0, null=True)

@@ -90,19 +90,11 @@ span.inline{
 
     <div class="brief-info">
         {% if menu.number_of_ingredients != -99 and menu.total_cooking_time != -99 and menu.energy_kcal != -99%}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.total_cooking_time }}&emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
-        {% elif menu.number_of_ingredients != -99 and  menu.total_cooking_time != -99 %}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.total_cooking_time }}</p>
-        {% elif menu.number_of_ingredients != -99 and  menu.energy_kcal != -99%}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }}</p>
-        {% elif menu.total_cooking_time != -99 and  menu.energy_kcal != -99%}
-        <p>{{ menu.total_cooking_time }} &emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
+        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
         {% elif menu.number_of_ingredients != -99 %}
         <p>{{ menu.number_of_ingredients }} Ingredients</p>
-        {% elif menu.total_cooking_time != -99%}
-        <p>{{ menu.total_cooking_time }}</p>
         {% elif menu.energy_kcal != -99%}
-        <p>{{ menu.energy_kcal }}</p>
+        <p>{{ menu.energy_kcal }} calories</p>
         {% endif %}
     </div>
     <div class=ingredient>        

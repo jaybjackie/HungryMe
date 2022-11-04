@@ -19,7 +19,8 @@ def index(request):
     search_post = request.GET.get('search')
     if search_post:
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
-            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
+            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post) |\
+                Q(menu_name__icontains=search_post))  
     else:
         menu_list = Menu.objects.all().order_by('-id')[:24]
     # feed = api_response()

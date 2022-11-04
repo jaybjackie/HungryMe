@@ -13,6 +13,6 @@ def api_response():
     }
     # get json 
     response = requests.request("GET", url, headers=headers, params=querystring).json()
-    print(requests.request("GET", url, headers=headers, params=querystring).text)
+    # print(requests.request("GET", url, headers=headers, params=querystring).text)
     return response['feed']
 

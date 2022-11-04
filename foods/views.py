@@ -87,7 +87,6 @@ def index(request):
             menu_name= get_menu_name,
             creator_name = 'Official HungryMe',
             number_of_ingredients = get_number_ingredients,
-            total_cooking_time = get_cooking_time,
             energy_kcal = get_kcal,
             fat_kcal = get_fat,
             sugar = get_sugar,

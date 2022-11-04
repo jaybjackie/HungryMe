@@ -1,4 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
 
@@ -16,14 +19,21 @@ h2{
     align-items: center;
     color: #000000
 }
+
 h3{
-    font-family: 'Lemon';font-size: 24px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    left: 57px;
+    top: 25px;
 }
 
 .container-title{
     display:flex;
     justify-content: space-between;
 }
+
 .text-title-2{
     text-decoration: none;
     font-family: 'Lemon';
@@ -35,33 +45,63 @@ h3{
     align-items: center;
     color: #000000;
 }
+
 .text-title-2:hover{
     text-decoration: none;
     color: black;
 }
 
-body {
-    height: 100vh;
-    background: linear-gradient(
-        to top,
-        white, 0%
-        white 25%,
-        #FFB21E 25%,
-        #FFB21E 100%);
+.one-block{
+    display: inline-table;
+    margin: 20px;
+    width: 289px;
+    height: 266px;
+    border-radius: 18px;
+    box-shadow: -1px 0 10px #000000;
+    background-color: white;
+    transition: 0.2s;
 }
 
-.one_blocks{
-    display: inline-block;
-    max-width: 85px;
-    max-height: 20px;
-    margin: 100px;
+.one-block:hover{
+    transform: translateY(-10px);
+}
+
+.one-block a:hover, a:visited, a:link, a:active, p:hover{
+    text-decoration: none;
+    color: #FFB21E;
 }
 
 .images{
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 18px 18px 0px 0px;
 }
 
+p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    margin-left: 13px;
+    margin-top: 7px;
+    color: #000000;
+}
+
+.menu-text{
+    max-height: 50px;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.blocks-zone{
+    background-color: #FEDA94;
+}
+
+.blocks{
+    margin: 40px;
+}
 
 </style>
 <div>
@@ -76,19 +116,20 @@ body {
     {% endif %}
 </div>    
 
-
+<div class="blocks-zone">
 <h3>Menu For You</h3>
-<div>
     <div class="blocks">
         {% if menu_list%}
             {% for menu in menu_list %}
-            <div class="one_blocks">
-                <a href="{% url 'detail' menu.id %}"> <img class="images" src="{{menu.picture_url}}" height="190px" width="220px"></img></a>
-            </div>
+            <a class="one-block" href="{% url 'detail' menu.id %}">
+                <img class="images" src="{{menu.picture_url}}" height="175px" width="289px"></img>
+                <div class="menu-text">
+                    <p>{{menu.menu_name}}</p>
+                </div>
+            </a>
             {% endfor %}
-        {% endif %} 
+        {% endif %}
     </div>
 </div>
-
 
 {% endblock %}

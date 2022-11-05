@@ -1,0 +1,210 @@
+{% extends "foods/base.html" %}
+{% block content %}
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+:root {
+	--primary-color:#FFB21E;
+	--secondary-color:#8735b7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+.wrapper {
+    width: 780px;
+    margin: 100px auto 0;
+}
+
+.wrapper .title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .option_item {
+    display: block;
+    position: relative;
+    width: 175px;
+    height: 175px;
+    margin: 10px;
+}
+
+.container .option_item .checkbox {
+    /* This is to hide small checkbox */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.option_item .option_inner {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 58px 40px;
+    cursor: pointer;
+    color: #585c68;
+    display: block;
+    border: 5px solid transparent;
+    position: relative;
+}
+
+.option_item .option_inner .icon {
+    margin-bottom: 10px;
+}
+
+.option_item .option_inner .icon .fab {
+    font-size: 32px;
+}
+
+.option_item .option_inner .name {
+    user-select: none;
+    font-family: 'Montserrat';font-size: 16px;
+}
+
+.option_item .checkbox:checked ~ .option_inner.wheat {
+    border-color: #ff8c00;
+    color: #ff8c00;
+}
+
+.option_item .checkbox:checked ~ .option_inner.dairy {
+    border-color: #55acee;
+    color: #55acee;
+}
+
+.option_item .checkbox:checked ~ .option_inner.peanut {
+    border-color: #25d366;
+    color: #25d366;
+}
+
+.option_item .checkbox:checked ~ .option_inner.egg {
+    border-color: #be8f00bc;
+    color: #be8f00bc;
+}
+
+
+.option_item .checkbox:checked ~ .option_inner.seafood {
+    border-color: #dd4b39;
+    color: #dd4b39;
+}
+
+
+
+.option_item .option_inner .tickmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 20px solid;
+    border-color: #000 transparent transparent #000;
+    display: none;
+}
+
+.option_item .option_inner .tickmark:before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    width: 15px;
+    height: 5px;
+    border: 3px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+}
+
+.option_item .checkbox:checked ~ .option_inner .tickmark {
+    display: block;
+}
+
+.option_item .option_inner.wheat .tickmark {
+    border-color: #ff8c00 transparent transparent #ff8c00;
+}
+
+.option_item .option_inner.dairy .tickmark {
+    border-color: #55acee transparent transparent #55acee;
+}
+
+.option_item .option_inner.peanut .tickmark {
+    border-color: #25d366 transparent transparent #25d366;
+}
+
+.option_item .option_inner.egg .tickmark {
+    border-color: #be8f00bc transparent transparent #be8f00bc ;
+}
+
+
+.option_item .option_inner.seafood .tickmark {
+    border-color: #dd4b39 transparent transparent #dd4b39;
+}
+
+
+
+</style>
+<script src="https://kit.fontawesome.com/f56f1a34bc.js" crossorigin="anonymous"></script>
+
+
+<div class="wrapper">
+    <div class="title">
+        Do you have any food allergies?
+    </div>
+
+    <div class="container">
+    <label class="option_item">
+        <input type="checkbox" class="checkbox">
+        <div class="option_inner wheat">
+        <div class="tickmark"></div>
+        <div class="icon"><i class="fa-solid fa-wheat-awn"></i></div>
+        <div class="name">Wheat</div>
+    </div>
+    </label>
+    <label class="option_item">
+        <input type="checkbox" class="checkbox" checked>
+        <div class="option_inner dairy">
+        <div class="tickmark"></div>
+        <div class="icon"><i class="fa-solid fa-glass-water"></i></div>
+        <div class="name">Dairy</div>
+        </div>
+    </label>
+    <label class="option_item">
+        <input type="checkbox" class="checkbox">
+        <div class="option_inner peanut">
+        <div class="tickmark"></div>
+        <div class="icon"><i class="fa-regular fa-lemon"></i></div>
+        <div class="name">Peanut</div>
+        </div>
+    </label>
+    <label class="option_item">
+        <input type="checkbox" class="checkbox" checked>
+        <div class="option_inner egg">
+        <div class="tickmark"></div>
+        <div class="icon"><i class="fa-solid fa-egg"></i></div>
+        <div class="name">Egg</div>
+        </div>
+    </label>
+    <label class="option_item">
+        <input type="checkbox" class="checkbox">
+        <div class="option_inner seafood">
+        <div class="tickmark"></div>
+        <div class="icon"><i class="fa-solid fa-shrimp"></i></div>
+        <div class="name">Seafood</div>
+        </div>
+    </label>
+{% endblock %}

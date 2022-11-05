@@ -1,7 +1,16 @@
 from django.db import models
 import datetime
 from django.utils import timezone
+from django.contrib.auth.models import User
 
+
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
+
+    def __str__(self):
+        return {self.rating}
+        
 class Menu(models.Model):
     menu_name = models.CharField(max_length=50)
     creator_name = models.CharField(max_length=50, default="Official HungryMe")
@@ -15,10 +24,12 @@ class Menu(models.Model):
     difficulty = models.CharField(max_length=30, default="None", null=True)
     description = models.CharField(max_length=250, default='No description', null=True)
     ingredients = models.JSONField(null=True, default=None)
+    rate = models.ForeignKey(Rating,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.menu_name} by {self.creator_name}"
-    
+        
+        
 class FoodOfDay(models.Model):
     range_date = models.DateTimeField('date end', default = timezone.now() + datetime.timedelta(days=1))
     menu = models.ForeignKey(Menu, on_delete = models.DO_NOTHING)

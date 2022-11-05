@@ -96,18 +96,20 @@ def index(request):
             description = get_description,
             ingredients = get_ingredients
         )
-        if not Menu.objects.filter(menu_name= menu.menu_name).exists():
-            menu.save()
+        if get_menu_name != 'missing menu name'\
+            and get_ingredients != 'No information'\
+            and get_picture_url != '':
+            if not Menu.objects.filter(menu_name= menu.menu_name).exists():
+                menu.save()
 
     feeds = random.choice(Menu.objects.all())
     food_of_day  = FoodOfDay.objects.first()
-    if food_of_day.was_end():
-        food_of_day.menu = feeds
-        food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
-        food_of_day.save()
-    
-    # return render(request, 'foods/index.html', {"menu_list": menu_list})
-    
+    if food_of_day:
+        if food_of_day.was_end():
+            food_of_day.menu = feeds
+            food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
+            food_of_day.save()
+        
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
     
 def detail(request, menu_id):

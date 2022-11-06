@@ -21,7 +21,8 @@ def index(request):
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
             Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
     else:
-        menu_list = Menu.objects.all().order_by('-id')[:24]
+        menu_list = Menu.objects.all().order_by()[:24]
+
     # feed = api_response()
     # for entry in feed:
     #     try:
@@ -119,6 +120,10 @@ def detail(request, menu_id):
         menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
     avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
     return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
+
+def filter(request):
+    
+    return render(request,'foods/filter.html',{})
 
 def signup(request):
     if request.method == 'GET':

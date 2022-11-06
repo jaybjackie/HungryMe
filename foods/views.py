@@ -21,7 +21,8 @@ def index(request):
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
             Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
     else:
-        menu_list = Menu.objects.all().order_by('-id')[:24]
+        menu_list = Menu.objects.all().order_by()[:24]
+
     # feed = api_response()
     # for entry in feed:
     #     try:
@@ -103,11 +104,11 @@ def index(request):
 
     feeds = random.choice(Menu.objects.all())
     food_of_day  = FoodOfDay.objects.first()
-    if food_of_day.was_end():
-        food_of_day.menu = feeds
-        food_of_day.range_date = datetime.datetime.now() +  datetime.timedelta(days=1)
-        food_of_day.save()
-    
+    if food_of_day:
+        if food_of_day.was_end():
+            food_of_day.menu = feeds
+            food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
+            food_of_day.save()
         
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
     
@@ -119,6 +120,10 @@ def detail(request, menu_id):
         menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
     avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
     return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
+
+def filter(request):
+    
+    return render(request,'foods/filter.html',{})
 
 def signup(request):
     if request.method == 'GET':

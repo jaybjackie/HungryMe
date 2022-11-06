@@ -2,14 +2,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from django.db.models import Q
+from django.db.models import Q, Avg
 from foods.models import Menu
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
 import datetime
-from foods.models import Menu ,FoodOfDay
+from foods.models import Menu ,FoodOfDay, MenuRating
 import random
 from time import timezone
 
@@ -19,10 +19,10 @@ def index(request):
     search_post = request.GET.get('search')
     if search_post:
         menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
-            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post) |\
-                Q(menu_name__icontains=search_post))  
+            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
     else:
         menu_list = Menu.objects.all().order_by()[:24]
+
     # feed = api_response()
     # for entry in feed:
     #     try:
@@ -96,29 +96,27 @@ def index(request):
     #         description = get_description,
     #         ingredients = get_ingredients
     #     )
-    #     if not Menu.objects.filter(menu_name= menu.menu_name).exists():
+
+    #     if not Menu.objects.filter(menu_name = menu.menu_name).exists():
     #         menu.save()
 
     feeds = random.choice(Menu.objects.all())
     food_of_day  = FoodOfDay.objects.first()
     if food_of_day.was_end():
         food_of_day.menu = feeds
-        food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
+        food_of_day.range_date = datetime.datetime.now() +  datetime.timedelta(days=1)
         food_of_day.save()
-    
-    # return render(request, 'foods/index.html', {"menu_list": menu_list})
-    
+         
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
-    search_post = request.GET.get('search')
-    if search_post:
-        menu_list = Menu.objects.filter(Q(menu_name__icontains=search_post) & \
-            Q(description__icontains=search_post) & Q(ingredients__icontains=search_post))  
+    if MenuRating.objects.filter(menu=menu, user=request.user).first() == None:
+        menu.rating = 0
     else:
-        menu_list = Menu.objects.all().order_by('-id')[:24]
-    return render(request, 'foods/detail.html', {"menu_list": menu_list, "menu": menu})
+        menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
+    avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
+    return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
 
 def filter(request):
     
@@ -146,3 +144,10 @@ def signup(request):
             return render(request, 'registration/signup.html', {'form': form})
     
     return render(request, 'registration/signup.html', {})
+
+
+def rate(request, menu_id, rating):
+    menu = Menu.objects.get(id=menu_id)
+    MenuRating.objects.filter(menu=menu, user=request.user).delete()
+    MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
+    return detail(request, menu_id)

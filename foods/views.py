@@ -83,24 +83,24 @@ def index(request):
     #     except:
     #         get_ingredients = 'No information'
             
-        menu = Menu(
-            menu_name= get_menu_name,
-            creator_name = 'Official HungryMe',
-            number_of_ingredients = get_number_ingredients,
-            energy_kcal = get_kcal,
-            fat_kcal = get_fat,
-            sugar = get_sugar,
-            picture_url = get_picture_url,
-            rating = get_rating,
-            difficulty = get_difficulty,
-            description = get_description,
-            ingredients = get_ingredients
-        )
-        if get_menu_name != 'missing menu name'\
-            and get_ingredients != 'No information'\
-            and get_picture_url != '':
-            if not Menu.objects.filter(menu_name= menu.menu_name).exists():
-                menu.save()
+    #     menu = Menu(
+    #         menu_name= get_menu_name,
+    #         creator_name = 'Official HungryMe',
+    #         number_of_ingredients = get_number_ingredients,
+    #         energy_kcal = get_kcal,
+    #         fat_kcal = get_fat,
+    #         sugar = get_sugar,
+    #         picture_url = get_picture_url,
+    #         rating = get_rating,
+    #         difficulty = get_difficulty,
+    #         description = get_description,
+    #         ingredients = get_ingredients
+    #     )
+    #     if get_menu_name != 'missing menu name'\
+    #         and get_ingredients != 'No information'\
+    #         and get_picture_url != '':
+    #         if not Menu.objects.filter(menu_name= menu.menu_name).exists():
+    #             menu.save()
 
     feeds = random.choice(Menu.objects.all())
     food_of_day  = FoodOfDay.objects.first()

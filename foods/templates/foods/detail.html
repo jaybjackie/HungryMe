@@ -54,6 +54,14 @@ body h3{
 .right{
     padding: 20px;
 }
+span.inline{
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    font-weight: bolder;
+}
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
    .main, .right {
@@ -135,44 +143,80 @@ body h3{
 
     <div class="brief-info">
         {% if menu.number_of_ingredients != -99 and menu.total_cooking_time != -99 and menu.energy_kcal != -99%}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.total_cooking_time }}&emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
-        {% elif menu.number_of_ingredients != -99 and  menu.total_cooking_time != -99 %}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.total_cooking_time }}</p>
-        {% elif menu.number_of_ingredients != -99 and  menu.energy_kcal != -99%}
-        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }}</p>
-        {% elif menu.total_cooking_time != -99 and  menu.energy_kcal != -99%}
-        <p>{{ menu.total_cooking_time }} &emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
+        <p>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }} calories</p>
         {% elif menu.number_of_ingredients != -99 %}
         <p>{{ menu.number_of_ingredients }} Ingredients</p>
-        {% elif menu.total_cooking_time != -99%}
-        <p>{{ menu.total_cooking_time }}</p>
         {% elif menu.energy_kcal != -99%}
-        <p>{{ menu.energy_kcal }}</p>
+        <p>{{ menu.energy_kcal }} calories</p>
         {% endif %}
     </div>
     <div class=ingredient>        
         <h3><b>Ingredients</b></h3>
         {% for ingredients in menu.ingredients %}
             <p>{{ingredients.wholeLine}}</p>
-            {% endfor %} 
+        {% endfor %} 
     </div>
     <div class="nutrition">
         <h3><b>Nutrition</b></h3>
-        <b>
         {% if menu.energy_kcal != -99 and menu.fat_kcal != -99 and menu.sugar != -99%}
-        <h6>{{ menu.energy_kcal }} calories&emsp;|&emsp;{{ menu.fat_kcal }}&emsp;|&emsp;{{ menu.sugar }} grams</h6>
+        <span class="inline">
+            <h6>Total calories<br></h6>
+            {{ menu.energy_kcal }} calories
+        </span>
+        <span class="inline">
+            <h6>Fat<br></h6>
+            {{ menu.fat_kcal }} calories
+        </span>
+        <span class="inline">
+            <h6>Sugar<br></h6>
+            {{ menu.sugar }} grams
+        </span>
         {% elif menu.energy_kcal != -99 and  menu.fat_kcal != -99 %}
-        <h6>{{ menu.energy_kcal }} calories&emsp;|&emsp;{{ menu.fat_kcal }}</h6>
+        <span class="inline">
+            <h6>Total calories<br></h6>
+            {{ menu.energy_kcal }} calories
+        </span>
+        <span class="inline">
+            <h6>Fat<br></h6>
+            {{ menu.fat_kcal }} calories
+        </span>
         {% elif menu.energy_kcal != -99 and  menu.sugar != -99%}
-        <h6>{{ menu.energy_kcal }} calories&emsp;|&emsp;{{ menu.sugar }}</h6>
+        <span class="inline">
+            <h6>Total calories<br></h6>
+            {{ menu.energy_kcal }} calories
+        </span>
+        <span class="inline">
+            <h6>Sugar<br></h6>
+            {{ menu.sugar }} grams
+        </span>
         {% elif menu.fat_kcal != -99 and  menu.sugar != -99%}
-        <h6>{{ menu.fat_kcal }} calories&emsp;|&emsp;{{ menu.sugar }} calories</h6>
+        <span class="inline">
+            <h6>Fat<br></h6>
+            {{ menu.fat_kcal }} calories
+        </span>
+        <span class="inline">
+            <h6>Sugar<br></h6>
+            {{ menu.sugar }} grams
+        </span>
         {% elif menu.energy_kcal != -99 %}
-        <h6>{{ menu.energy_kcal }} calories</h6>
+        <span class="inline">
+            <h6>Total calories<br></h6>
+            {{ menu.energy_kcal }} calories
+        </span>
         {% elif menu.fat_kcal != -99%}
-        <h6>{{ menu.fat_kcal }} calories</h6>
+        <span class="inline">
+            <h6>Fat<br></h6>
+            {{ menu.fat_kcal }} calories
+        </span>
         {% elif menu.sugar != -99%}
-        <h6>{{ menu.sugar }}</h6>
+        <span class="inline">
+            <h6>Sugar<br></h6>
+            {{ menu.sugar }} grams
+        </span>
+        {% else %}
+        <span class="inline">
+            <h6> Nutrition are not available for this menu.</h6>
+        </span>
         </b>
         {% endif %}
         

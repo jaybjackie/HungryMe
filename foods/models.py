@@ -10,7 +10,8 @@ class Rating(models.Model):
 
     def __str__(self):
         return {self.rating}
-        
+   
+   
 class Menu(models.Model):
     menu_name = models.CharField(max_length=50)
     creator_name = models.CharField(max_length=50, default="Official HungryMe")
@@ -37,3 +38,11 @@ class FoodOfDay(models.Model):
     def was_end(self):
         now = timezone.now()
         return self.range_date >= now
+
+class MenuRating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rate = models.IntegerField(default=0)
+    menu = models.ForeignKey(Menu, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return f"{self.menu.menu_name} Rating: {self.rate}"

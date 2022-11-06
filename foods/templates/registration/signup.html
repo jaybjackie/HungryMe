@@ -1,4 +1,5 @@
 {% extends "foods/base.html" %}
+{% load socialaccount %}
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -184,7 +185,7 @@ input {
 				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
 				<h1>Sign up here!</h1>
 					<div class="social-container">
-						<a href="#" class="google btn">
+						<a href="{% provider_login_url 'google' %}" class="google btn">
 							<i class="fa fa-google fa-fw"></i> Signup with Google+
 						</a>
 					</div>

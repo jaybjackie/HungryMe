@@ -2,14 +2,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
-from django.db.models import Q
+from django.db.models import Q, Avg
 from foods.models import Menu
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
 import datetime
-from foods.models import Menu ,FoodOfDay
+from foods.models import Menu ,FoodOfDay, MenuRating
 import random
 from time import timezone
 
@@ -105,7 +105,7 @@ def index(request):
     food_of_day  = FoodOfDay.objects.first()
     if food_of_day.was_end():
         food_of_day.menu = feeds
-        food_of_day.range_date = datetime.datetime.now()+  datetime.timedelta(days=1)
+        food_of_day.range_date = datetime.datetime.now() +  datetime.timedelta(days=1)
         food_of_day.save()
     
         
@@ -113,7 +113,12 @@ def index(request):
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
-    return render(request, 'foods/detail.html', {"menu": menu})
+    if MenuRating.objects.filter(menu=menu, user=request.user).first() == None:
+        menu.rating = 0
+    else:
+        menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
+    avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
+    return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
 
 def signup(request):
     if request.method == 'GET':
@@ -139,3 +144,8 @@ def signup(request):
     return render(request, 'registration/signup.html', {})
 
 
+def rate(request, menu_id, rating):
+    menu = Menu.objects.get(id=menu_id)
+    MenuRating.objects.filter(menu=menu, user=request.user).delete()
+    MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
+    return detail(request, menu_id)

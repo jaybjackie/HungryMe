@@ -36,3 +36,18 @@ class MenuRating(models.Model):
 
     def __str__(self):
         return f"{self.menu.menu_name} Rating: {self.rate}"
+
+class CookBook(models.Model):
+    pub_date = models.DateTimeField('date published')
+    cook_name = models.CharField(max_length=200)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    description = models.CharField(max_length=250, default='No description', null=True)
+    ingredients = models.JSONField(null=True, default=None)
+    picture_url = models.URLField(max_length=200, default='', null=True)
+    number_of_ingredients = models.IntegerField(default=1)
+    energy_kcal = models.FloatField(default=0.0, null=True)
+    fat_kcal = models.FloatField(default=0.0, null=True)
+    sugar = models.FloatField(default=0.0, null=True)
+
+    def __str__(self):
+        return self.cook_name

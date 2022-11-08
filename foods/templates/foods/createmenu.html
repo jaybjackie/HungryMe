@@ -1,0 +1,39 @@
+{% extends "foods/base.html" %}
+{% block content %}
+<ul>
+    <h1>Create Your Menu</h1>
+</ul>
+<div id="Create_cook_class">
+    <form action='.' method="POST">
+        {% csrf_token %}
+        <div id="Create_menu">
+            <input type='text' name="title" placeholder="Menu Name"/>
+        </div>
+        <div id="Description">
+            <input type='text' name="description" placeholder="Description"/>
+        </div>
+        <div id="Total calories">
+            <input type='text' name="totalcalories" placeholder="Calories"/>
+        </div>
+        <div id="Total calories">
+            <input type='text' name="fatcalories" placeholder="Calories"/>
+        </div>
+        <div id="Sugar">
+            <input type='text' name="sugargrams" placeholder="grams"/>
+        </div>
+        <label for="cars">Difficulty:</label>
+        <select name="Difficulty" id="Difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advance">Advance</option>
+        </select>
+        <div id="File">
+            <input type='file' name="upfile"/>
+        </div>
+        <div style="margin-top:200px;">
+            <button type="submit" class="btn btn-success btn-lg">Create menu</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -131,7 +131,7 @@ p {
     {% if food_of_day %}
     <div class="container-title">
         <div class="small-container">
-            <h1 class="text-title-1">Food of the day</h1>
+            <h1 class="text-title-1">Food of the Day</h1>
             <a  class="text-title-2" href="{% url 'detail' food_of_day.menu.id %}"><h2 class=>{{ food_of_day.menu.menu_name }}</h2></a>
         </div>
         <a class="menuImage" href="{% url 'detail' food_of_day.menu.id %}">

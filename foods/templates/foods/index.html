@@ -15,7 +15,7 @@ body{
 
 .container-title{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-height: 300px;
 }
 
@@ -135,7 +135,7 @@ p {
             <a  class="text-title-2" href="{% url 'detail' food_of_day.menu.id %}"><h2 class=>{{ food_of_day.menu.menu_name }}</h2></a>
         </div>
         <a class="menuImage" href="{% url 'detail' food_of_day.menu.id %}">
-            <img class="food-of-day-pic" src= "{{food_of_day.menu.picture_url}}" alt=menu.id width="400px" height="300px">
+            <img class="food-of-day-pic" src= "{{food_of_day.menu.picture_url}}" alt=menu.id width="450px" height="300px">
         </a>
     </div>
     {% endif %}

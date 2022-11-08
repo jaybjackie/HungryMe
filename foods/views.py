@@ -1,17 +1,19 @@
+from venv import create
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.db.models import Q, Avg
-from foods.models import Menu
+from foods.models import CookBook, Menu
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
 import datetime
-from foods.models import Menu ,FoodOfDay, MenuRating
+from foods.models import Menu ,FoodOfDay, MenuRating,CookBook
 import random
-from time import timezone
+# from time import timezone
+from django.utils import timezone
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -214,3 +216,35 @@ def rate(request, menu_id, rating):
     MenuRating.objects.filter(menu=menu, user=request.user).delete()
     MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
+
+
+def cook_home(request):
+    cook_book = CookBook.objects.all()
+    context = {
+        'cook_book': cook_book,
+    }
+    return render(request, '../templates/foods/cookhome.html', context)
+
+def cook_create(request):
+    user = request.user
+    if request.method == "POST":
+        name = request.POST.get("title")
+        des = request.POST.get("description")
+        totalcal = request.POST.get("totalcalories")
+        fatcal = request.POST.get("fatcalories")
+        sugargrams = request.POST.get("sugargrams")
+        file = request.POST.get("upfile")
+        create = CookBook(
+                            pub_date=timezone.now(),
+                            cook_name=name,
+                            user=request.user,
+                            description=des,
+                            energy_kcal=totalcal,
+                            fat_kcal=fatcal,
+                            sugar=sugargrams,
+                            picture_url=file,
+                            )
+        create.save()
+        return redirect("/My_cook_book")
+    context = {}
+    return render(request,'../templates/foods/createmenu.html',context)

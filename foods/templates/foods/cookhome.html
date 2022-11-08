@@ -1,0 +1,21 @@
+{% extends "foods/base.html" %}
+{% block content %}
+
+<ul>
+    <h1>My Cook Book</h1>
+</ul>
+{% if cook_book %}
+<ul>
+    {% for each_items in cook_book %}
+    <li><a href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}</a></li>
+    <!-- <li>{{ each_items.cook_name }}</li> -->
+    {% endfor %}
+</ul>
+{% else %}
+<p>No any blogs.</p>
+{% endif %}
+<ul>
+    <li><a href="/My_cook_book/create_menu/">Create Your Menu</a></li>
+</ul>
+
+{% endblock %}

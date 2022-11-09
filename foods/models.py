@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models import Avg
 
         
 class Menu(models.Model):
@@ -21,7 +22,9 @@ class Menu(models.Model):
 
     def __str__(self) -> str:
         return f"{self.menu_name} by {self.creator_name}"
-        
+
+    def avg_menurating(self) -> float:
+        return self.menurating_set.aggregate(Avg('rate'))['rate__avg']
         
 class FoodOfDay(models.Model):
     range_date = models.DateTimeField('date end', default = timezone.now() + datetime.timedelta(days=1))

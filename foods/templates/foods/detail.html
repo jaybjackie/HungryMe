@@ -129,6 +129,7 @@ span.inline{
         </div>
         <script>
             const rate = (rating, menu_id) => {
+                console.log(`rating: ${rating}, menu: ${menu_id}`)
                 fetch(`/rate/${menu_id}/${rating}/`, {
                     method: 'GET',
                     headers: {

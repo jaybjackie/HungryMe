@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 {% extends "foods/base.html" %}
 {% block content %}
 
@@ -131,6 +132,10 @@ p{
     -webkit-box-orient: vertical;
 }
 
+.checked {
+    color: orange;
+}
+
 </style>
 <div>
     {% if food_of_day %}
@@ -156,6 +161,16 @@ p{
                 <div class="menu-text">
                     <p>{{menu.menu_name}}</p>
                 </div>
+                {% if menu.avg_menurating > 0 %}
+                    <p>
+                        <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
+                    </p>
+                {% endif %}
+               
             </a>
             {% endfor %}
         {% endif %}

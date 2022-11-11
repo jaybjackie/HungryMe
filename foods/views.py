@@ -10,10 +10,11 @@ from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
 import datetime
-from foods.models import Menu ,FoodOfDay, MenuRating,CookBook
+from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment,Reply
 import random
 # from time import timezone
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -210,14 +211,30 @@ def signup(request):
     
     return render(request, 'registration/signup.html', {})
 
-
+@login_required
 def rate(request, menu_id, rating):
     menu = Menu.objects.get(id=menu_id)
     MenuRating.objects.filter(menu=menu, user=request.user).delete()
     MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
 
+@login_required
+def review(request, menu_id, reviewing):
+    menu = Menu.objects.get(id=menu_id)
+    Comment.objects.filter(menu=menu, user=request.user).delete()
+    Comment.objects.update_or_create(user=request.user, review=reviewing, menu=menu)
+    return detail(request, menu_id)
 
+
+@login_required
+def reply(request, menu_id, replying):
+    menu = Menu.objects.get(id=menu_id)
+    Reply.objects.filter(menu=menu, user=request.user).delete()
+    Reply.objects.update_or_create(user=request.user, reply=replying, menu=menu)
+    return detail(request, menu_id)
+    
+
+@login_required
 def cook_home(request):
     cook_book = CookBook.objects.all()
     context = {
@@ -225,6 +242,8 @@ def cook_home(request):
     }
     return render(request, '../templates/foods/cookhome.html', context)
 
+
+@login_required
 def cook_create(request):
     user = request.user
     if request.method == "POST":
@@ -248,3 +267,6 @@ def cook_create(request):
         return redirect("/My_cook_book")
     context = {}
     return render(request,'../templates/foods/createmenu.html',context)
+
+
+

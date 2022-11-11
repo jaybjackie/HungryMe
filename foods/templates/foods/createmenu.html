@@ -6,21 +6,26 @@
 <div id="Create_cook_class">
     <form action='.' method="POST">
         {% csrf_token %}
-        <div id="Create_menu">
-            <input type='text' name="title" placeholder="Menu Name"/>
-        </div>
-        <div id="Description">
-            <input type='text' name="description" placeholder="Description"/>
-        </div>
-        <div id="Total calories">
-            <input type='text' name="totalcalories" placeholder="Calories"/>
-        </div>
-        <div id="Total calories">
-            <input type='text' name="fatcalories" placeholder="Calories"/>
-        </div>
-        <div id="Sugar">
-            <input type='text' name="sugargrams" placeholder="grams"/>
-        </div>
+        <p>Menu Name*</p>
+            <div id="Create_menu">
+                <input type='text' name="title" placeholder="Menu Name"/>
+            </div>
+        <p>Description</p>
+            <div id="Description">
+                <input type='text' name="description" placeholder="Description"/>
+            </div>
+        <p>Total calories</p>
+            <div id="Total calories">
+                <input type='text' name="totalcalories" placeholder="Calories"/>
+            </div>
+        <p>Fat calories</p>
+            <div id="Fat calories">
+                <input type='text' name="fatcalories" placeholder="Calories"/>
+            </div>
+        <p>Sugar(grams)</p>
+            <div id="Sugar">
+                <input type='text' name="sugargrams" placeholder="grams"/>
+            </div>
         <label for="cars">Difficulty:</label>
         <select name="Difficulty" id="Difficulty">
             <option value="Beginner">Beginner</option>

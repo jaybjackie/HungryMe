@@ -1,3 +1,4 @@
+from unicodedata import category
 from venv import create
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
@@ -26,84 +27,9 @@ def index(request):
     else:
         menu_list = Menu.objects.all().order_by()[:24]
 
+    # Fetch data from api
     # feed = api_response()
-    # for entry in feed:
-    #     try:
-    #         get_menu_name = entry['display']['displayName']
-    #     except:
-    #         get_menu_name = 'missing menu name'
-
-    #     try:
-    #         get_difficulty = entry['content']['tags']['difficulty'][0]['display-name']
-    #     except:
-    #         get_difficulty = 'No information'
-
-    #     try:
-    #         get_kcal = [element['value'] for element \
-    #             in entry['content']['nutrition']['nutritionEstimates'] \
-    #                 if element['attribute'] == 'ENERC_KCAL'][0]
-    #     except:
-    #         get_kcal = -99
-    #     try:
-    #         get_fat = [element['value'] for element \
-    #             in entry['content']['nutrition']['nutritionEstimates'] \
-    #                 if element['attribute'] == 'FAT_KCAL'][0]
-    #     except:
-    #         get_fat = -99
-    #     try:
-    #         get_sugar = [element['value'] for element \
-    #             in entry['content']['nutrition']['nutritionEstimates'] \
-    #                 if element['attribute'] == 'SUGAR'][0]
-    #     except:
-    #         get_sugar = -99
-    #     try:
-    #         get_description = entry['seo']['web']['meta-tags']['description']
-    #     except:
-    #         get_description = 'No information'
-
-    #     try:
-    #         get_number_ingredients = len(entry['content']['ingredientLines'])
-    #     except:
-    #         get_number_ingredients = -99
-
-    #     try:
-    #         get_cooking_time = entry['content']['details']['totalTime']
-    #     except:
-    #         get_cooking_time = 'No information'
-
-    #     try:
-    #         get_rating = entry['content']['details']['rating']
-    #     except:
-    #         get_rating = 0.0
-
-    #     try:
-    #         get_picture_url = entry['display']['images'][0]
-    #     except:
-    #         get_picture_url = ''
-
-    #     try:
-    #         get_ingredients = entry['content']['ingredientLines']
-    #     except:
-    #         get_ingredients = 'No information'
-            
-    #     menu = Menu(
-    #         menu_name= get_menu_name,
-    #         creator_name = 'Official HungryMe',
-    #         number_of_ingredients = get_number_ingredients,
-    #         energy_kcal = get_kcal,
-    #         fat_kcal = get_fat,
-    #         sugar = get_sugar,
-    #         picture_url = get_picture_url,
-    #         rating = get_rating,
-    #         difficulty = get_difficulty,
-    #         description = get_description,
-    #         ingredients = get_ingredients
-    #     )
-    #     if get_menu_name != 'missing menu name'\
-    #         and get_ingredients != 'No information'\
-    #         and get_picture_url != '':
-    #         if not Menu.objects.filter(menu_name= menu.menu_name).exists():
-    #             menu.save()
+    # save_menu(feed)
 
     feeds = random.choice(Menu.objects.all())
     food_of_day  = FoodOfDay.objects.first()
@@ -114,6 +40,95 @@ def index(request):
             food_of_day.save()
         
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
+
+def save_menu(feed):
+    for entry in feed:
+        try:
+            get_menu_name = entry['display']['displayName']
+        except:
+            get_menu_name = 'missing menu name'
+
+        try:
+            get_difficulty = entry['content']['tags']['difficulty'][0]['display-name']
+        except:
+            get_difficulty = 'No information'
+
+        try:
+            get_kcal = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'ENERC_KCAL'][0]
+        except:
+            get_kcal = -99
+
+        try:
+            get_fat = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'FAT_KCAL'][0]
+        except:
+            get_fat = -99
+
+        try:
+            get_sugar = [element['value'] for element \
+                in entry['content']['nutrition']['nutritionEstimates'] \
+                    if element['attribute'] == 'SUGAR'][0]
+        except:
+            get_sugar = -99
+            
+        try:
+            get_description = entry['seo']['web']['meta-tags']['description']
+        except:
+            get_description = 'No information'
+
+        try:
+            get_number_ingredients = len(entry['content']['ingredientLines'])
+        except:
+            get_number_ingredients = -99
+
+        try:
+            get_rating = entry['content']['details']['rating']
+        except:
+            get_rating = 0.0
+
+        try:
+            get_picture_url = entry['display']['images'][0]
+        except:
+            get_picture_url = ''
+
+        try:
+            get_ingredients = entry['content']['ingredientLines']
+        except:
+            get_ingredients = 'No information'
+        
+        try:
+            get_nutrition = entry['content']['tags']['nutrition']["display-name"]
+        except:
+            get_nutrition = 'No information'
+        
+        try:
+            get_category = entry['content']['ingredientLines'][0]
+        except:
+            get_category = 'No information'
+            
+        menu = Menu(
+            menu_name= get_menu_name,
+            creator_name = 'Official HungryMe',
+            number_of_ingredients = get_number_ingredients,
+            energy_kcal = get_kcal,
+            fat_kcal = get_fat,
+            sugar = get_sugar,
+            picture_url = get_picture_url,
+            rating = get_rating,
+            difficulty = get_difficulty,
+            description = get_description,
+            ingredients = get_ingredients,
+            nutrition = get_nutrition,
+            category = get_category
+        )
+        if get_menu_name != 'missing menu name'\
+            and get_ingredients != 'No information'\
+            and get_picture_url != '':
+            if not Menu.objects.filter(menu_name= menu.menu_name).exists():
+                menu.save()
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)

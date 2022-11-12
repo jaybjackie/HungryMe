@@ -122,8 +122,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/'    #
-LOGOUT_REDIRECT_URL = '/'         # after logout, go where?
+LOGIN_REDIRECT_URL = '/'    # Go to homepage
+LOGOUT_REDIRECT_URL = '/accounts/login/' # redirect to login page
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -135,4 +135,16 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SITE_ID = 1
-SOCIALACCOUNT_LOGIN_ON_GET=True
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE" : [
+            'profile',
+            'email',
+        ],
+        "AUTH_PARAMS" :{
+            'access_type': 'online',
+        }        
+    }
+}

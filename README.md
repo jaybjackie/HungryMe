@@ -62,3 +62,10 @@ Recommendations using search box. However, if you have no clue about the dish yo
  
  Go to the app:
 [http://localhost:8000/](http://localhost:8000/)
+
+## DEMO run
+You can uses these demo users below to visits the site.
+
+| Username  | Password  |
+|-----------|-----------|
+|   admin01  | test01 |

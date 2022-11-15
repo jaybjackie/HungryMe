@@ -31,15 +31,16 @@ def index(request):
     # feed = api_response()
     # save_menu(feed)
 
-    feeds = random.choice(Menu.objects.all())
-    food_of_day  = FoodOfDay.objects.first()
-    if food_of_day:
-        if food_of_day.was_end():
-            food_of_day.menu = feeds
-            food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
-            food_of_day.save()
+    # feeds = random.choice(Menu.objects.all())
+    # food_of_day  = FoodOfDay.objects.first()
+    # if food_of_day:
+    #     if food_of_day.was_end():
+    #         food_of_day.menu = feeds
+    #         food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
+    #         food_of_day.save()
+    return render(request, 'foods/index.html', {"menu_list": menu_list})
         
-    return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
+    # return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
 
 def save_menu(feed):
     for entry in feed:

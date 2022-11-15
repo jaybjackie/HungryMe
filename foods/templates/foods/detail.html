@@ -141,6 +141,32 @@ span.inline{
             }
         </script>
     </div>
+    
+    <ul>
+        <h4>Comment List</h4>
+    </ul>
+    {% if comment_object %}
+    <ul>
+        {% for each_comment in comment_object %}
+        <a>{{ each_comment.text }}</a>
+        <a>Date {{ each_name_blog.pub_date }}</a>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No any comments.</p>
+    {% endif %}
+    
+    <div id="Comment">
+        <form action='.' method="POST">
+            {% csrf_token %}
+            <div id="Create_blog_bar">
+                <input type='text' name="newtext" placeholder="Add Your comment"/>
+            </div>
+            <div style="margin-top:200px;">
+                <button type="submit" class="btn btn-success btn-lg">Send</button>
+            </div>
+        </form>
+    </div>
 
     <div class="brief-info">
         {% if menu.number_of_ingredients != -99 and menu.total_cooking_time != -99 and menu.energy_kcal != -99%}

@@ -66,9 +66,9 @@
 <div class="blocks-zone2">
     <div class="plus-container">
         <a class="two-block" href="/My_cook_book/create_menu/">
-            <img class="images" height="266px" width="289px">
-                <div class="plus">+</div>
-            </img>
+        <img class="images" height="266px" width="289px">
+            <div class="plus">+</div>
+        </img>
         </a>
     </div>
 
@@ -76,10 +76,11 @@
     <ul>
     {% for each_items in cook_book %}
         <a class="three-block" href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}
-            <img class="images2"  height="238px" width="289px"></img>
+            <img class="images2" src="{{menu.picture_url}}" height="238px" width="289px"></img>
+            <a href="delete/{{each_items.cook_name}}">delete</a>
         </a>
     {% endfor %}
-    
+
     {% else %}
     <p>No any blogs.</p>
     {% endif %}

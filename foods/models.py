@@ -43,23 +43,12 @@ class MenuRating(models.Model):
         return f"{self.menu.menu_name} Rating: {self.rate}"
         
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    review = models.IntegerField(default=0)
-    menu = models.ForeignKey(Menu, on_delete=models.DO_NOTHING)
-
-
-    def __str__(self):
-        return f"{self.menu.menu_name} Comment: {self.review}"
-
-
-class Reply(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.IntegerField(default=0)
-    menu = models.ForeignKey(Menu, on_delete=models.DO_NOTHING)
-
+    text = models.CharField(max_length=200)
+    user = models.CharField(max_length=200)
+    room_name = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return f"{self.menu.menu_name} Reply: {self.comment}"
+        return self.text
 
 class CookBook(models.Model):
     pub_date = models.DateTimeField('date published')
@@ -75,4 +64,3 @@ class CookBook(models.Model):
 
     def __str__(self):
         return self.cook_name
-

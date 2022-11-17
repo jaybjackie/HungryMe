@@ -107,6 +107,7 @@ span.inline{
     <div class="description">
         <p>{{ menu.description }}</p>
               <div class="card-body">
+                  
                 <h5 class="card-title">Avg rating:
                     <span class="fa fa-star {% if avg_rate > 0 %} checked {% endif %}"></span>
                     <span class="fa fa-star {% if avg_rate > 1 %} checked {% endif %}"></span>
@@ -114,6 +115,7 @@ span.inline{
                     <span class="fa fa-star {% if avg_rate > 3 %} checked {% endif %}" ></span>
                     <span class="fa fa-star {% if avg_rate > 4 %} checked {% endif %}"></span>
                 </h5>
+                {% if user.is_authenticated %}
                 <ul class="btn btn-light list-inline rating-list">
                     <li onclick="rate(5, {{ menu.id }})">
                         <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i></li>
@@ -126,6 +128,25 @@ span.inline{
                     <li onclick="rate(1, {{ menu.id }})">
                         <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i></li>
                   </ul>
+                {% else %}
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                  </ul>
+                  {% endif %}
         </div>
         <script>
             const rate = (rating, menu_id) => {

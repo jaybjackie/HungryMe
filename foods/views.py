@@ -1,5 +1,3 @@
-from unicodedata import category
-from venv import create
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
@@ -31,16 +29,15 @@ def index(request):
     # feed = api_response()
     # save_menu(feed)
 
-    # feeds = random.choice(Menu.objects.all())
-    # food_of_day  = FoodOfDay.objects.first()
-    # if food_of_day:
-    #     if food_of_day.was_end():
-    #         food_of_day.menu = feeds
-    #         food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
-    #         food_of_day.save()
-    return render(request, 'foods/index.html', {"menu_list": menu_list})
+    feeds = random.choice(Menu.objects.all())
+    food_of_day  = FoodOfDay.objects.first()
+    if food_of_day:
+        if food_of_day.was_end():
+            food_of_day.menu = feeds
+            food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
+            food_of_day.save()
         
-    # return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
+    return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
 
 def save_menu(feed):
     for entry in feed:
@@ -133,10 +130,13 @@ def save_menu(feed):
     
 def detail(request, menu_id):
     menu = get_object_or_404(Menu, pk=menu_id)
-    if MenuRating.objects.filter(menu=menu, user=request.user).first() == None:
-        menu.rating = 0
+    if request.user.is_authenticated:
+        if MenuRating.objects.filter(menu=menu, user=request.user).first() == None:
+            menu.rating = 0
+        else:
+            menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
     else:
-        menu.rating = MenuRating.objects.filter(menu=menu, user=request.user).first().rate
+        menu.rating = 0
     avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
     return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
 

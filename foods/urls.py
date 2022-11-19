@@ -10,5 +10,6 @@ urlpatterns = [
     path('rate/<int:menu_id>/<int:rating>/', views.rate),
     path('My_cook_book/', views.cook_home, name='cook'),
     path('My_cook_book/create_menu/', views.cook_create, name='create'),
+    path('community/', views.community, name='community')
     path('My_cook_book/delete/<str:cook_name>', views.delete, name='delete')
 ]

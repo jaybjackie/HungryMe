@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on HungryMe
+From: webmaster@localhost
+To: kollawat.r@ku.th
+Date: Sat, 19 Nov 2022 20:24:06 -0000
+Message-ID: 
+ <166888944612.24579.5604927079968483620@1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa>
+
+
+You're receiving this email because you requested a password reset for your user account at HungryMe.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/Mg/bf5ko6-d928959c17ad2489a3ff5370f244cc05/
+
+Your username, in case you’ve forgotten: admin007
+
+Thanks for using our site!
+
+The HungryMe team
+
+
+
+-------------------------------------------------------------------------------

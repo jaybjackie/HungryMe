@@ -10,9 +10,9 @@ Recommendations using search box. However, if you have no clue about the dish yo
 # How to Install and Runserver (as a Developer)
 
 1. Clone this project repository to your local machine
-````
-git clone https://github.com/jaybjackie/HungryMe.git
-````
+    ````
+    git clone https://github.com/jaybjackie/HungryMe.git
+    ````
 2. Go to  this repository directory<br>
    
    for `MacOS/Linux`
@@ -27,7 +27,7 @@ git clone https://github.com/jaybjackie/HungryMe.git
     pip install -r requirements.txt
     ````
 
-4. Create `.env` file in `mysite/` and modify by the following lines:
+4. Modify `sample.env` by the following lines:
 
     To create SECRET KEY
     ```
@@ -49,17 +49,23 @@ git clone https://github.com/jaybjackie/HungryMe.git
     python manage.py migrate
     ````
 
-9. Run the server.
+6. Importing data from `data.json`.
+    ````
+    python manage.py loaddata data.json
+    ````
+7. Run the server.
  
    for `MacOS/Linux`
    ````
    python manage.py runserver
    ````
-   
-   for `WindowOS`
-    ````
-    python .\manage.py runserver
-    ````
  
  Go to the app:
 [http://localhost:8000/](http://localhost:8000/)
+
+## DEMO run
+You can uses these demo users below to visits the site.
+
+| Username  | Password  |
+|-----------|-----------|
+|   admin01  | test01 |

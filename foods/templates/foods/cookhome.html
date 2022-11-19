@@ -1,21 +1,89 @@
 {% extends "foods/base.html" %}
 {% block content %}
 
+<style>
+
+.two-block{
+    display: inline-table;
+    margin: 20px;
+    width: 289px;
+    height: 266px;
+    border-radius: 18px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: #959595;
+    transition: 0.2s;
+}
+
+.two-block:hover{
+    transform: translateY(-10px);
+    text-decoration-line: none;
+    text-decoration: none;
+}
+
+.images{
+    border-radius: 18px;
+}
+
+.plus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.three-block{
+    display: inline-table;
+    margin: 20px;
+    width: 289px;
+    height: 266px;
+    border-radius: 18px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.three-block:hover{
+    transform: translateY(-10px);
+    text-decoration-line: none;
+    text-decoration: none;
+
+}
+
+.images2{
+    border-radius: 18px;
+}
+
+.blocks-zone2{
+    background-color: white;
+    display: flex;
+}
+</style>
+
 <ul>
     <h1>My Cook Book</h1>
 </ul>
-{% if cook_book %}
-<ul>
-    {% for each_items in cook_book %}
-    <li><a href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}</a></li>
-    <!-- <li>{{ each_items.cook_name }}</li> -->
-    {% endfor %}
-</ul>
-{% else %}
-<p>No any blogs.</p>
-{% endif %}
-<ul>
-    <li><a href="/My_cook_book/create_menu/">Create Your Menu</a></li>
-</ul>
 
-{% endblock %}
+<div class="blocks-zone2">
+    <div class="plus-container">
+        <a class="two-block" href="/My_cook_book/create_menu/">
+        <img class="images" height="266px" width="289px">
+            <div class="plus">+</div>
+        </img>
+        </a>
+    </div>
+
+    {% if cook_book %}
+    <ul>
+    {% for each_items in cook_book %}
+        <a class="three-block" href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}
+            <img class="images2" src="{{menu.picture_url}}" height="238px" width="289px"></img>
+            <a href="delete/{{each_items.cook_name}}">delete</a>
+        </a>
+    {% endfor %}
+
+    {% else %}
+    <p>No any blogs.</p>
+    {% endif %}
+    </ul>
+</div>
+    {% endblock %}

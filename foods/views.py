@@ -210,13 +210,11 @@ def signup(request):
     
     return render(request, 'registration/signup.html', {})
 
-
 def rate(request, menu_id, rating):
     menu = Menu.objects.get(id=menu_id)
     MenuRating.objects.filter(menu=menu, user=request.user).delete()
     MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
-
 
 def cook_home(request):
     cook_book = CookBook.objects.all()
@@ -247,4 +245,12 @@ def cook_create(request):
         create.save()
         return redirect("/My_cook_book")
     context = {}
-    return render(request,'../templates/foods/createmenu.html',context)
+    return render(request, '../templates/foods/createmenu.html', context)
+
+def community(request):
+    feed = api_response()
+    for entry in feed:
+        pass
+    
+    context = {}
+    return render(request, '../templates/foods/community.html', context)

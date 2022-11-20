@@ -52,12 +52,12 @@ h1{
 .plus{
     color: black;
     position: relative;
-    top: 110px;
+    top: 108px;
     left: 137px;
     font-size: 27px;
 }
 
-.three-block{
+.added-block{
     display: inline-table;
     margin: 20px;
     width: 289px;
@@ -68,12 +68,12 @@ h1{
     transition: 0.2s;
 }
 
-.three-block:hover{
+.added-block:hover{
     transform: translateY(-10px);
     text-decoration-line: none;
 }
 
-.images2{
+.added-pic{
     border-radius: 18px 18px 0px 0px;
     object-fit: cover;
 }
@@ -85,7 +85,7 @@ h1{
 
 .x-delete{
     position: absolute;
-    top: 8px;
+    top: 6px;
     right: 16px;
 }
 </style>
@@ -102,8 +102,8 @@ h1{
     {% if cook_book %}
     <ul>
         {% for each_items in cook_book %}
-            <a class="three-block" href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}
-                <img class="images2" src="{{menu.picture_url}}" height="175px" width="289px">
+            <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}
+                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px">
                     <div class="x-delete" href="delete/{{each_items.cook_name}}">x</div>
                 </img>
                 <div class="created-menu">

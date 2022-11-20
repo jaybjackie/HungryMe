@@ -115,13 +115,13 @@ h2:hover{
 p{
     font-family: 'Roboto Slab', serif;
     font-size: 15px;
-    margin-left: 13px;
-    margin-top: 7px;
     color: #000000;
 }
 
 .menu-text{
-    max-height: 50px;
+    margin-left: 13px;
+    margin-top: 7px;
+    height: 50px;
     max-width: 220px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -133,6 +133,11 @@ p{
 
 .checked {
     color: orange;
+}
+
+.ratings{
+    color: #999999;
+    margin-left: 13px;
 }
 
 </style>
@@ -161,13 +166,13 @@ p{
                     <p>{{menu.menu_name}}</p>
                 </div>
                 {% if menu.avg_menurating > 0 %}
-                    <p>
+                    <div class="ratings">
                         <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
-                    </p>
+                    </div>
                 {% endif %}
             </a>
             {% endfor %}

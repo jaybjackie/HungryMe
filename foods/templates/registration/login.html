@@ -1,4 +1,4 @@
-{% extends "foods/base.html" %}
+{% extends "registration/header.html" %}
 {% load socialaccount %}
 {% load static %}
 {% block content %}
@@ -283,7 +283,7 @@ input {
 					</div>
 					<input type="text" placeholder="Username*" name="username" required>
 					<input type="password" placeholder="Password*" name="password" required>
-					<a href=#>Forgot your password?</a>
+					<a href="{% url 'password_reset' %}">Forgot your password?</a>
 				<button type="submit">Login</button>
 			</form>
 		</div>

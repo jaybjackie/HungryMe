@@ -134,10 +134,10 @@ button {
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Top Rated-Dishes</a>
                     <a class="dropdown-item" href="#">What should I eat ?</a>
-                    <a class="dropdown-item" href="{% url 'community' %}">Community's Foods</a>
-                    <a class="dropdown-item" href="{% url 'cook' %}">My Cookbook</a>
-                    <a class="dropdown-item" href="{% url 'create' %}">Add My Menu</a>
-                    <a class="dropdown-item" href="#">My History</a>
+                    <a class="dropdown-item" href="#">Community's recipe</a>
+                    <a class="dropdown-item" href="{% url 'create' %}">Add my menu</a>
+                    <a class="dropdown-item" href="{% url 'cook' %}">My cookbook</a>
+                    <a class="dropdown-item" href="#">My history</a>
                 </div>
             </li>
             <li>   
@@ -166,14 +166,7 @@ button {
                 </button>
                 {% else %}
                 <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
-                </button>
-                {% endif %}
-            </li>
-            <li>
-                {% if not user.is_authenticated %}
-                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login/Sign up</a>
                 </button>
                 {% endif %}
             </li>

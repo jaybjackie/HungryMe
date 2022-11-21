@@ -84,7 +84,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 LOGIN_REDIRECT_URL = '/foods/' # show list of menus
-LOGOUT_REDIRECT_URL = '/accounts/login/'        
+LOGOUT_REDIRECT_URL = '/accounts/login/'     
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'emails'   
 
 
 # Database

@@ -23,6 +23,7 @@ class Menu(models.Model):
     def __str__(self) -> str:
         return f"{self.menu_name} by {self.creator_name}"
 
+    @property
     def avg_menurating(self) -> float:
         return self.menurating_set.aggregate(Avg('rate'))['rate__avg']
         

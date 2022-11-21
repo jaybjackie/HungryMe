@@ -3,9 +3,41 @@
 
 <style>
 
-.two-block{
+body{
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1{
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+    color: #F8BE28;
+    top: 10px;
+}
+
+.cookbook-container{
+    display: inline-table;
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    background-color: #36213E;
+    width: 375px;
+    height: 70px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 60px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.add-container{
     display: inline-table;
     margin: 20px;
+    margin-left: 50px;
     width: 289px;
     height: 266px;
     border-radius: 18px;
@@ -14,24 +46,24 @@
     transition: 0.2s;
 }
 
-.two-block:hover{
+.add-container:hover{
     transform: translateY(-10px);
     text-decoration-line: none;
-    text-decoration: none;
 }
 
-.images{
+.plain{
     border-radius: 18px;
 }
 
 .plus{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    color: black;
+    position: relative;
+    top: 108px;
+    left: 137px;
+    font-size: 27px;
 }
 
-.three-block{
+.added-block{
     display: inline-table;
     margin: 20px;
     width: 289px;
@@ -42,48 +74,69 @@
     transition: 0.2s;
 }
 
-.three-block:hover{
+.added-block:hover{
     transform: translateY(-10px);
     text-decoration-line: none;
-    text-decoration: none;
-
 }
 
-.images2{
-    border-radius: 18px;
+.added-pic{
+    object-fit: cover;
+    border-radius: 18px 18px 0px 0px;
 }
 
-.blocks-zone2{
+.cookbook-container{
     background-color: white;
     display: flex;
 }
+
+.x-delete button{
+    position: relative;
+    background-color: #e54545;
+    border: none;
+    color: black;
+    padding: 5px;
+    height: 30px;
+    transition: 0.2s;
+    bottom: 170px;
+    left: 250px;
+    border: solid;
+}
+
+button:hover{
+    background-color: #b83e3e;
+}
+
+.x-text{
+    text-align: center;
+}
+
 </style>
 
-<ul>
-    <h1>My Cook Book</h1>
-</ul>
+<div class="header">
+    <h1>My Cookbook</h1>
+</div>
 
-<div class="blocks-zone2">
-    <div class="plus-container">
-        <a class="two-block" href="/My_cook_book/create_menu/">
-        <img class="images" height="266px" width="289px">
-            <div class="plus">+</div>
-        </img>
-        </a>
-    </div>
+<div class="cookbook-container">
+    <a class="add-container" href="/My_cook_book/create_menu/">
+        <div class="plus">+</div>
+    </a>
 
     {% if cook_book %}
     <ul>
-    {% for each_items in cook_book %}
-        <a class="three-block" href="/My_cook_book/{{ each_items.cook_name }}">{{ each_items.cook_name }}
-            <img class="images2" src="{{menu.picture_url}}" height="238px" width="289px"></img>
-            <a href="delete/{{each_items.cook_name}}">delete</a>
-        </a>
-    {% endfor %}
-
-    {% else %}
-    <p>No any blogs.</p>
-    {% endif %}
+        {% for each_items in cook_book %}
+            <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">
+                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px">
+                    <div class="x-delete" href="delete/{{each_items.cook_name}}">
+                        <button type="button"><p class="x-text">X</p></button>
+                    </div>
+                </img>
+                <div class="created-menu">
+                    <p>{{menu.menu_name}}</p>
+                </div>
+                <p>{{ each_items.cook_name }}</p>
+            </a>
+        {% endfor %}
     </ul>
+    {% endif %}
 </div>
-    {% endblock %}
+{% endblock %}

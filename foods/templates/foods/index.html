@@ -1,7 +1,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 {% extends "foods/base.html" %}
 {% block content %}
@@ -41,12 +41,12 @@ h2{
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+    transition: 0.35s;
 }
 
 h3{
     font-family: 'Roboto Slab', serif;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 36px;
     position: relative;
     left: 57px;
     top: 25px;
@@ -70,10 +70,13 @@ h3{
     font-size: 64px;
     line-height: 84px;
     color: #000000;
+    transition: 0.35s;
+    height: 35px;
 }
 
 .text-title-2:hover{
     text-decoration-line: none;
+    transform: translateY(-7px);
 }
 
 h2:hover{
@@ -116,13 +119,13 @@ h2:hover{
 p{
     font-family: 'Roboto Slab', serif;
     font-size: 15px;
-    margin-left: 13px;
-    margin-top: 7px;
     color: #000000;
 }
 
 .menu-text{
-    max-height: 50px;
+    margin-left: 13px;
+    margin-top: 7px;
+    height: 50px;
     max-width: 220px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -134,6 +137,11 @@ p{
 
 .checked {
     color: orange;
+}
+
+.ratings{
+    color: #999999;
+    margin-left: 13px;
 }
 
 </style>
@@ -162,15 +170,14 @@ p{
                     <p>{{menu.menu_name}}</p>
                 </div>
                 {% if menu.avg_menurating > 0 %}
-                    <p>
+                    <div class="ratings">
                         <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
-                    </p>
+                    </div>
                 {% endif %}
-               
             </a>
             {% endfor %}
         {% endif %}

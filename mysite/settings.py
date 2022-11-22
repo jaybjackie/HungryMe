@@ -26,7 +26,7 @@ SECRET_KEY = config("SECRET_KEY", cast=str, default="missing-secret-key")
 DEBUG = True
 # add localhost using config
 # ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="localhost")
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -130,7 +130,10 @@ LOGOUT_REDIRECT_URL = '/accounts/login/' # redirect to login page
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-
+STATIC_ROOT = os.path.join(BASE_DIR /'foods' /'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

@@ -9,11 +9,13 @@ from django.views.decorators.vary import vary_on_cookie
 from .forms import RegisterForm
 from django.contrib import messages
 import datetime
-from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment,Reply
+from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment
 import random
 # from time import timezone
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+# from .forms import CommentFrom
+
 
 @cache_page(60 * 60)
 @vary_on_cookie
@@ -138,7 +140,17 @@ def detail(request, menu_id):
     else:
         menu.rating = 0
     avg_rate = MenuRating.objects.filter(menu=menu).aggregate(Avg("rate"))["rate__avg"]
-    return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate})
+    comment_object = Comment.objects.filter(room_name = menu)
+    user = request.user
+
+    if request.method == 'POST':
+        comment_text = request.POST.get("newtext")
+        print(comment_text)
+        comment = Comment(text = comment_text, user = user, room_name = menu)
+        comment.save()
+        return redirect("index")
+    else:
+        return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate,"comment_object": comment_object,})
 
 def filter(request):
     # feed = api_response()
@@ -227,12 +239,14 @@ def signup(request):
     
     return render(request, 'registration/signup.html', {})
 
+
 @login_required
 def rate(request, menu_id, rating):
     menu = Menu.objects.get(id=menu_id)
     MenuRating.objects.filter(menu=menu, user=request.user).delete()
     MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
+
 
 @login_required
 def review(request, menu_id, reviewing):
@@ -241,15 +255,7 @@ def review(request, menu_id, reviewing):
     Comment.objects.update_or_create(user=request.user, review=reviewing, menu=menu)
     return detail(request, menu_id)
 
-
-@login_required
-def reply(request, menu_id, replying):
-    menu = Menu.objects.get(id=menu_id)
-    Reply.objects.filter(menu=menu, user=request.user).delete()
-    Reply.objects.update_or_create(user=request.user, reply=replying, menu=menu)
-    return detail(request, menu_id)
     
-
 @login_required
 def cook_home(request):
     cook_book = CookBook.objects.all()
@@ -265,6 +271,7 @@ def cook_create(request):
     if request.method == "POST":
         name = request.POST.get("title")
         des = request.POST.get("description")
+        Ing = request.POST.get("Ingredients")
         totalcal = request.POST.get("totalcalories")
         fatcal = request.POST.get("fatcalories")
         sugargrams = request.POST.get("sugargrams")
@@ -274,6 +281,7 @@ def cook_create(request):
                             cook_name=name,
                             user=request.user,
                             description=des,
+                            ingredients=Ing,
                             energy_kcal=totalcal,
                             fat_kcal=fatcal,
                             sugar=sugargrams,
@@ -282,8 +290,7 @@ def cook_create(request):
         create.save()
         return redirect("/My_cook_book")
     context = {}
-    return render(request,'../templates/foods/createmenu.html',context)
-
+    return render(request, '../templates/foods/createmenu.html', context)
 
 def top_rate_foods(request):
     menu_list = Menu.objects.all()
@@ -291,3 +298,16 @@ def top_rate_foods(request):
     sort_rated = sorted(rated_menu, key=lambda menu: menu.avg_menurating, reverse=True)
     
     return render(request, 'foods/top_foods.html', {"rated_chart": sort_rated})
+
+def delete(request,cook_name):
+    member = CookBook.objects.get(cook_name=cook_name)
+    member.delete()
+    return redirect("/My_cook_book/")
+
+def community(request):
+    feed = api_response()
+    for entry in feed:
+        pass
+    
+    context = {}
+    return render(request, '../templates/foods/community.html', context)

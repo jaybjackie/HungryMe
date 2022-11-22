@@ -287,7 +287,7 @@ def cook_create(request):
 
 def top_rate_foods(request):
     menu_list = Menu.objects.all()
-    rated_menu = [Menu.objects.get(pk=menu.id) for menu in menu_list if Menu.objects.get(pk=menu.id).avg_menurating != None]
+    rated_menu = [Menu.objects.get(pk=menu.id) for menu in menu_list if Menu.objects.get(pk=menu.id).avg_menurating != None][:10]
     sort_rated = sorted(rated_menu, key=lambda menu: menu.avg_menurating, reverse=True)
     
     return render(request, 'foods/top_foods.html', {"rated_chart": sort_rated})

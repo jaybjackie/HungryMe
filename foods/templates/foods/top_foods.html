@@ -48,9 +48,10 @@ body h3{
     border-radius: 38px;
 }
 .menu-text{
+    margin-top: 20px ;
     left: 200px;
     max-height: 100px;
-    max-width: 400px;
+    max-width: 600px;
     font-family: 'Lemon';font-size: 32px;
     position: absolute;
     
@@ -67,6 +68,38 @@ ol li{
     height: 80px;
     top: 120px;
 }
+@media screen and (max-width: 800px) {
+   .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+.rating-list li {
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li {
+    color: orange;
+}
+
+.rating-list {
+    display: inline-block;
+    list-style: none;
+}
+.checked {
+    color: orange;
+}
+.rating-star {
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 800px;
+}
+.creatorName {
+    font-family: 'Roboto';
+    color: black;
+}
 </style>
 <body>
     <div>
@@ -79,7 +112,23 @@ ol li{
                     <img class="images" src="{{menu.picture_url}}"></img>
                     <div class="menu-text">
                         <li><p>{{menu.menu_name}}</p></li>
+                        <div class="creatorName">
+                            <h5 >{{ menu.creator_name}}</h5>
+                        </div> 
                     </div>
+                       
+                <div class="rating-star">
+                {% if menu.avg_menurating > 0 %}
+                    <p>
+                        <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
+                        <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
+                    </p>
+                    <p style="color: black;">{{ menu.avg_menurating }} out of 5</p>
+                </div>
+                {% endif %}
                 </a>
                 {% endfor %}
             </ol>

@@ -1,22 +1,53 @@
 {% extends "foods/base.html" %}
 {% block content %}
-<ul>
-    <h1>Create Your Menu</h1>
-</ul>
+<style>
+.header1{
+    background-color: #36213E;
+    width: 375px;
+    height: 70px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 60px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+h1{
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+    color: #F8BE28;
+    top: 10px;
+}
+/* .Description{
+    height: 90px;
+} */
+    
+    </style>
+    <div class="header1">
+        <h1>Create Your Menu</h1>
+    </div>
 <div id="Create_cook_class">
     <form action='.' method="POST">
         {% csrf_token %}
         <p>Menu Name*</p>
             <div id="Create_menu">
-                <input type='text' name="title" placeholder="Menu Name"/>
+                <input type='text' size="100px" style="height: 40px;" name="title" placeholder="must be less than or equal to 50 letters"/>
             </div>
         <p>Description</p>
             <div id="Description">
-                <input type='text' name="description" placeholder="Description"/>
+                <input  type='text' size="100px" style="height: 40px;" name="description" placeholder="must be less than or equal to 250 letters"/>
             </div>
         <p>Ingredients</p>
             <div id="Ingredients">
-                <input type='text' name="ingredients" placeholder="Ingredients"/>
+                <table>
+                    <tr>
+                        <td>
+                            <input type='text' name="ingredients" id="ingredients" placeholder="name"/>  
+                            <input type='number' name="quantity" placeholder="quantity" id="quantity"/> 
+                            <input type='text' name="quantityunit" placeholder="quantity Unit" id="quantityunit" />
+                        </td>
+                    </tr>
+                </table>
             </div>
         <p>Total calories</p>
             <div id="Total calories">
@@ -40,9 +71,58 @@
             <input type='file' name="upfile"/>
         </div>
         <div style="margin-top:200px;">
-            <button type="submit" class="btn btn-success btn-lg">Create menu</button>
+            <button type="submit" class="btn btn-success btn-lg"">Create menu</button>
         </div>
     </form>
+    <button id="add-more" onclick="addIngredient()">Add Ingredient</button>
 </div>
+<script >
+    let table = document.querySelector('table');
+    let btnAdd =  document.querySelector('#add-more');
+    let ingredients = [];
+        
+    function addIngredient() {
+        const ingredient = document.getElementById("ingredients").value
+        const quantity = document.getElementById("quantity").value
+        const quantityUnit = document.getElementById("quantityunit").value
+        ingredients.push({
+            name: ingredient,
+            quantity: quantity,
+            quantityUnit: quantityUnit,
+        })
+        renderIngredients(ingredients)
+    }
+
+    function removeIngredient(name) {
+        ingredients = ingredients.filter((ingredient) => ingredient.name !== name)
+        renderIngredients(ingredients)
+    }
+
+    function renderIngredients(ingredients) {
+        table = document.querySelector('table');
+        table.innerHTML = `
+            <tr>
+                <td>
+                    <input type='text' name="ingredients" id="ingredients" placeholder="name"/>  
+                    <input type='number' name="quantity" placeholder="quantity" id="quantity"/> 
+                    <input type='text' name="quantityunit" placeholder="quantity Unit" id="quantityunit" />
+                </td>
+            </tr>
+        `
+        ingredients.forEach((ingredient) => {
+            let template = `
+                <tr>
+                    <td>
+                        <input type='text' value=${ingredient.name} disabled />
+                        <input type='number' value=${ingredient.quantity} disabled /> 
+                        <input type='text' value=${ingredient.quantityUnit} disabled />
+                        <span onclick="removeIngredient('${ingredient.name}')">X</span>
+                    </td>
+                </tr>
+            `;
+            table.innerHTML += template;
+        })
+    }
+</script>
 
 {% endblock %}

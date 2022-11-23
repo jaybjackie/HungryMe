@@ -1,3 +1,4 @@
+import logging
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
 from django.contrib.auth.forms import UserCreationForm
@@ -17,8 +18,8 @@ from django.contrib.auth.decorators import login_required
 # from .forms import CommentFrom
 
 
-@cache_page(60 * 60)
-@vary_on_cookie
+# @cache_page(60 * 60)
+# @vary_on_cookie
 def index(request):
     search_post = request.GET.get('search')
     if search_post:
@@ -31,16 +32,26 @@ def index(request):
     # feed = api_response()
     # save_menu(feed)
 
-    feeds = random.choice(Menu.objects.all())
-    food_of_day  = FoodOfDay.objects.first()
+    try:
+        feeds = random.choice(Menu.objects.all())
+    except IndexError:
+        logging.warn("Empty database, make sure you loaddata from data/")
+    
+    try:
+        food_of_day = FoodOfDay.objects.first()
+    except IndexError:
+        food_of_day = None
+        logging.warn("Empty database, make sure you loaddata from data/")
+
     if food_of_day:
         if food_of_day.was_end():
             food_of_day.menu = feeds
             food_of_day.range_date = datetime.datetime.now() + datetime.timedelta(days=1)
             food_of_day.save()
-        
+
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
 
+    
 def save_menu(feed):
     for entry in feed:
         try:

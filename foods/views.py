@@ -1,7 +1,6 @@
 import logging
 from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.db.models import Q, Avg
 from foods.models import CookBook, Menu
@@ -12,10 +11,8 @@ from django.contrib import messages
 import datetime
 from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment
 import random
-# from time import timezone
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-# from .forms import CommentFrom
 
 
 @cache_page(60 * 60)

@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
 
@@ -17,10 +20,13 @@ h1{
     top: 10px;
 }
 
+p{
+    font-family: 'Roboto Slab', serif;
+}
+
 .cookbook-container{
-    display: inline-grid;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header{
@@ -29,7 +35,7 @@ h1{
     height: 70px;
     text-align: center;
     margin-top: 25px;
-    margin-left: 60px;
+    margin-left: 25px;
     border-radius: 20px;
     margin-bottom: 12px;
 }
@@ -37,13 +43,13 @@ h1{
 .add-container{
     display: inline-table;
     margin: 20px;
-    margin-left: 50px;
     width: 289px;
     height: 266px;
     border-radius: 18px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     background-color: #959595;
     transition: 0.2s;
+    /* padding: 133px 144.5px; */
 }
 
 .add-container:hover{
@@ -58,9 +64,9 @@ h1{
 .plus{
     color: black;
     position: relative;
-    top: 108px;
-    left: 137px;
     font-size: 27px;
+    left: 140px;
+    top: 110px;
 }
 
 .added-block{
@@ -133,13 +139,12 @@ a:hover{
     <h1>My Cookbook</h1>
 </div>
 
-<div class="cookbook-container">
+<ul class="cookbook-container">
     <a class="add-container" href="/My_cook_book/create_menu/">
         <div class="plus">+</div>
     </a>
 
     {% if cook_book %}
-    <ul>
         {% for each_items in cook_book %}
             <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">
                 <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px"></img>
@@ -151,7 +156,6 @@ a:hover{
                 </div>
             </a>
         {% endfor %}
-    </ul>
     {% endif %}
 <!--<script>
     function confirmation() {
@@ -161,5 +165,5 @@ a:hover{
         }
     }
     </script> -->
-</div>
+</ul>
 {% endblock %}

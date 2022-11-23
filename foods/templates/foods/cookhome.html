@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
 
@@ -17,10 +20,13 @@ h1{
     top: 10px;
 }
 
+p{
+    font-family: 'Roboto Slab', serif;
+}
+
 .cookbook-container{
-    display: inline-table;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header{
@@ -29,7 +35,7 @@ h1{
     height: 70px;
     text-align: center;
     margin-top: 25px;
-    margin-left: 60px;
+    margin-left: 25px;
     border-radius: 20px;
     margin-bottom: 12px;
 }
@@ -37,13 +43,13 @@ h1{
 .add-container{
     display: inline-table;
     margin: 20px;
-    margin-left: 50px;
     width: 289px;
     height: 266px;
     border-radius: 18px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     background-color: #959595;
     transition: 0.2s;
+    /* padding: 133px 144.5px; */
 }
 
 .add-container:hover{
@@ -58,9 +64,9 @@ h1{
 .plus{
     color: black;
     position: relative;
-    top: 108px;
-    left: 137px;
     font-size: 27px;
+    left: 140px;
+    top: 110px;
 }
 
 .added-block{
@@ -76,7 +82,6 @@ h1{
 
 .added-block:hover{
     transform: translateY(-10px);
-    text-decoration-line: none;
 }
 
 .added-pic{
@@ -89,25 +94,43 @@ h1{
     display: flex;
 }
 
-.x-delete button{
+a:hover{
+    text-decoration: none;
+}
+
+.x-delete[type=submit]{
     position: relative;
     background-color: #e54545;
     border: none;
-    color: black;
-    padding: 5px;
-    height: 30px;
-    transition: 0.2s;
-    bottom: 170px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
     left: 250px;
-    border: solid;
+    bottom: 160px;
 }
 
-button:hover{
+.x-delete[type=submit]:hover{
     background-color: #b83e3e;
 }
 
-.x-text{
-    text-align: center;
+.created-menu{
+    position: relative;
+    margin-left: 13px;
+    margin-top: 7px;
+    bottom: 35px;
+    height: 50px;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: black;
+}
+
+.created-menu:hover{
+    text-decoration: none;
 }
 
 </style>
@@ -116,27 +139,31 @@ button:hover{
     <h1>My Cookbook</h1>
 </div>
 
-<div class="cookbook-container">
+<ul class="cookbook-container">
     <a class="add-container" href="/My_cook_book/create_menu/">
         <div class="plus">+</div>
     </a>
 
     {% if cook_book %}
-    <ul>
         {% for each_items in cook_book %}
             <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">
-                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px">
-                    <div class="x-delete" href="delete/{{each_items.cook_name}}">
-                        <button type="button"><p class="x-text">X</p></button>
-                    </div>
-                </img>
+                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px"></img>
+                <form action="delete/{{each_items.cook_name}}">
+                    <input class="x-delete" type="submit" value="X">
+                </form>
                 <div class="created-menu">
-                    <p>{{menu.menu_name}}</p>
+                    <p>{{ each_items.cook_name }}</p>
                 </div>
-                <p>{{ each_items.cook_name }}</p>
             </a>
         {% endfor %}
-    </ul>
     {% endif %}
-</div>
+<!--<script>
+    function confirmation() {
+        let text = "Are you sure?";
+        if(confirm(text) == true){
+            
+        }
+    }
+    </script> -->
+</ul>
 {% endblock %}

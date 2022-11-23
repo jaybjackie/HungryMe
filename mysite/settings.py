@@ -25,8 +25,8 @@ SECRET_KEY = config("SECRET_KEY", cast=str, default="missing-secret-key")
 # DEBUG = config("DEBUG", cast=bool, default=False)
 DEBUG = True
 # add localhost using config
-# ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="localhost")
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="localhost")
+# ALLOWED_HOSTS = ['.localhost' , '127.0.0.1', '[::1]']
 
 # Application definition
 
@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Bangkok"
 
 USE_I18N = True
 

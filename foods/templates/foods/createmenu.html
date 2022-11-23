@@ -17,49 +17,117 @@ h1{
     font-weight: bold;
     color: #F8BE28;
     top: 10px;
+
 }
-/* .Description{
-    height: 90px;
-} */
-    
-    </style>
+.bn30 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #d3c41f, #c66b1a);
+  padding: 0.7em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: white;
+  width: max-content;
+}
+
+.bn30 .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #d3c41f, #c66b1a);
+}
+
+.bn30:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #0e0e10;
+}
+
+.bn30:hover {
+  background-image: linear-gradient(-45deg, #991fd6, #5939ce);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+
+.bn30:hover .text {
+  background-image: linear-gradient(-45deg, #991fd6, #5939ce);
+}
+
+.something {
+    display: flex;
+}
+
+.preview-file {
+    width: 300px;
+    height: 300px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-color: gray;
+    margin-bottom: 16px;
+}
+
+</style>
     <div class="header1">
-        <h1>Create Your Menu</h1>
+        <h1>Create Your Food</h1>
     </div>
-<div id="Create_cook_class">
+<div id="Create_cook_class" style="padding: 16px">
     <form action='.' method="POST">
         {% csrf_token %}
-        <p>Menu Name*</p>
-            <div id="Create_menu">
-                <input type='text' size="100px" style="height: 40px;" name="title" placeholder="must be less than or equal to 50 letters"/>
+        <div class="something">
+            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div id="Create_menu">
+                    <p>Menu Name*</p>
+                    <input type='text' size="90px" style="height: 40px;" name="title" placeholder="must be less than or equal to 50 letters" />
+                </div>
+                <div id="Description">
+                    <p>Description</p>
+                    <input  type='text' size="90px" style="height: 250px;" name="description" placeholder="must be less than or equal to 250 letters" />
+                </div>
             </div>
-        <p>Description</p>
-            <div id="Description">
-                <input  type='text' size="100px" style="height: 40px;" name="description" placeholder="must be less than or equal to 250 letters"/>
+            <div id="File" style="margin: 44px 0 0 144px">
+                <div id="preview-file" class="preview-file">
+                    <p>Choose file to upload the Image</p>
+                </div>
+                <input type='file' accept="image/png,image/jpeg" name="upfile" id="upfile" />
             </div>
+        </div>
         <p>Ingredients</p>
             <div id="Ingredients">
                 <table>
                     <tr>
                         <td>
-                            <input type='text' name="ingredients" id="ingredients" placeholder="name"/>  
-                            <input type='number' name="quantity" placeholder="quantity" id="quantity"/> 
-                            <input type='text' name="quantityunit" placeholder="quantity Unit" id="quantityunit" />
+                            <input type='text' name="ingredients" id="ingredients" size="60px" style="height: 40px;" placeholder="name"/>  
+                            <input type='number' name="quantity" placeholder="quantity" size="30px" style="height: 40px;" id="quantity"/> 
+                            <input type='text' name="quantityunit" placeholder="quantity Unit" size="30px" style="height: 40px;" id="quantityunit" />
                         </td>
                     </tr>
                 </table>
             </div>
+        <p id="add-more" onclick="addIngredient()" class="bn30">Add Ingredient</p>
         <p>Total calories</p>
             <div id="Total calories">
-                <input type='text' name="totalcalories" placeholder="Calories"/>
+                <input type='text' name="totalcalories" placeholder="Calories" />
             </div>
         <p>Fat calories</p>
             <div id="Fat calories">
-                <input type='text' name="fatcalories" placeholder="Calories"/>
+                <input type='text' name="fatcalories" placeholder="Calories" />
             </div>
         <p>Sugar(grams)</p>
             <div id="Sugar">
-                <input type='text' name="sugargrams" placeholder="grams"/>
+                <input type='text' name="sugargrams" placeholder="grams" />
             </div>
         <label for="cars">Difficulty:</label>
         <select name="Difficulty" id="Difficulty">
@@ -67,19 +135,35 @@ h1{
             <option value="Intermediate">Intermediate</option>
             <option value="Advance">Advance</option>
         </select>
-        <div id="File">
-            <input type='file' name="upfile"/>
-        </div>
+
         <div style="margin-top:200px;">
-            <button type="submit" class="btn btn-success btn-lg"">Create menu</button>
+            <button type="submit" class="btn btn-success btn-lg">Create menu</button>
         </div>
     </form>
-    <button id="add-more" onclick="addIngredient()">Add Ingredient</button>
+
 </div>
 <script >
     let table = document.querySelector('table');
     let btnAdd =  document.querySelector('#add-more');
     let ingredients = [];
+    let imagePreview = null;
+    let uploadFile = document.querySelector("#upfile")
+    let previewFileElement = document.querySelector("#preview-file")
+
+    uploadFile.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        previewFile(file)
+    })
+
+    const previewFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            imagePreview = reader.result;
+            previewFileElement.style.backgroundColor = 'transparent'
+            previewFileElement.innerHTML = `<img src=${imagePreview} style="width: 100%; height: 100%; object-fit: contain;" alt='chosen' />`
+        };
+    };
         
     function addIngredient() {
         const ingredient = document.getElementById("ingredients").value

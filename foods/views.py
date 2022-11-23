@@ -18,8 +18,8 @@ from django.contrib.auth.decorators import login_required
 # from .forms import CommentFrom
 
 
-# @cache_page(60 * 60)
-# @vary_on_cookie
+@cache_page(60 * 60)
+@vary_on_cookie
 def index(request):
     search_post = request.GET.get('search')
     if search_post:
@@ -51,7 +51,7 @@ def index(request):
 
     return render(request, 'foods/index.html', {"menu_list": menu_list,"food_of_day":food_of_day})
 
-    
+
 def save_menu(feed):
     for entry in feed:
         try:

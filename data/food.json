@@ -24422,6 +24422,19 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2022-11-23T03:47:39.820Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Google API",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Sites\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -25038,7 +25051,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$ZDOSptVa3em6cLEZG25QZE$2h7nihFdCMzK6RgT8JAuHkQ9fgmFYSm5LnYs466vmN8=",
-    "last_login": "2022-11-23T03:21:26.866Z",
+    "last_login": "2022-11-23T03:47:23.562Z",
     "is_superuser": true,
     "username": "admin01",
     "first_name": "",
@@ -25243,6 +25256,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "ppx4ghbqpf8waiyvat68igq95vj9k8lq",
+  "fields": {
+    "session_data": ".eJxVjk1vwjAMhv-Lz6hKSrMEbiDthDgiNE1T5TjpBytJ1aSXVf3vSxAHuNl-Hr_2AjXOsavnYKe6N7AHDpvXmUb6tS4Dc0PX-oK8i1Ovi6wUTxqKszd2OD7dt4AOQ5e2pUJsxFaXjRFcCiX5VktthLDIyopxpkTJq2qnZWmajG1qiFFDO2YUUQoNnnockMjPLtYhYrSw_15gnDzZENKRwbe9yyb5MTFI5eORESe8ZwHWDVyVPHxcPs-nrz-En_UfyzxUKg:1oxgjs:6JQm9Ju-ouLGzu8FgSSYFVI0uvyaqaq1qq4YP8DScsk",
+    "expire_date": "2022-12-07T03:47:56.010Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "vm4jdj3fd01dmr2ne795fghcfgpnq2va",
   "fields": {
     "session_data": ".eJxVjMEOwiAQRP-FsyFA2UA9evcbyLILUjU0Ke2p8d8tSQ96nHlvZhcBt7WEraUlTCyuQovLbxeRXql2wE-sj1nSXNdlirIr8qRN3mdO79vp_h0UbOVYO4-YYYgmM2gH3ukhusgACZWxSisPRls7Rmc4d5yOQIoyjYo9kfh8AczfN3A:1oxgKE:DmJODMlqS0RpD0YiGq7SCwseDCyFDMosSWKD_5IxmGo",
@@ -25266,7 +25287,9 @@
     "client_id": "384312367871-irh9b5qfrefiln84kcfra0t2tebue9tu.apps.googleusercontent.com",
     "secret": "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",
     "key": "",
-    "sites": []
+    "sites": [
+      1
+    ]
   }
 }
 ]

@@ -18,7 +18,7 @@ h1{
 }
 
 .cookbook-container{
-    display: inline-table;
+    display: inline-grid;
     width: 100%;
     height: 100%;
 }
@@ -76,7 +76,6 @@ h1{
 
 .added-block:hover{
     transform: translateY(-10px);
-    text-decoration-line: none;
 }
 
 .added-pic{
@@ -89,25 +88,48 @@ h1{
     display: flex;
 }
 
-.x-delete button{
+a:hover{
+    text-decoration: none;
+}
+
+/* .x-delete{
+    width: 20px;
+    height: 20px;
+    bottom: 160px;
+    left: 260px;
+} 
+
+.x-text{
+    color: black;
+    position: relative;
+    bottom: 3px;
+}
+
+.button{
+    background-color: #e54545;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 180px;
+}
+
+.button:hover{
+    background-color: #b83e3e;
+} */
+
+.x-delete[type=submit]{
     position: relative;
     background-color: #e54545;
     border: none;
-    color: black;
-    padding: 5px;
-    height: 30px;
-    transition: 0.2s;
-    bottom: 170px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
     left: 250px;
-    border: solid;
+    bottom: 160px;
 }
 
-button:hover{
+.x-delete[type=submit]:hover{
     background-color: #b83e3e;
-}
-
-.x-text{
-    text-align: center;
 }
 
 </style>
@@ -125,18 +147,24 @@ button:hover{
     <ul>
         {% for each_items in cook_book %}
             <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">
-                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px">
-                    <div class="x-delete" href="delete/{{each_items.cook_name}}">
-                        <button type="button"><p class="x-text">X</p></button>
-                    </div>
-                </img>
+                <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px"></img>
+                <form action="delete/{{each_items.cook_name}}">
+                    <input class="x-delete" type="submit" value="x">
+                </form>
                 <div class="created-menu">
-                    <p>{{menu.menu_name}}</p>
+                    <p>{{ each_items.cook_name }}</p>
                 </div>
-                <p>{{ each_items.cook_name }}</p>
             </a>
         {% endfor %}
     </ul>
     {% endif %}
+<!--<script>
+    function confirmation() {
+        let text = "Are you sure?";
+        if(confirm(text) == true){
+            
+        }
+    }
+    </script> -->
 </div>
 {% endblock %}

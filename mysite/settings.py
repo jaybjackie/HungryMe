@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from email.policy import default
 import os
 from pathlib import Path
 from decouple import config, Csv
@@ -26,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY", cast=str, default="missing-secret-key")
 DEBUG = True
 # add localhost using config
 # ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="localhost")
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['.localhost' , '127.0.0.1', '[::1]']
 
 # Application definition
 
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = config("TIME_ZONE",cast=str, default="Asia/Bangkok")
 
 USE_I18N = True
 
@@ -146,7 +147,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'email',
         ],
         "AUTH_PARAMS" :{
-            'access_type': 'online',
+            'access_type': 'offline',
         }        
     }
 }

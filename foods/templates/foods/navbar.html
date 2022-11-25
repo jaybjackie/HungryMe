@@ -1,7 +1,21 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
+
 p1 {
     font-family: 'Lemon';font-size: 21px;
 }
+
+.nav-bar{
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+    float: right;
+    margin: 10px;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -61,19 +75,23 @@ p1 {
     text-align: center;
     background-color: #fff;
 }
+
 .menu ul {
     margin-bottom: 0;
 }
+
 .menu a {
     color: #333; 
     text-transform: uppercase;
     opacity: 0.8;
 }
+
 .menu a:hover {
     text-decoration: none;
     opacity: 1;
 }
-button {
+
+/* button {
         border-radius: 20px;
         background-color: #8735b7;
         color: #FFFFFF;
@@ -83,24 +101,17 @@ button {
         text-transform: uppercase;
         cursor: pointer;
         margin: 2.5px;
-}
-
-
-.nav-bar {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    float: right;
-}
+} */
 
 .navbar-collapse {
     position: relative;
 }
+
 .navbar-collapse ul{
     position: absolute;
     right: 10px;
-
 }
+
 .dropdown-toggle::after {
     content: none;
 }
@@ -112,6 +123,41 @@ button {
 	text-decoration: none;
 	margin: 15px 0;
     display: flex;
+}
+
+.about-us[type=submit]{
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    color: black;
+    top: 7.5px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 7.5px 12px;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.logout, .login{
+    position: relative;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);
+    border: 1.5px solid #5E1689;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    line-height: 0.5px;
+}
+
+.logs-text{
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    color: white;
+    top: 7px;
+    font-size: 15px;
 }
 
 </style>
@@ -132,21 +178,21 @@ button {
                     <span class="bars"></span>
                 </a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">What should I eat?</a>
                     <a class="dropdown-item" href="{% url 'top-rated' %}">Top Rated-Dishes</a>
-                    <a class="dropdown-item" href="#">What should I eat ?</a>
-                    <a class="dropdown-item" href="#">Community's recipe</a>
-                    <a class="dropdown-item" href="{% url 'create' %}">Add my Food</a>
-                    <a class="dropdown-item" href="{% url 'cook' %}">My cookbook</a>
-                    <a class="dropdown-item" href="#">My history</a>
+                    <a class="dropdown-item" href="#">Community's Foods</a>
+                    <a class="dropdown-item" href="{% url 'cook' %}">My Cookbook</a>
+                    <a class="dropdown-item" href="{% url 'create' %}">Add My Food</a>
+                    <!-- <a class="dropdown-item" href="#">My History</a> -->
                 </div>
             </li>
             <li>   
                 <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}">
-                    <input id="search-input" class="form-control mr-sm-2" type="search"   placeholder="Search for Menus!" aria-label="Search" name="search">
+                    <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search for Menus!" aria-label="Search" name="search">
                     <div id="myDropdown" class="dropdown-content">
                         {% if menu_list%}
                             {% for menu in menu_list %}
-                                <a href= "{% url 'detail' menu.id %}"> {{menu.menu_name}} </a>
+                                <a href= "{% url 'detail' menu.id %}">{{menu.menu_name}}</a>
                             {% endfor %}
                         {% endif %}
                     </div>
@@ -154,19 +200,29 @@ button {
                 </form>
             </li>
             <li>
-                <button type="button" class="btn btn-light" style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
-                    <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" 
-                    class="btn btn-light" aria-current="page" href="https://github.com/jaybjackie/HungryMe/wiki/About-us" width="20" >About us</a>
-                </button>
+                <!-- <button class="about-us">
+                    <a class="about-us-a" aria-current="page" href="https://github.com/jaybjackie/HungryMe/wiki/About-us" target="_blank">
+                        <p class="about-us-text">About us</p>
+                    </a>
+                </button> -->
+
+                <form action="https://github.com/jaybjackie/HungryMe/wiki/About-us" target="_blank">
+                    <input class="about-us" type="submit" value="About us"/>
+                </form>
+
             </li> 
             <li>
                 {% if user.is_authenticated %}
-                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                <button class="logout">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                        <p class="logs-text">Logout</p>
+                    </a>
                 </button>
                 {% else %}
-                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login/Sign up</a>
+                <button class="login">
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">
+                        <p class="logs-text">Login / Sign up</p>
+                    </a>
                 </button>
                 {% endif %}
             </li>

@@ -153,6 +153,14 @@ def detail(request, menu_id):
         return render(request, 'foods/detail.html', {"menu": menu, "avg_rate": avg_rate,"comment_object": comment_object,})
 
 def filter(request):
+    allergies_food = [{"name" : "wheat", "icon": "fa-solid fa-wheat-awn"}, {"name" :"diary", "icon": "fa-solid fa-glass-water"},{"name" :"peanut","icon": "fa-regular fa-lemon"}, 
+    {"name" :"egg","icon": "fa-solid fa-egg"}, {"name":"seafood", "icon" : "fa-solid fa-shrimp"}]
+    decision_food =[{},{},{}]
+    print("################################################################")
+    if request.method == 'POST':
+        comment_text = request.POST.get("allergie")
+        print (comment_text)
+        
     # feed = api_response()
     # for entry in feed:
     #     try:
@@ -214,7 +222,43 @@ def filter(request):
     #     if not Menu.objects.filter(menu_name= menu.menu_name).exists():
     #         menu.save()
     
-    return render(request,'foods/filter.html',{})
+    return render(request,'foods/filter.html', {"allergies":allergies_food})
+
+def filter_result(request):
+    if request.method == 'POST':
+        print(request.POST)
+        val = dict(request.POST)
+        print("##########################################")
+        print(val['allergie'])
+        filter_menu_list = []
+        menu_list = Menu.objects.all().order_by()[:24]
+        for menu in menu_list:
+            if menu.ingredients not in val['allergie']:
+                filter_menu_list.append(menu)
+
+        # not_allergie = Menu.objects.filter(ingredients=val['allergie']).exclude(True)
+        # print (not_allergie)
+
+    # Fetch data from api
+    # feed = api_response()
+    # save_menu(feed)
+
+    feeds = random.choice(Menu.objects.all())
+
+    return render(request, 'foods/filter_result.html', {"filter_menu_list": filter_menu_list})
+        # call filter method
+
+    return render(request, 'foods/filter_result.html', {
+        # filtered value
+        "filter_menu_list": [
+            {
+                "id": 1,
+                "menu_name": 'mock menu name',
+                "picture_url": 'mock picture_url',
+                "avg_menurating": 4
+            }
+        ]
+    })
 
 def signup(request):
     if request.method == 'GET':
@@ -226,6 +270,7 @@ def signup(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
+            print (user)
             messages.success(request, 'Account was created for' + user)
             re_user = authenticate(username=form.cleaned_data.get('username'),
                                     password=form.cleaned_data.get('password1'))

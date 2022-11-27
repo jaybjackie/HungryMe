@@ -16,25 +16,23 @@
 }
 
 body {
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    background-color:#212d38;
 }
 
-.wrapper {
-    width: 780px;
-    margin: 100px auto 0;
-}
 
-.wrapper .title {
+.title {
     font-size: 24px;
     color: #fff;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 25px;
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .container .option_item {
@@ -86,7 +84,7 @@ body {
     color: #ff8c00;
 }
 
-.option_item .checkbox:checked ~ .option_inner.dairy {
+.option_item .checkbox:checked ~ .option_inner.diary {
     border-color: #55acee;
     color: #55acee;
 }
@@ -105,6 +103,76 @@ body {
 .option_item .checkbox:checked ~ .option_inner.seafood {
     border-color: #dd4b39;
     color: #dd4b39;
+}
+
+.option_item .checkbox:checked ~ .option_inner.lowsugar {
+    border-color: #04c4ffbc;
+    color: #04c4ffbc;
+}
+.option_item .checkbox:checked ~ .option_inner.highsugar {
+    border-color: #dd4b39;
+    color: #dd4b39;
+}
+.option_item .checkbox:checked ~ .option_inner.lowfat {
+    border-color: #04c4ffbc;
+    color: #04c4ffbc;
+}
+.option_item .checkbox:checked ~ .option_inner.highfat {
+    border-color: #dd4b39;
+    color: #dd4b39;
+}
+
+.option_item .checkbox:checked ~ .option_inner.lowenergy {
+    border-color: #04c4ffbc;
+    color: #04c4ffbc;
+}
+.option_item .checkbox:checked ~ .option_inner.highenergy {
+    border-color: #dd4b39;
+    color: #dd4b39;
+}
+.option_item .checkbox:checked ~ .option_inner.meat {
+    border-color: #f44d00c7;
+    color: #f44d00c7;
+}
+.option_item .checkbox:checked ~ .option_inner.blueberries {
+    border-color: #003df4c7;
+    color: #003df4c7;
+}
+.option_item .checkbox:checked ~ .option_inner.avocado{
+    border-color: #017a39c7;
+    color: #017a39c7;
+}
+.option_item .checkbox:checked ~ .option_inner.onions{
+    border-color: #62fc90c7;
+    color: #62fc90c7;
+}
+.option_item .checkbox:checked ~ .option_inner.herbseasoning{
+    border-color: #419159;
+    color: #419159;
+}
+.option_item .checkbox:checked ~ .option_inner.butter{
+    border-color: #dbd700;
+    color: #dbd700;
+}
+.option_item .checkbox:checked ~ .option_inner.chocolate{
+    border-color: #ff0000;
+    color: #ff0000;
+}
+.option_item .checkbox:checked ~ .option_inner.cheese{
+    border-color: #ffc400;
+    color: #ffc400;
+}
+.option_item .checkbox:checked ~ .option_inner.beginner{
+    border-color: #ff7700;
+    color: #ff7700;
+}
+.option_item .checkbox:checked ~ .option_inner.intermediate{
+    border-color: #3c00ff;
+    color: #3c00ff;
+}
+.option_item .checkbox:checked ~ .option_inner.advance{
+    border-color: #f200ff ;
+    color: #f200ff ;
 }
 
 
@@ -138,7 +206,7 @@ body {
     border-color: #ff8c00 transparent transparent #ff8c00;
 }
 
-.option_item .option_inner.dairy .tickmark {
+.option_item .option_inner.diary .tickmark {
     border-color: #55acee transparent transparent #55acee;
 }
 
@@ -150,22 +218,353 @@ body {
     border-color: #be8f00bc transparent transparent #be8f00bc ;
 }
 
-
 .option_item .option_inner.seafood .tickmark {
     border-color: #dd4b39 transparent transparent #dd4b39;
 }
 
+.option_item .option_inner.lowsugar .tickmark {
+    border-color: #04c4ffbc transparent transparent #04c4ffbc;
+}
+.option_item .option_inner.highsugar .tickmark {
+    border-color: #dd4b39 transparent transparent #dd4b39;
+}
+
+.option_item .option_inner.lowfat .tickmark {
+    border-color: #04c4ffbc transparent transparent #04c4ffbc;
+}
+.option_item .option_inner.highfat .tickmark {
+    border-color: #dd4b39 transparent transparent #dd4b39;
+}
+
+.option_item .option_inner.lowenergy .tickmark {
+    border-color: #04c4ffbc transparent transparent #04c4ffbc;
+}
+.option_item .option_inner.highenergy .tickmark {
+    border-color: #dd4b39 transparent transparent #dd4b39;
+}
+.option_item .option_inner.meat .tickmark {
+    border-color: #f44d00c7 transparent transparent #f44d00c7;
+}
+.option_item .option_inner.blueberries .tickmark {
+    border-color: #003df4c7 transparent transparent #003df4c7;
+}
+.option_item .option_inner.avocado .tickmark {
+    border-color: #017a39c7 transparent transparent #017a39c7;
+}
+.option_item .option_inner.onions .tickmark {
+    border-color: #62fc90c7 transparent transparent #62fc90c7;
+}
+.option_item .option_inner.herbseasoning .tickmark {
+    border-color: #419159 transparent transparent #62fc90;
+}
+.option_item .option_inner.butter .tickmark {
+    border-color: #dbd700 transparent transparent #dbd700;
+}
+.option_item .option_inner.chocolate .tickmark {
+    border-color: #ff0000 transparent transparent #ff0000;
+}
+.option_item .option_inner.cheese .tickmark {
+    border-color: #ffc400 transparent transparent #ffc400;
+}
+.option_item .option_inner.beginner .tickmark {
+    border-color: #ff7700 transparent transparent #ff7700;
+}
+.option_item .option_inner.intermediate .tickmark {
+    border-color: #3c00ff transparent transparent #3c00ff;
+}
+.option_item .option_inner.advance .tickmark {
+    border-color: #f200ff transparent transparent #f200ff;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide1 {
+    max-width: auto !important;
+    overflow-x: scroll;
+}
+
+.slide2{
+    max-width: auto!important;
+    overflow-x: scroll;
+}
+
+.slide3 .container {
+    max-width: 80em;
+    overflow-x: visible;
+}
 
 
 </style>
 <script src="https://kit.fontawesome.com/f56f1a34bc.js" crossorigin="anonymous"></script>
 
 
-<div class="wrapper">
-    <div class="title">
-        Do you have any food allergies?
+<form class="wrapper" action="{% url 'result' %}" method="POST">
+    {% csrf_token %}
+    <div class="slide1">
+        <div class="title">
+            Do you have any food allergies?
+        </div>
+        <div class="container" onchange="getValue1()">
+            {% for allergie in allergies %}
+            <label class="option_item">
+                <input type="checkbox" class="checkbox"  name="allergie" value={{allergie.name}}>
+                <div class="option_inner {{allergie.name}}">
+                    <div class="tickmark"></div>
+                    <div class="icon"><i class="{{allergie.icon}}"></i></div>
+                    <div class="name">{{allergie.name}}</div>
+                </div>
+            </label>
+            {% endfor %}
+        </div>
     </div>
+    <div class="slide2" onchange="getValue2()">
+        <div class="title">
+            Decision Foods
+        </div>
+        <div class="container">
+            <label class="option_item">
+                <input type="radio" class="checkbox" name="sugar">
+                <div class="option_inner lowsugar">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-down"></i></div>
+                <div class="name">Low Sugar</div>
+            </div>
+            </label>
+            <label class="option_item">
+                <input type="radio" class="checkbox" checked name="sugar">
+                <div class="option_inner highsugar">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-up"></i></div>
+                <div class="name">High Sugar</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="radio" class="checkbox" name="fat">
+                <div class="option_inner lowfat">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-down"></i></div>
+                <div class="name">Low fat</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="radio" class="checkbox" checked name="fat">
+                <div class="option_inner highfat">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-up"></i></div>
+                <div class="name">High fat</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="radio" class="checkbox" checked name="energy">
+                <div class="option_inner lowenergy">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-down"></i></div>
+                <div class="name">Low energy</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="radio" class="checkbox" name="energy">
+                <div class="option_inner highenergy">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-angles-up"></i></div>
+                <div class="name">High energy</div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="slide3" onchange="getValue3()">
+        <div class="title">
+            I don't want this on my dish
+        </div>
+        <div class="container">
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="meat" value="meat">
+                <div class="option_inner meat">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+                <div class="name">Meat</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="blueberries" value="blueberries">
+                <div class="option_inner blueberries">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-bomb"></i></div>
+                <div class="name">Blueberries</div>
+                </div>
+            </label>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="avocado" value="avocado" >
+                <div class="option_inner avocado">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-fire-flame-simple"></i></div>
+                <div class="name">avocado</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" checked name="onions" value="onions">
+                <div class="option_inner onions">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-life-ring"></i></div>
+                <div class="name">onions</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="herbseasoning" value="herbseasoning">
+                <div class="option_inner herbseasoning">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="name">Herb seasoning</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="butter" value="butter">
+                <div class="option_inner butter">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-cube"></i></div>
+                <div class="name">Butter</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="chocolate" value="chocolate">
+                <div class="option_inner chocolate">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-rug"></i></div>
+                <div class="name">Chocolate</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="cheese" vaule="cheese">
+                <div class="option_inner cheese">
+                    <div class="tickmark"></div>
+                    <div class="icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <div class="name">Cheese</div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="slide4" onchange="getValue4()">
+        <div class="title">
+            Cooking Skills
+        </div>
+        <div class="container">
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="beginner" value="beginner">
+                <div class="option_inner beginner">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-user"></i></div>
+                <div class="name">Beginner</div>
+            </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="intermediate" value="intermediate">
+                <div class="option_inner intermediate">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <div class="name">Intermediate</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="advance" value="advance">
+                <div class="option_inner advance">
+                <div class="tickmark"></div>
+                <div class="icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <div class="name">Advance</div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <button onclick="onSubmit()"><i class="fa fa-solid fa-search"></i>Filter</button>
+</form>
+    <script>
+        const filter = {
+            food_allergies: [],
+            decisionFood: {},
+            prohibitedIngrediants: [],
+            cookingSkills: [],
+        };
+        // get checked value of allegies food
+        const getValue1 = () => {
+            const slide1 = document.querySelector('.slide1');
+            const container = slide1.querySelector('.container');
+            const option_item = container.querySelectorAll('.option_item');
+            const food_allergies = []
+            for(let i = 0; i < option_item.length; i++) {           
+                const checkbox = option_item[i].querySelector(".checkbox")
+                if (checkbox.checked) {
+                    food_allergies.push(checkbox.value)}
+            };
+            filter.food_allergies = food_allergies;
+            console.log(food_allergies);
+        }
 
+        // get checked value of 
+        const getValue2 = () => {
+            const slide2 = document.querySelector('.slide2');
+            const container = slide2.querySelector('.container');
+            const option_item = container.querySelectorAll('.option_item');
+            const decisionFood = {
+                sugar: '',
+                fat: '',
+                energy: '',
+            }
+            const radioGroup = Array.from(option_item).map((item) => {
+                return item.querySelector('input[type="radio"]')
+            })
+            decisionFood.sugar = radioGroup[0].checked ? 'Low Sugar' : 'High Sugar';
+            decisionFood.fat = radioGroup[2].checked? 'Low fat' : 'High fat';
+            decisionFood.energy = radioGroup[4].checked ? 'Low energy' : 'High energy';
+            filter.decisionFood = {...decisionFood};
+            console.log(decisionFood);
+        }
+
+        const getValue3 = () => {
+            const slide1 = document.querySelector('.slide3');
+            const container = slide1.querySelector('.container');
+            const option_item = container.querySelectorAll('.option_item');
+            const prohibitedIngrediants = []
+            for(let i = 0; i < option_item.length; i++) {           
+                const checkbox = option_item[i].querySelector(".checkbox")
+                if (checkbox.checked) {
+                    prohibitedIngrediants.push(checkbox.value)}
+            };
+            filter.prohibitedIngrediants = prohibitedIngrediants
+            console.log(prohibitedIngrediants);
+        }
+
+        const getValue4 = () => {
+            const slide1 = document.querySelector('.slide4');
+            const container = slide1.querySelector('.container');
+            const option_item = container.querySelectorAll('.option_item');
+            const cookingSkills = []
+            for(let i = 0; i < option_item.length; i++) {           
+                const checkbox = option_item[i].querySelector(".checkbox")
+                if (checkbox.checked) {
+                    cookingSkills.push(checkbox.value)}
+            };
+            filter.cookingSkills = cookingSkills
+            console.log(cookingSkills);
+        }
+        const onSubmit = () => {
+        };
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+    <!-- 
     <div class="container">
     <label class="option_item">
         <input type="checkbox" class="checkbox">
@@ -206,5 +605,4 @@ body {
         <div class="icon"><i class="fa-solid fa-shrimp"></i></div>
         <div class="name">Seafood</div>
         </div>
-    </label>
-{% endblock %}
+    </label> -->

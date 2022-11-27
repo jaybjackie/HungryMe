@@ -38,71 +38,6 @@ p1 {
     right: 10px;
 }
 
-/* .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown a:hover {
-    background-color: rgb(100, 100, 100);
-} */
-
-/* .menu-bar {
-    position: absolute;
-    top: 10px;    
-    left: 50%;
-    height: 14px;
-    margin-left: -10px;
-} */
-
-/* .bars {
-    display: block;
-    width: 20px;
-    height: 3px;    
-    background-color: #333;
-    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
-} */
-
-/* .menu {
-    display: none; 
-    width: 100%;
-    padding: 30px 10px 50px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #fff;
-}
-
-.menu a {
-    color: #333; 
-    text-transform: uppercase;
-    opacity: 0.8;
-} */
-
-/* .menu a:hover {
-    text-decoration: none;
-    opacity: 1;
-} */
-
-/* button {
-        border-radius: 20px;
-        background-color: #8735b7;
-        color: #FFFFFF;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 12px 45px;
-        text-transform: uppercase;
-        cursor: pointer;
-        margin: 2.5px;
-} */
-
-/* .navbar-collapse {
-    position: relative;
-} */
-
-/* .dropdown-toggle::after {
-    content: none;
-} */
-
 .dropdown-item{
     display: inline-block;
     font-family: 'Roboto Slab', serif;
@@ -271,7 +206,7 @@ p1 {
         <ul class="nav-bar">
             <li> <!-- Dropdown Menu -->
                 <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <input id="toggle1" type="checkbox" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">
+                <input id="toggle1" type="checkbox">
                 <label class="hamburger1" for="toggle1">
                     <div class="top"></div>
                     <div class="meat"></div>
@@ -284,7 +219,6 @@ p1 {
                     <a class="dropdown-item" href="#">Community's Foods</a>
                     <a class="dropdown-item" href="{% url 'cook' %}">My Cookbook</a>
                     <a class="dropdown-item" href="{% url 'create' %}">Add My Food</a>
-                    <!-- <a class="dropdown-item" href="#">My History</a> -->
                 </div>
             </li>
             <div class="search-wrapper"> <!-- Search Box -->

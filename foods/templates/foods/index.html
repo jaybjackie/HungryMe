@@ -8,16 +8,25 @@
 
 <style>
 
+@media all and (max-width: 1000px){
+    .menuImage{
+        display: none;
+    }
+}
+
 body{
+    font-family: 'Roboto Slab', serif;
     height: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    background-color: #FEDA94;
 }
 
 .container-title{
     display:flex;
     justify-content: space-evenly;
     max-height: 300px;
+    background-color: white;
 }
 
 .small-container{
@@ -42,6 +51,10 @@ h2{
     line-clamp: 2;
     -webkit-box-orient: vertical;
     transition: 0.35s;
+}
+
+h2:hover{
+    color: #dd7003;
 }
 
 h3{
@@ -77,10 +90,6 @@ h3{
 .text-title-2:hover{
     text-decoration-line: none;
     transform: translateY(-7px);
-}
-
-h2:hover{
-    color: #dd7003;
 }
 
 .food-of-day-pic{
@@ -145,7 +154,7 @@ p{
 }
 
 </style>
-<div>
+<div> <!-- Food of the Day -->
     {% if food_of_day %}
     <div class="container-title">
         <div class="small-container">
@@ -161,7 +170,7 @@ p{
 
 <div class="blocks-zone">
 <h3>Menu For You</h3>
-    <div class="blocks">
+    <div class="blocks"> <!-- Menu Blocks -->
         {% if menu_list%}
             {% for menu in menu_list %}
             <a class="one-block" href="{% url 'detail' menu.id %}">
@@ -170,7 +179,7 @@ p{
                     <p>{{menu.menu_name}}</p>
                 </div>
                 {% if menu.avg_menurating > 0 %}
-                    <div class="ratings">
+                    <div class="ratings"> <!-- Rating Stars -->
                         <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
                         <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>

@@ -1,15 +1,57 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 <style>
-p1 {
-    font-family: 'Lemon';font-size: 21px;
+
+@media all and (max-width: 1000px){
+    #navbarNavDropdown{
+        display: none;
+    }
 }
-.dropdown {
-    position: relative;
+
+p1 {
+    font-family: 'Lemon';
+    font-size: 21px;
+}
+
+#p1{
+    position: absolute;
+    left: 120px;
+}
+
+.nav-bar{
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+    margin: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: left;
+}
+
+.navbar-collapse ul{
+    position: absolute;
+    right: 10px;
+}
+
+.dropdown-item{
     display: inline-block;
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+    display: flex;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     max-height: 400px;
     overflow-y: auto;
     background-color: #f6f6f6;
@@ -25,93 +67,128 @@ p1 {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    padding: 12px 16px;
 }
 
-.dropdown a:hover {
-    background-color: #ddd;
-}
-
-.show {
+.show{
     display: block;
-    margin: auto;
 }
 
-.menu-bar {
-    position: absolute;
-    top: 20px;    
-    left: 50%;
-    height: 14px;
-    margin-left: -10px;
+/* Hamburger Dropdown Menu */
+.hamburger1{
+    height: 45px;
+    margin: 10px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 7px);
+    justify-items: center;
+    z-index: 120;
 }
 
-.bars {
-    display: block;
+.hamburger1 div{
+    background-color: #36213E;
+    position: relative;
     width: 20px;
-    height: 3px;    
-    background-color: #333;
-    box-shadow: 0 5px 0 #333, 0 10px 0 #333;
+    height: 3px;
+    margin-top: 15px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.menu {
-    display: none; 
-    width: 100%;
-    padding: 30px 10px 50px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #fff;
-}
-.menu ul {
-    margin-bottom: 0;
-}
-.menu a {
-    color: #333; 
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-.menu a:hover {
-    text-decoration: none;
-    opacity: 1;
-}
-button {
-        border-radius: 20px;
-        background-color: #8735b7;
-        color: #FFFFFF;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 12px 45px;
-        text-transform: uppercase;
-        cursor: pointer;
-        margin: 2.5px;
+#toggle1{
+    display: none;
 }
 
+#toggle1:checked + .hamburger1 .top{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 14px;
+}
 
-.nav-bar {
-    display: flex;
-    list-style: none;
+#toggle1:checked + .hamburger1 .meat{
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#toggle1:checked + .hamburger1 .bottom{
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+#toggle1:checked ~ .dropdown-menu{
+    height: 340px;
+}
+/* Hamburger Dropdown Menu */
+
+.search-wrapper{
+    position: relative;
+    width: 350px;
+    height: 35px;
+    display: inline;
     align-items: center;
+    margin: 10px;
+    margin-left: 0;
+    top: 1px;
+}
+
+#search-input{
+    display: inline;
+    position: static;
+    width: 350px;
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#maggie{
+    box-sizing: border-box;
+    position: relative;
+    color: white;
+    background-color: #5E1689;
+    border-radius: 50%;
+    padding: 7px;
+    border: none;
+    right: 3px;
+    transition: all 0.3s;
     float: right;
+    bottom: 32.5px;
 }
 
-.navbar-collapse {
+.about-us[type=submit]{
+    font-family: 'Roboto Slab', serif;
     position: relative;
+    color: black;
+    top: 8px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 7.5px 18px;
+    border: none;
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.navbar-collapse ul{
-    position: absolute;
-    right: 10px;
 
-}
-.dropdown-toggle::after {
-    content: none;
-}
-
-.dropdown-item{
+.logout, .login{
     position: relative;
-    color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
-    display: flex;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);
+    border: 1.5px solid #5E1689;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    line-height: 0.5px;
+}
+
+.logs-text{
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    color: white;
+    top: 7px;
+    font-size: 15px;
 }
 
 </style>
@@ -120,53 +197,62 @@ button {
     <a class ="navbar-brand" href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="80" class="img-responive"></a>
     
     {% if user.is_authenticated %}
-    <div id="p1" aria-current="page"style="color:black"><p1>{{ user.username }} is Hungry!</p1></div>
+    <div id="p1" aria-current="page" style="color:black"><p1>{{ user.username }} is Hungry!</p1></div>
     {% else %}
-    <div id="p1" aria-current="page"style="color:black"><p1>Welcome!</p1></div>
+    <div id="p1" aria-current="page" style="color:black"><p1>Welcome!</p1></div>
     {% endif %}
     
     <div class="navbar-collapse" id="navbarNavDropdown">
         <ul class="nav-bar">
-            <li>
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="bars"></span>
+            <li> <!-- Dropdown Menu -->
+                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <input id="toggle1" type="checkbox">
+                <label class="hamburger1" for="toggle1">
+                    <div class="top"></div>
+                    <div class="meat"></div>
+                    <div class="bottom"></div>
+                </label>
                 </a>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">What should I eat?</a>
                     <a class="dropdown-item" href="{% url 'top-rated' %}">Top Rated-Dishes</a>
-                    <a class="dropdown-item" href="#">What should I eat ?</a>
-                    <a class="dropdown-item" href="#">Community's recipe</a>
-                    <a class="dropdown-item" href="{% url 'create' %}">Add my Food</a>
-                    <a class="dropdown-item" href="{% url 'cook' %}">My cookbook</a>
-                    <a class="dropdown-item" href="#">My history</a>
+                    <a class="dropdown-item" href="#">Community's Foods</a>
+                    <a class="dropdown-item" href="{% url 'cook' %}">My Cookbook</a>
+                    <a class="dropdown-item" href="{% url 'create' %}">Add My Food</a>
                 </div>
             </li>
-            <li>   
-                <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}">
-                    <input id="search-input" class="form-control mr-sm-2" type="search"   placeholder="Search for Menus!" aria-label="Search" name="search">
-                    <div id="myDropdown" class="dropdown-content">
-                        {% if menu_list%}
-                            {% for menu in menu_list %}
-                                <a href= "{% url 'detail' menu.id %}"> {{menu.menu_name}} </a>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="search-wrapper"> <!-- Search Box -->
+                <li>
+                    <form class="search-box" action="{% url 'index' %}">
+                        <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search menus..." aria-label="Search" name="search" autocomplete="off">
+                        <div id="myDropdown" class="dropdown-content">
+                            {% if menu_list%}
+                                {% for menu in menu_list %}
+                                    <a href= "{% url 'detail' menu.id %}">{{menu.menu_name}}</a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <button id="maggie" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+            </div>
+            <li> <!-- About Us -->
+                <form action="https://github.com/jaybjackie/HungryMe/wiki/About-us" target="_blank">
+                    <input class="about-us" type="submit" value="About us"/>
                 </form>
-            </li>
-            <li>
-                <button type="button" class="btn btn-light" style="background-color: rgb(255, 255, 255);border:1px solid #FFB21E;border-radius: 50px; cursor: pointer;">
-                    <a type="button" style= "background-color:#ffffff ;border:0.5px solid #ffffff;border-radius: 50px; cursor: pointer;" 
-                    class="btn btn-light" aria-current="page" href="https://github.com/jaybjackie/HungryMe/wiki/About-us" width="20" >About us</a>
-                </button>
             </li> 
-            <li>
+            <li> <!-- Login/Logout -->
                 {% if user.is_authenticated %}
-                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                <button class="logout">
+                    <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">
+                        <p class="logs-text">Logout</p>
+                    </a>
                 </button>
                 {% else %}
-                <button style= "background: linear-gradient(180deg, #5E1689 40%, #8735b7 80%, #e3b3ff 120%);border:1.5px solid #5E1689;padding: 3px;border-radius: 50px; cursor: pointer;">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login/Sign up</a>
+                <button class="login">
+                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">
+                        <p class="logs-text">Login / Sign up</p>
+                    </a>
                 </button>
                 {% endif %}
             </li>
@@ -203,6 +289,19 @@ button {
             }
             }
         }
+
+        // $(document).ready(function(){
+        //     // Show hide popover
+        //     $(".dropdown").click(function(){
+        //         $(this).find(".dropdown-content").slideToggle("fast");
+        //     });
+        // });
+
+        // $(document).on("click", function(event){
+        //     var $trigger = $(".dropdown");
+        //     if($trigger !== event.target && !$trigger.has(event.target).length){
+        //         $(".dropdown-content").slideUp("fast");
+        //     }            
+        // });
     </script>
 </nav>
-

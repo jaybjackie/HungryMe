@@ -38,7 +38,7 @@ class CreateFoodFrom(forms.ModelForm):
                                 required= True,
                                 widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'must be less than or equal to 250 letters'}))
     
-    ingredients = forms.CharField(
+    ingredients = forms.JSONField(
                                 max_length=250,
                                 required= True,
                                 widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'name'}))

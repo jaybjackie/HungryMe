@@ -233,6 +233,8 @@ def signup(request):
     
     if request.method == 'POST':
         form = RegisterForm(request.POST)
+        print("#######################")
+        print(form)
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
@@ -260,8 +262,12 @@ def rate(request, menu_id, rating):
 @login_required
 def ratecookbook(request, cook_name, rating):
     menu = CookBook.objects.get(cook_name=cook_name)
+    menu.rating = float(rating)
+    menu.save()
+    print(cook_name)
+    print(menu.rating)
     CookbookRating.objects.filter(menu=menu, user=request.user).delete()
-    CookbookRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
+    CookbookRating.objects.update_or_create(user=request.user, rate=float(rating), menu=menu)
     return show_food(request,cook_name)
 
 
@@ -295,7 +301,7 @@ def cook_create(request):
     if request.method == "POST":
         name = request.POST.get("title")
         des = request.POST.get("description")
-        Ing = request.POST.get("Ingredients")
+        ing = request.POST.get("ingredients")
         totalcal = request.POST.get("totalcalories")
         fatcal = request.POST.get("fatcalories")
         sugargrams = request.POST.get("sugargrams")
@@ -305,7 +311,7 @@ def cook_create(request):
                             cook_name=name,
                             user=request.user,
                             description=des,
-                            ingredients=Ing,
+                            ingredients=ing,
                             energy_kcal=totalcal,
                             fat_kcal=fatcal,
                             sugar=sugargrams,
@@ -356,7 +362,10 @@ def community(request):
 
 def show_food(request,cook_name):
     all_my_food = CookBook.objects.filter(cook_name=cook_name)
+
+    print(all_my_food[0].rating)
     context = {
         'all_food': all_my_food,
+
     }
     return render(request, '../templates/foods/show_detail.html', context)

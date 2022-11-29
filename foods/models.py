@@ -62,6 +62,8 @@ class CookBook(models.Model):
     energy_kcal = models.FloatField(default=0.0, null=True)
     fat_kcal = models.FloatField(default=0.0, null=True)
     sugar = models.FloatField(default=0.0, null=True)
+    rating = models.FloatField(default=0.0, null=True)
+
     # difficulty = models.CharField(max_length=30, default="None", null=True)
 
     def __str__(self):

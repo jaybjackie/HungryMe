@@ -3,6 +3,7 @@ import datetime
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.db.models import Avg
+from django import forms
 
         
 class Menu(models.Model):
@@ -65,3 +66,6 @@ class CookBook(models.Model):
 
     def __str__(self):
         return self.cook_name
+
+class Filter(models.Model):
+    food_allergies = forms.MultipleChoiceField()

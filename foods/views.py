@@ -435,20 +435,10 @@ def top_rate_foods(request):
 
     return render(request, 'foods/top_foods.html', {"rated_chart": sort_rated})
 
-
 def delete(request, cook_name):
     member = CookBook.objects.get(cook_name=cook_name)
     member.delete()
     return redirect("/My_cook_book/")
-
-
-def community(request):
-    feed = api_response()
-    for entry in feed:
-        pass
-
-    context = {}
-    return render(request, '../templates/foods/community.html', context)
 
 def show_food(request,cook_name):
     all_my_food = CookBook.objects.filter(cook_name=cook_name)

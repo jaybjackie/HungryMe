@@ -1,4 +1,4 @@
-{% extends "registration/header.html" %}
+{% extends "foods/base.html" %}
 {% load socialaccount %}
 {% load static %}
 {% block content %}
@@ -256,7 +256,7 @@ input {
 <body>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form class='signup-form' action="{% url 'signup' %}" method="POST">
+			<form class='signup-form' action="#" method="POST">
 				{% csrf_token %}
 				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
 				<h1>Sign up here!</h1>
@@ -272,7 +272,7 @@ input {
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form class="login-form" action="{% url 'login' %}" method="POST">
+			<form class="login-form" action="#" method="POST">
 				{% csrf_token %}
 				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
 				<h1>Login here!</h1>
@@ -283,7 +283,7 @@ input {
 					</div>
 					<input type="text" placeholder="Username*" name="username" required>
 					<input type="password" placeholder="Password*" name="password" required>
-					<a href="{% url 'password_reset' %}">Forgot your password?</a>
+					<a href=#>Forgot your password?</a>
 				<button type="submit">Login</button>
 			</form>
 		</div>

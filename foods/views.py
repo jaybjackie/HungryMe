@@ -14,7 +14,6 @@ import random
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
-
 @cache_page(60 * 60)
 @vary_on_cookie
 def index(request):

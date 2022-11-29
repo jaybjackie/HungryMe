@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+import logging
+from django.shortcuts import render, get_object_or_404, redirect 
 from foods.get_data import api_response
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.db.models import Q, Avg
 from foods.models import CookBook, Menu
@@ -11,7 +11,6 @@ from django.contrib import messages
 import datetime
 from foods.models import Menu, FoodOfDay, MenuRating, CookBook, Comment
 import random
-# from time import timezone
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 # from .forms import CommentFrom
@@ -33,8 +32,22 @@ def index(request):
     # feed = api_response()
     # save_menu(feed)
 
+
     feeds = random.choice(Menu.objects.all())
     food_of_day = FoodOfDay.objects.first()
+
+    try:
+        feeds = random.choice(Menu.objects.all())
+    except IndexError:
+        logging.warn("Empty database, make sure you loaddata from data/")
+    
+    try:
+        food_of_day = FoodOfDay.objects.first()
+    except IndexError:
+        food_of_day = None
+        logging.warn("Empty database, make sure you loaddata from data/")
+
+
     if food_of_day:
         if food_of_day.was_end():
             food_of_day.menu = feeds
@@ -42,6 +55,7 @@ def index(request):
             food_of_day.save()
 
     return render(request, 'foods/index.html', {"menu_list": menu_list, "food_of_day": food_of_day})
+
 
 
 def save_menu(feed):

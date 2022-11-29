@@ -13,7 +13,6 @@ from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment
 import random
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 
 @cache_page(60 * 60)
 @vary_on_cookie

@@ -319,26 +319,3 @@ def community(request):
     
     context = {}
     return render(request, '../templates/foods/community.html', context)
-
-def signup(request):
-    if request.method == 'GET':
-        form = RegisterForm()
-        return render(request, 'registration/login.html', {'form': form})
-    
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for' + user)
-            re_user = authenticate(username=form.cleaned_data.get('username'),
-                                    password=form.cleaned_data.get('password1'))
-            if user is not None:
-                login(request, re_user)
-            messages.success(request, "Registration successful.")
-            return redirect('index')
-        else:
-            messages.error(request, 'Error Processing Your Request')
-            return render(request, 'registration/login.html', {'form': form})
-    
-    return render(request, 'registration/login.html', {})

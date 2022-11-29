@@ -254,9 +254,10 @@ input {
 </style>
 <html>
 <body>
+
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form class='signup-form' action="#" method="POST">
+			<form class='signup-form' action="{% url 'signup' %}" method="POST">
 				{% csrf_token %}
 				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
 				<h1>Sign up here!</h1>
@@ -272,7 +273,7 @@ input {
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form class="login-form" action="#" method="POST">
+			<form class="login-form" action="{% url 'login' %}" method="POST">
 				{% csrf_token %}
 				<a class ="logo"href="{% url 'index' %}"><img src ="https://i.ibb.co/fXy38gx/Hungry-Me-logo.png"  width="150" class="img-responive"></a>
 				<h1>Login here!</h1>
@@ -298,23 +299,21 @@ input {
 					<h1>Sign up.</h1>
 					<p>Sign up here if you don't have account.</p>
 					<button class="ghost" id="signUp">Sign Up</button>
+
 				</div>
+				
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome!</h1>
+				<p>Are you a doughnut? Because I find you a-dough-rable.</p>
+				
 			</div>
 		</div>
 	</div>
-	<script>
-		const signUpButton = document.getElementById('signUp');
-		const signInButton = document.getElementById('signIn');
-		const container = document.getElementById('container');
-	
-		signUpButton.addEventListener('click', () => {
-		container.classList.add("right-panel-active");
-		});
-	
-		signInButton.addEventListener('click', () => {
-		container.classList.remove("right-panel-active");
-		});
-	</script>
+</div>
 </body>
 </html>
 {% endblock %}

@@ -8,134 +8,161 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Lemon' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
 <style>
-    
-h1 {
-    font-family: 'Lemon';font-size: 32px;
-    position: absolute;
-    width: 705px;
-    height: 114px;
-    left: 607px;
-    top: 176px;
+
+.top-wrapper{
+    display: inline-block;
+    position: relative;
 }
+
+h1 {
+    font-family: 'Lemon';
+    font-size: 32px;
+    padding: 17px;
+}
+
+#rounded-rect{
+    position: relative;
+    border-radius: 50px;
+    background: white; 
+    width: 360px;
+    left: 35%;
+    top: 20px;
+    margin-bottom: 30px;
+}
+
 body {
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
     background: rgb(249, 219, 158);
     margin: auto;
+    overflow-x: hidden;
 }
+
 body h3{
     padding-left: 20px;
     padding-bottom: 10px;
 }
+
 .blocks {
-    margin: 40px;
-    margin-top: 100px;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
 }
 
 .one-block{
     display: inline-table;
+    position: relative;
     margin: 10px;
-    width: 1333px;
+    width: 1300px;
     height: 220px;
     border-radius: 38px;
     background-color: white;
-    
+    transition: 0.4s;
 }
+
+.one-block:hover{
+    text-decoration-line: none;
+    transform: translateX(-15px);
+}
+
 .one-block img{
+    object-fit: cover;
     float: right ; 
     height: 220px;
     width: 326px;
     border-radius: 38px;
 }
+
 .menu-text{
+    font-family: 'Lemon';
+    font-size: 32px;
+    position: relative;
     margin-top: 20px ;
-    left: 200px;
+    left: 100px;
     max-height: 100px;
     max-width: 600px;
-    font-family: 'Lemon';font-size: 32px;
-    position: absolute;
-    
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    transition: 0.4s;
 }
+
+.creatorName {
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    position: relative;
+    left: 10px;
+}
+
 ol li{
     color: black;
 }
-#rounded-rect{
-    /* position: absolute; */
-    border-radius: 50px;
-    background: white;
-    padding: 20px; 
-    width: 370px;
-    height: 80px;
-    top: 120px;
-}
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 1000px) {
    .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
-.rating-list li {
-    float: right;
-    color: #ddd;
-    padding: 10px 5px;
-}
 
-.rating-list li:hover,
-.rating-list li:hover ~ li {
-    color: orange;
-}
-
-.rating-list {
-    display: inline-block;
-    list-style: none;
-}
 .checked {
     color: orange;
 }
+
 .rating-star {
-    position: absolute;
+    position: relative;
+    width: 132px;
+    height: 50px;
+    bottom: 85px;
     margin-top: 28px;
     margin-left: 800px;
 }
-.creatorName {
-    font-family: 'Roboto';
-    color: black;
+
+.rating-num{
+    text-align: center;
 }
+
+.fa-star{
+    font-size: 25px;
+}
+
+span{
+    color: #999999;
+}
+
 </style>
 <body>
-    <div>
+    <div class="top-wrapper">
         <h1 id="rounded-rect">Top-Rated Dishes</h1>
-            <div class="blocks">
-            {% if rated_chart %}
+        <div class="blocks">
+        {% if rated_chart %}
             <ol>
                 {% for menu in rated_chart %}
                 <a class="one-block "href="{% url 'detail' menu.id %}">
                     <img class="images" src="{{menu.picture_url}}"></img>
                     <div class="menu-text">
                         <li><p>{{menu.menu_name}}</p></li>
-                        <div class="creatorName">
-                            <h5 >{{ menu.creator_name}}</h5>
-                        </div> 
+                        <h5 class="creatorName">{{ menu.creator_name}}</h5>
                     </div>
-                       
-                <div class="rating-star">
-                {% if menu.avg_menurating > 0 %}
-                    <p>
-                        <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
-                        <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
-                    </p>
-                    <p style="color: black;">{{ menu.avg_menurating }} out of 5</p>
-                </div>
+                    <div class="rating-star"> <!-- Rating Stars -->
+                    {% if menu.avg_menurating > 0 %}
+                        <p>
+                            <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
+                        </p>
+                        <p class="rating-num" style="color: black;">{{ menu.avg_menurating }} out of 5</p>
+                    </div>
                 {% endif %}
                 </a>
                 {% endfor %}
             </ol>
-            </div>
-            {% endif %}
+        </div>
+        {% endif %}
     </div>
 </body>
 </html>

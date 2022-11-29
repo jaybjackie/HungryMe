@@ -22367,7 +22367,2930 @@
           "remainder": "Silvana's Kitchen",
           "quantity": 1.0,
           "wholeLine": "1 cup plus 3 tablespoons Silvana's Kitchen Gluten-Free All-Purpose Flour"
-          }
+        }
       }
-  }
-]
+    },
+    {
+      "model": "foods.menu",
+      "pk": 40,
+      "fields": {
+        "menu_name": "Quick & Easy Strawberry Jam",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 2,
+        "energy_kcal": 504,
+        "fat_kcal": -99,
+        "sugar": 118,
+        "picture_url": "https://lh3.googleusercontent.com/skRHuKLaSgIg_rIIs4qcTRAgy_Z2Qv8ZhRdN1gYkem_gH8X9mMrcI0Tq4EX_ACB2IbiXp399Cm--9R8UR1cwVI8",
+        "rating": 4.0,
+        "difficulty": "intermediate",
+        "description": "Quick & Easy Strawberry Jam With Strawberries, Granulated Sugar",
+        "ingredients": [
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 357
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "5f1f94e1-e2b6-4a0e-88ee-324808acd4e3",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "strawberries"
+              }
+            ],
+            "ingredient": "strawberries",
+            "id": "0a586f16-3db3-4a46-bb46-3c1da3588759",
+            "remainder": "hulled and sliced",
+            "quantity": 2.0,
+            "wholeLine": "2 cups strawberries, hulled and sliced"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 101
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 0.5
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "ddf08f37-fb8d-4e14-a868-67e58f68eee1",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "granulated sugar"
+              }
+            ],
+            "ingredient": "granulated sugar",
+            "id": "d6d645eb-7430-47af-90e7-6f7642c32c17",
+            "remainder": "",
+            "quantity": 0.5,
+            "wholeLine": "½ cup granulated sugar"
+          }
+        ],
+        "nutrition": "High energy",
+        "category": {
+          "category": "Produce",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                "name": "gram",
+                "abbreviation": "g",
+                "plural": "grams",
+                "pluralAbbreviation": "grams",
+                "kind": "mass",
+                "decimal": true
+              },
+              "quantity": 357
+            },
+            "imperial": {
+              "unit": {
+                "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                "name": "cup",
+                "abbreviation": "cup",
+                "plural": "cups",
+                "pluralAbbreviation": "cups",
+                "kind": "volume",
+                "decimal": false
+              },
+              "quantity": 2.0
+            }
+          },
+          "unit": "cup",
+          "ingredientId": "5f1f94e1-e2b6-4a0e-88ee-324808acd4e3",
+          "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "strawberries"
+            }
+          ],
+          "ingredient": "strawberries",
+          "id": "0a586f16-3db3-4a46-bb46-3c1da3588759",
+          "remainder": "hulled and sliced",
+          "quantity": 2.0,
+          "wholeLine": "2 cups strawberries, hulled and sliced"
+        }
+      }
+    },
+    {
+      "model": "foods.menu",
+      "pk": 41,
+      "fields": {
+        "menu_name": "Easy Key Lime Pie",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 5,
+        "energy_kcal": 586,
+        "fat_kcal": 300,
+        "sugar": 53,
+        "picture_url": "https://lh4.ggpht.com/EiW-4y4z14Dac3OB2UkmNkuoIMnsRjfqk3WiLlHcqQl_8LmFsibgZwjRveFRp1kXbKG47syhsZZalatDJUcX8UU",
+        "rating": 4.2,
+        "difficulty": "beginner",
+        "description": "Easy Key Lime Pie With Sweetened Condensed Milk, Frozen Limeade Concentrate, Heavy Cream, Piecrust, Lime",
+        "ingredients": [
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 307
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1248a2e0-6e69-102c-9a8a-0030485841f8",
+                  "name": "ounce",
+                  "abbreviation": "oz.",
+                  "plural": "ounces",
+                  "pluralAbbreviation": "oz.",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 14.0
+              }
+            },
+            "unit": "ounce",
+            "ingredientId": "88c353d0-2b78-44db-a826-7c0e1ed99b81",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "sweetened condensed milk"
+              }
+            ],
+            "ingredient": "sweetened condensed milk",
+            "id": "fce6cf9c-5368-4f01-8f39-ab6cbdd0ae98",
+            "remainder": "",
+            "quantity": 14.0,
+            "wholeLine": "1 14-ounce can sweetened condensed milk"
+          },
+          {
+            "category": "Drinks",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 138
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1248a2e0-6e69-102c-9a8a-0030485841f8",
+                  "name": "ounce",
+                  "abbreviation": "oz.",
+                  "plural": "ounces",
+                  "pluralAbbreviation": "oz.",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 6.0
+              }
+            },
+            "unit": "ounce",
+            "ingredientId": "47685369-924c-4c23-b227-8b7be2e6ea56",
+            "categoryId": "2108da4e-13aa-4785-947c-fa6eb53b8407",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "frozen limeade concentrate"
+              }
+            ],
+            "ingredient": "frozen limeade concentrate",
+            "id": "47f2c4a3-2b39-4406-9047-82232d9ba484",
+            "remainder": "not thawed",
+            "quantity": 6.0,
+            "wholeLine": "1 6-ounce can frozen limeade concentrate (not thawed)"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 237
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "11ded23f-872c-4cee-bce3-1774d192eed1",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "heavy cream"
+              }
+            ],
+            "ingredient": "heavy cream",
+            "id": "e8b7e446-9a48-4dc3-9534-c4ba3e4d2273",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "1 cup heavy cream"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 170
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1248a2e0-6e69-102c-9a8a-0030485841f8",
+                  "name": "ounce",
+                  "abbreviation": "oz.",
+                  "plural": "ounces",
+                  "pluralAbbreviation": "oz.",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 6.0
+              }
+            },
+            "unit": "ounce",
+            "ingredientId": "d9009734-fcf8-4ff8-8996-5d1d3b2a51fb",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "pie crusts"
+              }
+            ],
+            "ingredient": "piecrust",
+            "id": "2fc6e574-cabf-4cf5-b20a-1ebe958ff154",
+            "remainder": "graham cracker",
+            "quantity": 6.0,
+            "wholeLine": "1 6-ounce graham cracker piecrust"
+          },
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "ddfaeeee-40ac-4058-8b2b-218706d1b26c",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "lime"
+              }
+            ],
+            "ingredient": "lime",
+            "id": "433a0542-cd4b-4ee4-997a-7aedb76f2613",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "Zest of 1 lime"
+          }
+        ],
+        "nutrition": "High energy",
+        "category": {
+          "category": "Baking & Cooking",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                "name": "milliliter",
+                "abbreviation": "ml",
+                "plural": "milliliters",
+                "pluralAbbreviation": "ml",
+                "kind": "volume",
+                "decimal": true
+              },
+              "quantity": 307
+            },
+            "imperial": {
+              "unit": {
+                "id": "1248a2e0-6e69-102c-9a8a-0030485841f8",
+                "name": "ounce",
+                "abbreviation": "oz.",
+                "plural": "ounces",
+                "pluralAbbreviation": "oz.",
+                "kind": "mass",
+                "decimal": true
+              },
+              "quantity": 14.0
+            }
+          },
+          "unit": "ounce",
+          "ingredientId": "88c353d0-2b78-44db-a826-7c0e1ed99b81",
+          "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "sweetened condensed milk"
+            }
+          ],
+          "ingredient": "sweetened condensed milk",
+          "id": "fce6cf9c-5368-4f01-8f39-ab6cbdd0ae98",
+          "remainder": "",
+          "quantity": 14.0,
+          "wholeLine": "1 14-ounce can sweetened condensed milk"
+        }
+      }
+    },
+    {
+      "model": "foods.menu",
+      "pk": 42,
+      "fields": {
+        "menu_name": "No-Knead Artisan Bread",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 6,
+        "energy_kcal": 276,
+        "fat_kcal": 25,
+        "sugar": -99,
+        "picture_url": "https://lh3.googleusercontent.com/nPVN3JaBMs8NDKQHb0OmMdBswMJ0cy7y4D9b9KqhIAi-S_jkZup-lpKt4CWd5Qoqa23j3QWxmYA7GAc7LuCI",
+        "rating": 3.0,
+        "difficulty": "beginner",
+        "description": "Become a bread baker with this fast and delicious master bread dough recipe from the book that made Zoë and co-author Jeff Hertzberg famous. From there, make pizza, baguettes, buns, and more.",
+        "ingredients": [
+          {
+            "category": "Drinks",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a02e-6e69-102c-9a8a-0030485841f8",
+                  "name": "liter",
+                  "abbreviation": "liter",
+                  "plural": "liters",
+                  "pluralAbbreviation": "liters",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 0.71
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "1fa6990c-b063-4939-bff8-dbc5416b47b8",
+            "categoryId": "2108da4e-13aa-4785-947c-fa6eb53b8407",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "lukewarm water"
+              }
+            ],
+            "ingredient": "lukewarm water",
+            "id": "b12366fd-8a38-47c2-ae52-be50f55af25f",
+            "remainder": "",
+            "quantity": 3.0,
+            "wholeLine": "3 cups lukewarm water"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "87944903-2f48-4662-9ef2-bfed4ede4304",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "active dry yeast"
+              }
+            ],
+            "ingredient": "granulated yeast",
+            "id": "227d3f86-b798-4e43-a9bc-57adbfe7bcea",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "1 Tbsp. granulated yeast"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "a79b41e6-8a44-47fa-a016-54cf4cae1fbe",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "kosher salt"
+              }
+            ],
+            "ingredient": "kosher salt",
+            "id": "38addbd6-6821-4d57-a6a9-d58b5f05b766",
+            "remainder": "can decrease amount to taste",
+            "quantity": 1.0,
+            "wholeLine": "1 Tbsp. kosher salt (can decrease amount to taste)"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12487144-6e69-102c-9a8a-0030485841f8",
+                  "name": "kilogram",
+                  "abbreviation": "kg",
+                  "plural": "kilograms",
+                  "pluralAbbreviation": "kilograms",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 0.81
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 6.5
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "8a1c890b-d2fe-467d-b068-e3bfad9cb595",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "unbleached all-purpose flour"
+              }
+            ],
+            "ingredient": "unbleached all purpose flour",
+            "id": "668c75db-fbf4-4e9a-87ef-f1b078aaa85f",
+            "remainder": "for dough",
+            "quantity": 6.5,
+            "wholeLine": "6 1/2 cups unbleached all-purpose flour"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              }
+            },
+            "unit": "",
+            "ingredientId": "8a1c890b-d2fe-467d-b068-e3bfad9cb595",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "unbleached all-purpose flour"
+              }
+            ],
+            "ingredient": "unbleached all-purpose flour",
+            "id": "acaaae99-4f0d-4aea-abf2-6ab00ad16f23",
+            "remainder": "for scoring dough",
+            "quantity": null,
+            "wholeLine": "Unbleached all-purpose flour (for scoring dough)"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              }
+            },
+            "unit": "",
+            "ingredientId": "9ed78948-13d2-4a5f-9089-1685267e675c",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "butter"
+              }
+            ],
+            "ingredient": "butter",
+            "id": "38ceea00-7e22-4f99-b1f0-03ab76d0ee54",
+            "remainder": "softened, for serving",
+            "quantity": null,
+            "wholeLine": "Butter (softened, for serving)"
+          }
+        ],
+        "nutrition": "Low energy",
+        "category": {
+          "category": "Drinks",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "1248a02e-6e69-102c-9a8a-0030485841f8",
+                "name": "liter",
+                "abbreviation": "liter",
+                "plural": "liters",
+                "pluralAbbreviation": "liters",
+                "kind": "volume",
+                "decimal": true
+              },
+              "quantity": 0.71
+            },
+            "imperial": {
+              "unit": {
+                "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                "name": "cup",
+                "abbreviation": "cup",
+                "plural": "cups",
+                "pluralAbbreviation": "cups",
+                "kind": "volume",
+                "decimal": false
+              },
+              "quantity": 3.0
+            }
+          },
+          "unit": "cup",
+          "ingredientId": "1fa6990c-b063-4939-bff8-dbc5416b47b8",
+          "categoryId": "2108da4e-13aa-4785-947c-fa6eb53b8407",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "lukewarm water"
+            }
+          ],
+          "ingredient": "lukewarm water",
+          "id": "b12366fd-8a38-47c2-ae52-be50f55af25f",
+          "remainder": "",
+          "quantity": 3.0,
+          "wholeLine": "3 cups lukewarm water"
+        }
+      }
+    },
+    {
+      "model": "foods.menu",
+      "pk": 43,
+      "fields": {
+        "menu_name": "Hash Brown-crusted Quiche With Sausage",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 10,
+        "energy_kcal": 244,
+        "fat_kcal": 190,
+        "sugar": 0,
+        "picture_url": "https://lh3.googleusercontent.com/Bk_z1iePGAUCqrQrQTSEP3A6RUegd_bfjrDIIZn4ZiqG22oa8lkCSsm8tzAEYKiGvIgL_CV40aXmHmkGi5XY",
+        "rating": 4.0,
+        "difficulty": "beginner",
+        "description": "Hash Brown-crusted Quiche With Sausage With Simply Potatoes Shredded Hash Browns, Unsalted Butter, Pepper, Salt, Ground Pork Sausage, Large Eggs, Heavy Whipping Cream, Shredded Cheddar Cheese, Shredded Monterey Jack Cheese, Scallions",
+        "ingredients": [
+          {
+            "category": "Frozen Foods",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a02e-6e69-102c-9a8a-0030485841f8",
+                  "name": "liter",
+                  "abbreviation": "liter",
+                  "plural": "liters",
+                  "pluralAbbreviation": "liters",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 0.71
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "d0d41fea-10ce-4d95-bee6-f7b0ad5ec38c",
+            "categoryId": "484819b0-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "Simply Potatoes® Shredded"
+              }
+            ],
+            "ingredient": "Simply Potatoes Shredded Hash Browns",
+            "id": "a1649189-b589-4afd-be05-02cda3f9426a",
+            "remainder": "found in the refrigerator section at the market",
+            "quantity": 3.0,
+            "wholeLine": "• 3 cups Simply Potatoes shredded hash browns (found in the refrigerator section at the market)"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 4.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 4.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "aaa15a2f-1a51-452b-b18e-957b29b49da4",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "unsalted butter"
+              }
+            ],
+            "ingredient": "unsalted butter",
+            "id": "3e4ecbbc-9291-4a16-84fc-ada1da4aefd2",
+            "remainder": "melted",
+            "quantity": 4.0,
+            "wholeLine": "• 4 tablespoons (1/4 cup) unsalted butter, melted"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              }
+            },
+            "unit": "",
+            "ingredientId": "a9aea9f5-5057-40ac-b86e-464ac626c574",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "pepper"
+              }
+            ],
+            "ingredient": "pepper",
+            "id": "a23862b0-0499-4e58-87e4-575547b4dfed",
+            "remainder": "",
+            "quantity": null,
+            "wholeLine": "• salt and pepper"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": null
+              }
+            },
+            "unit": "",
+            "ingredientId": "e01cac82-90ba-4267-8201-4d4d16332fb4",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "salt"
+              }
+            ],
+            "ingredient": "salt",
+            "id": "5efb3db6-2449-4f38-aba7-039a11acbdb3",
+            "remainder": "",
+            "quantity": null,
+            "wholeLine": "• salt and pepper"
+          },
+          {
+            "category": "Meat",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 237
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "049a53dd-9004-462b-9854-99a3c9cb03a4",
+            "categoryId": "40ea353d-0dfc-4f8c-bf09-be73af9bd78e",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "ground pork sausage"
+              }
+            ],
+            "ingredient": "ground pork sausage",
+            "id": "ccdef067-0a33-480e-8545-568e5f3ed722",
+            "remainder": "seasoned Italian",
+            "quantity": 1.0,
+            "wholeLine": "• 1 cup (about 8 ounces) seasoned Italian ground pork sausage"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 6.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 6.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "2ea89351-aab1-472d-82ec-f6a0c7ef61af",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "large eggs"
+              }
+            ],
+            "ingredient": "large eggs",
+            "id": "1245aa43-e622-4ad3-9440-a83b30ce4de3",
+            "remainder": "",
+            "quantity": 6.0,
+            "wholeLine": "• 6 large eggs"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 59
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 0.25
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "9649c265-5b8c-4fa0-8305-d308b550e484",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "heavy whipping cream"
+              }
+            ],
+            "ingredient": "heavy whipping cream",
+            "id": "e4c859c5-3836-4c41-bf63-1db136b42844",
+            "remainder": "",
+            "quantity": 0.25,
+            "wholeLine": "• 1/4 cup heavy whipping cream"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 113
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "d8c04f92-826d-49a6-9efa-7b5e705c970c",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "shredded cheddar cheese"
+              }
+            ],
+            "ingredient": "shredded cheddar cheese",
+            "id": "a5f716de-1703-4242-8112-09445a326bdc",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "• 1 cup shredded cheddar cheese"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 113
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "13523641-fa3b-4815-82c6-1a6a32847eef",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "shredded Monterey Jack cheese"
+              }
+            ],
+            "ingredient": "shredded Monterey Jack cheese",
+            "id": "69ea173a-8a55-4d46-b9dc-7d84a407802b",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "• 1 cup shredded Monterey jack cheese"
+          },
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "441f1499-a2a6-4e0f-bca9-746a468e7343",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "scallions"
+              }
+            ],
+            "ingredient": "scallions",
+            "id": "467fc86f-472f-410d-a66d-ecb37642602e",
+            "remainder": "finely chopped",
+            "quantity": 2.0,
+            "wholeLine": "• 2 scallions, finely chopped"
+          }
+        ],
+        "nutrition": "Low energy",
+        "category": {
+          "category": "Frozen Foods",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "1248a02e-6e69-102c-9a8a-0030485841f8",
+                "name": "liter",
+                "abbreviation": "liter",
+                "plural": "liters",
+                "pluralAbbreviation": "liters",
+                "kind": "volume",
+                "decimal": true
+              },
+              "quantity": 0.71
+            },
+            "imperial": {
+              "unit": {
+                "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                "name": "cup",
+                "abbreviation": "cup",
+                "plural": "cups",
+                "pluralAbbreviation": "cups",
+                "kind": "volume",
+                "decimal": false
+              },
+              "quantity": 3.0
+            }
+          },
+          "unit": "cup",
+          "ingredientId": "d0d41fea-10ce-4d95-bee6-f7b0ad5ec38c",
+          "categoryId": "484819b0-6064-11e9-8647-d663bd873d93",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "Simply Potatoes® Shredded"
+            }
+          ],
+          "ingredient": "Simply Potatoes Shredded Hash Browns",
+          "id": "a1649189-b589-4afd-be05-02cda3f9426a",
+          "remainder": "found in the refrigerator section at the market",
+          "quantity": 3.0,
+          "wholeLine": "• 3 cups Simply Potatoes shredded hash browns (found in the refrigerator section at the market)"
+        }
+      }
+    },
+    {
+      "model": "foods.menu",
+      "pk": 44,
+      "fields": {
+        "menu_name": "Encharcada (Portuguese Soaked Eggs)",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 4,
+        "energy_kcal": 592,
+        "fat_kcal": 150,
+        "sugar": 101,
+        "picture_url": "https://lh3.googleusercontent.com/Sa54Up7IRE2tV11i-jFYgGjBg-YgjDerlvBvC8HgwiAcH-Aidj9CfkmImex-41k1ujtdjAtzNr01FN5_3-wRBQ",
+        "rating": 4.0,
+        "difficulty": "intermediate",
+        "description": "Encharcada (portuguese Soaked Eggs) With Granulated Sugar, Water, Cinnamon Stick, Egg Yolks",
+        "ingredients": [
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 403
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "ddf08f37-fb8d-4e14-a868-67e58f68eee1",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "granulated sugar"
+              }
+            ],
+            "ingredient": "granulated sugar",
+            "id": "506c5d1d-3cfd-472f-979d-24cc44a09318",
+            "remainder": "",
+            "quantity": 2.0,
+            "wholeLine": "2 cups (500 grams) granulated sugar"
+          },
+          {
+            "category": "Drinks",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 473
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "6ec4f660-96d8-45ac-a747-8bbf8e696872",
+            "categoryId": "2108da4e-13aa-4785-947c-fa6eb53b8407",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "water"
+              }
+            ],
+            "ingredient": "water",
+            "id": "a4629cda-cc2b-4e66-9402-41a72a3b718c",
+            "remainder": "",
+            "quantity": 2.0,
+            "wholeLine": "2 cups (500 ml) water"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "b2b961c3-a864-4b59-8115-94a73446ceca",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "cinnamon sticks"
+              }
+            ],
+            "ingredient": "cinnamon stick",
+            "id": "1bb1dbc9-648b-463f-9e04-f068eed4e080",
+            "remainder": "small",
+            "quantity": 1.0,
+            "wholeLine": "1 small cinnamon stick"
+          },
+          {
+            "category": "Dairy",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 15.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 15.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "38955877-9b53-4543-b12e-9e3126799c7f",
+            "categoryId": "d8efba0b-2538-4882-9298-7d8c4d175c5f",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "egg yolk"
+              }
+            ],
+            "ingredient": "egg yolks",
+            "id": "7f51dc5f-871f-44fd-b4f0-272ce476ba39",
+            "remainder": "",
+            "quantity": 15.0,
+            "wholeLine": "15 egg yolks"
+          }
+        ],
+        "nutrition": "High energy",
+        "category": {
+          "category": "Baking & Cooking",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                "name": "gram",
+                "abbreviation": "g",
+                "plural": "grams",
+                "pluralAbbreviation": "grams",
+                "kind": "mass",
+                "decimal": true
+              },
+              "quantity": 403
+            },
+            "imperial": {
+              "unit": {
+                "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                "name": "cup",
+                "abbreviation": "cup",
+                "plural": "cups",
+                "pluralAbbreviation": "cups",
+                "kind": "volume",
+                "decimal": false
+              },
+              "quantity": 2.0
+            }
+          },
+          "unit": "cup",
+          "ingredientId": "ddf08f37-fb8d-4e14-a868-67e58f68eee1",
+          "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "granulated sugar"
+            }
+          ],
+          "ingredient": "granulated sugar",
+          "id": "506c5d1d-3cfd-472f-979d-24cc44a09318",
+          "remainder": "",
+          "quantity": 2.0,
+          "wholeLine": "2 cups (500 grams) granulated sugar"
+        }
+      }
+    },
+    {
+      "model": "foods.menu",
+      "pk": 45,
+      "fields": {
+        "menu_name": "Classic Lo Mein Noodles",
+        "creator_name": "Official HungryMe",
+        "number_of_ingredients": 12,
+        "energy_kcal": 223,
+        "fat_kcal": 110,
+        "sugar": 1,
+        "picture_url": "https://lh3.googleusercontent.com/yi0UC0aZA77ZztdBpN8PF-UzEFuED-Gj4cDHbOCgoCu-p7kBeFukuOGIYHeK2PWisjjF9DqJYnTVWRJmGdwMMA",
+        "rating": 3.0,
+        "difficulty": "beginner",
+        "description": "Soft egg noodles in gravy are a great excuse to brush up on your knife skills. Slice your way through bok choy, chop scallions Jet's way, and master fresh ginger with this easy weeknight dish.",
+        "ingredients": [
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 113
+              },
+              "imperial": {
+                "unit": {
+                  "id": "12493192-6e69-102c-9a8a-0030485841f8",
+                  "name": "pound",
+                  "abbreviation": "lb.",
+                  "plural": "pounds",
+                  "pluralAbbreviation": "lb.",
+                  "kind": "mass",
+                  "decimal": false
+                },
+                "quantity": 0.25
+              }
+            },
+            "unit": "pound",
+            "ingredientId": "dfd8b202-47c6-4034-92d3-74efe9fd64dc",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "baby bok choy"
+              }
+            ],
+            "ingredient": "baby bok choy",
+            "id": "ecc9970f-5f59-4ca2-aec6-728399a82b2f",
+            "remainder": "",
+            "quantity": 0.25,
+            "wholeLine": "1/4 lb. (125g) baby bok choy, bottoms removed"
+          },
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "203f101c-fe8f-102c-a985-0030485841f8",
+                  "name": "",
+                  "abbreviation": "",
+                  "plural": "",
+                  "pluralAbbreviation": "",
+                  "kind": "count",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "",
+            "ingredientId": "441f1499-a2a6-4e0f-bca9-746a468e7343",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "scallions"
+              }
+            ],
+            "ingredient": "scallions",
+            "id": "fecf1019-842e-4f8a-8d07-3155f24a3343",
+            "remainder": "",
+            "quantity": 3.0,
+            "wholeLine": ""
+          },
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "d3b640ba-fa9e-102c-a985-0030485841f8",
+                  "name": "centimeter",
+                  "abbreviation": "cm",
+                  "plural": "centimeters",
+                  "pluralAbbreviation": "cms",
+                  "kind": "length",
+                  "decimal": true
+                },
+                "quantity": 5.08
+              },
+              "imperial": {
+                "unit": {
+                  "id": "12486c76-6e69-102c-9a8a-0030485841f8",
+                  "name": "inch",
+                  "abbreviation": "in.",
+                  "plural": "inches",
+                  "pluralAbbreviation": "in.",
+                  "kind": "length",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "inch",
+            "ingredientId": "f9693c56-5422-4f8d-9396-b02741723ef9",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "fresh ginger root"
+              }
+            ],
+            "ingredient": "fresh ginger root",
+            "id": "64e77d2a-b0fc-43fb-a875-fe3b2e6a11a8",
+            "remainder": "",
+            "quantity": 2.0,
+            "wholeLine": "1 Tbsp. (11 g) ginger, thinly sliced"
+          },
+          {
+            "category": "Produce",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 2.0
+              }
+            },
+            "unit": "teaspoon",
+            "ingredientId": "797b9b50-252b-4440-8fa9-4a71519c8d6a",
+            "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "garlic clove"
+              }
+            ],
+            "ingredient": "garlic cloves",
+            "id": "7e29aed1-18d6-4bc5-95bd-e4cdf981b6db",
+            "remainder": "",
+            "quantity": 2.0,
+            "wholeLine": "2 tsp. (10 g) minced garlic"
+          },
+          {
+            "category": "Canned Goods & Soups",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "1248a146-6e69-102c-9a8a-0030485841f8",
+                  "name": "milliliter",
+                  "abbreviation": "ml",
+                  "plural": "milliliters",
+                  "pluralAbbreviation": "ml",
+                  "kind": "volume",
+                  "decimal": true
+                },
+                "quantity": 59
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 0.25
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "dafda3d1-972e-48bd-8a24-8dfd6de8b85b",
+            "categoryId": "715e568a-39d7-4317-ba69-4213a271fec7",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "chicken stock"
+              }
+            ],
+            "ingredient": "chicken stock",
+            "id": "e7af598a-10ea-4aba-9d6d-ebcd6bcae5c1",
+            "remainder": "",
+            "quantity": 0.25,
+            "wholeLine": "1/4 cup (60 ml) chicken stock"
+          },
+          {
+            "category": "Condiments",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "06dca028-e592-4dde-8ba2-0ec235a77654",
+            "categoryId": "8b69687e-72ad-484a-8e94-413f63ef9384",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "oyster sauce"
+              }
+            ],
+            "ingredient": "oyster sauce",
+            "id": "2b6d068c-737f-445f-8eb7-84e6561b27a8",
+            "remainder": "",
+            "quantity": 3.0,
+            "wholeLine": "3 Tbsp. (45 ml) oyster sauce"
+          },
+          {
+            "category": "Condiments",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "d938bb99-099a-4f7a-9a8f-7dcf3622b606",
+            "categoryId": "8b69687e-72ad-484a-8e94-413f63ef9384",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "soy sauce"
+              }
+            ],
+            "ingredient": "soy sauce",
+            "id": "f2e0e5f5-656e-494c-b695-acbbbcc8fffb",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "1 Tbsp. (15 ml) soy sauce"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "teaspoon",
+            "ingredientId": "e1319fc8-204c-4f18-9556-c73e658fcaa0",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "toasted sesame oil"
+              }
+            ],
+            "ingredient": "toasted sesame oil",
+            "id": "14823c62-e5bc-49fb-b882-f979061c831a",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": ""
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124afc0c-6e69-102c-9a8a-0030485841f8",
+                  "name": "teaspoon",
+                  "abbreviation": "tsp.",
+                  "plural": "teaspoons",
+                  "pluralAbbreviation": "tsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 1.0
+              }
+            },
+            "unit": "teaspoon",
+            "ingredientId": "694549c9-45c4-469a-a810-052312f2d7a7",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "cornstarch"
+              }
+            ],
+            "ingredient": "cornstarch",
+            "id": "244ef6ae-3b7b-47be-98c4-8d34bcbcde53",
+            "remainder": "",
+            "quantity": 1.0,
+            "wholeLine": "1 tsp. cornstarch"
+          },
+          {
+            "category": "Baking & Cooking",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              },
+              "imperial": {
+                "unit": {
+                  "id": "124a0414-6e69-102c-9a8a-0030485841f8",
+                  "name": "tablespoon",
+                  "abbreviation": "Tbsp.",
+                  "plural": "tablespoons",
+                  "pluralAbbreviation": "Tbsp.",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "tablespoon",
+            "ingredientId": "ab771b6c-d832-44c3-84c9-c10250e6946c",
+            "categoryId": "48481730-6064-11e9-8647-d663bd873d93",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "vegetable oil"
+              }
+            ],
+            "ingredient": "vegetable oil",
+            "id": "7fc62ef0-af0d-4e50-a628-0f5810e954f3",
+            "remainder": "",
+            "quantity": 3.0,
+            "wholeLine": "3 Tbsp. (45 ml) cooking oil"
+          },
+          {
+            "category": "Meat",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 227
+              },
+              "imperial": {
+                "unit": {
+                  "id": "12493192-6e69-102c-9a8a-0030485841f8",
+                  "name": "pound",
+                  "abbreviation": "lb.",
+                  "plural": "pounds",
+                  "pluralAbbreviation": "lb.",
+                  "kind": "mass",
+                  "decimal": false
+                },
+                "quantity": 0.5
+              }
+            },
+            "unit": "pound",
+            "ingredientId": "29b3bbbf-4c27-4f0e-ba50-6be21d0f4b37",
+            "categoryId": "40ea353d-0dfc-4f8c-bf09-be73af9bd78e",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "boneless skinless chicken breasts"
+              }
+            ],
+            "ingredient": "boneless skinless chicken breasts",
+            "id": "727b2494-7e95-42e4-b9fa-cc75727e64fd",
+            "remainder": "or thighs, fat trimmed, thinly sliced",
+            "quantity": 0.5,
+            "wholeLine": ""
+          },
+          {
+            "category": "Pasta & Grains",
+            "amount": {
+              "metric": {
+                "unit": {
+                  "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                  "name": "gram",
+                  "abbreviation": "g",
+                  "plural": "grams",
+                  "pluralAbbreviation": "grams",
+                  "kind": "mass",
+                  "decimal": true
+                },
+                "quantity": 132
+              },
+              "imperial": {
+                "unit": {
+                  "id": "1246463a-6e69-102c-9a8a-0030485841f8",
+                  "name": "cup",
+                  "abbreviation": "cup",
+                  "plural": "cups",
+                  "pluralAbbreviation": "cups",
+                  "kind": "volume",
+                  "decimal": false
+                },
+                "quantity": 3.0
+              }
+            },
+            "unit": "cup",
+            "ingredientId": "afdf46e9-a4d1-44bb-8839-f79f460e13e7",
+            "categoryId": "e6d6ce43-2b19-417f-9e37-da6da6c57de4",
+            "relatedRecipeSearchTerm": [
+              {
+                "allowedIngredient": "lo mein noodles"
+              }
+            ],
+            "ingredient": "lo mein noodles",
+            "id": "ea13172d-aa04-4de0-835f-b2c75cc19199",
+            "remainder": "fresh",
+            "quantity": 3.0,
+            "wholeLine": "3 cups (750 g) fresh lo mein noodles"
+          }
+        ],
+        "nutrition": "Low energy",
+        "category": {
+          "category": "Produce",
+          "amount": {
+            "metric": {
+              "unit": {
+                "id": "12485d26-6e69-102c-9a8a-0030485841f8",
+                "name": "gram",
+                "abbreviation": "g",
+                "plural": "grams",
+                "pluralAbbreviation": "grams",
+                "kind": "mass",
+                "decimal": true
+              },
+              "quantity": 113
+            },
+            "imperial": {
+              "unit": {
+                "id": "12493192-6e69-102c-9a8a-0030485841f8",
+                "name": "pound",
+                "abbreviation": "lb.",
+                "plural": "pounds",
+                "pluralAbbreviation": "lb.",
+                "kind": "mass",
+                "decimal": false
+              },
+              "quantity": 0.25
+            }
+          },
+          "unit": "pound",
+          "ingredientId": "dfd8b202-47c6-4034-92d3-74efe9fd64dc",
+          "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
+          "relatedRecipeSearchTerm": [
+            {
+              "allowedIngredient": "baby bok choy"
+            }
+          ],
+          "ingredient": "baby bok choy",
+          "id": "ecc9970f-5f59-4ca2-aec6-728399a82b2f",
+          "remainder": "",
+          "quantity": 0.25,
+          "wholeLine": "1/4 lb. (125g) baby bok choy, bottoms removed"
+        }
+      }
+    },
+    {
+      "model": "foods.foodofday",
+      "pk": 1,
+      "fields": {
+        "range_date": "2022-11-23T03:05:44Z",
+        "menu": 1
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 1,
+      "fields": {
+        "action_time": "2022-11-23T03:05:49.311Z",
+        "user": 1,
+        "content_type": 2,
+        "object_id": "1",
+        "object_repr": "FoodOfDay object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 2,
+      "fields": {
+        "action_time": "2022-11-23T03:06:34.061Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "localhost:8000",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 3,
+      "fields": {
+        "action_time": "2022-11-23T03:08:18.796Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "Google API",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 4,
+      "fields": {
+        "action_time": "2022-11-23T03:47:39.820Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "Google API",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Sites\"]}}]"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 1,
+      "fields": {
+        "name": "Can add menu",
+        "content_type": 1,
+        "codename": "add_menu"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 2,
+      "fields": {
+        "name": "Can change menu",
+        "content_type": 1,
+        "codename": "change_menu"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 3,
+      "fields": {
+        "name": "Can delete menu",
+        "content_type": 1,
+        "codename": "delete_menu"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 4,
+      "fields": {
+        "name": "Can view menu",
+        "content_type": 1,
+        "codename": "view_menu"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 5,
+      "fields": {
+        "name": "Can add food of day",
+        "content_type": 2,
+        "codename": "add_foodofday"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 6,
+      "fields": {
+        "name": "Can change food of day",
+        "content_type": 2,
+        "codename": "change_foodofday"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 7,
+      "fields": {
+        "name": "Can delete food of day",
+        "content_type": 2,
+        "codename": "delete_foodofday"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 8,
+      "fields": {
+        "name": "Can view food of day",
+        "content_type": 2,
+        "codename": "view_foodofday"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 9,
+      "fields": {
+        "name": "Can add menu rating",
+        "content_type": 3,
+        "codename": "add_menurating"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 10,
+      "fields": {
+        "name": "Can change menu rating",
+        "content_type": 3,
+        "codename": "change_menurating"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 11,
+      "fields": {
+        "name": "Can delete menu rating",
+        "content_type": 3,
+        "codename": "delete_menurating"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 12,
+      "fields": {
+        "name": "Can view menu rating",
+        "content_type": 3,
+        "codename": "view_menurating"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 13,
+      "fields": {
+        "name": "Can add cook book",
+        "content_type": 4,
+        "codename": "add_cookbook"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 14,
+      "fields": {
+        "name": "Can change cook book",
+        "content_type": 4,
+        "codename": "change_cookbook"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 15,
+      "fields": {
+        "name": "Can delete cook book",
+        "content_type": 4,
+        "codename": "delete_cookbook"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 16,
+      "fields": {
+        "name": "Can view cook book",
+        "content_type": 4,
+        "codename": "view_cookbook"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 17,
+      "fields": {
+        "name": "Can add comment",
+        "content_type": 5,
+        "codename": "add_comment"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 18,
+      "fields": {
+        "name": "Can change comment",
+        "content_type": 5,
+        "codename": "change_comment"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 19,
+      "fields": {
+        "name": "Can delete comment",
+        "content_type": 5,
+        "codename": "delete_comment"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 20,
+      "fields": {
+        "name": "Can view comment",
+        "content_type": 5,
+        "codename": "view_comment"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 21,
+      "fields": {
+        "name": "Can add log entry",
+        "content_type": 6,
+        "codename": "add_logentry"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 22,
+      "fields": {
+        "name": "Can change log entry",
+        "content_type": 6,
+        "codename": "change_logentry"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 23,
+      "fields": {
+        "name": "Can delete log entry",
+        "content_type": 6,
+        "codename": "delete_logentry"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 24,
+      "fields": {
+        "name": "Can view log entry",
+        "content_type": 6,
+        "codename": "view_logentry"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 25,
+      "fields": {
+        "name": "Can add permission",
+        "content_type": 7,
+        "codename": "add_permission"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 26,
+      "fields": {
+        "name": "Can change permission",
+        "content_type": 7,
+        "codename": "change_permission"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 27,
+      "fields": {
+        "name": "Can delete permission",
+        "content_type": 7,
+        "codename": "delete_permission"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 28,
+      "fields": {
+        "name": "Can view permission",
+        "content_type": 7,
+        "codename": "view_permission"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 29,
+      "fields": {
+        "name": "Can add group",
+        "content_type": 8,
+        "codename": "add_group"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 30,
+      "fields": {
+        "name": "Can change group",
+        "content_type": 8,
+        "codename": "change_group"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 31,
+      "fields": {
+        "name": "Can delete group",
+        "content_type": 8,
+        "codename": "delete_group"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 32,
+      "fields": {
+        "name": "Can view group",
+        "content_type": 8,
+        "codename": "view_group"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 33,
+      "fields": {
+        "name": "Can add user",
+        "content_type": 9,
+        "codename": "add_user"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 34,
+      "fields": {
+        "name": "Can change user",
+        "content_type": 9,
+        "codename": "change_user"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 35,
+      "fields": {
+        "name": "Can delete user",
+        "content_type": 9,
+        "codename": "delete_user"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 36,
+      "fields": {
+        "name": "Can view user",
+        "content_type": 9,
+        "codename": "view_user"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 37,
+      "fields": {
+        "name": "Can add content type",
+        "content_type": 10,
+        "codename": "add_contenttype"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 38,
+      "fields": {
+        "name": "Can change content type",
+        "content_type": 10,
+        "codename": "change_contenttype"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 39,
+      "fields": {
+        "name": "Can delete content type",
+        "content_type": 10,
+        "codename": "delete_contenttype"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 40,
+      "fields": {
+        "name": "Can view content type",
+        "content_type": 10,
+        "codename": "view_contenttype"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 41,
+      "fields": {
+        "name": "Can add session",
+        "content_type": 11,
+        "codename": "add_session"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 42,
+      "fields": {
+        "name": "Can change session",
+        "content_type": 11,
+        "codename": "change_session"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 43,
+      "fields": {
+        "name": "Can delete session",
+        "content_type": 11,
+        "codename": "delete_session"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 44,
+      "fields": {
+        "name": "Can view session",
+        "content_type": 11,
+        "codename": "view_session"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 45,
+      "fields": {
+        "name": "Can add site",
+        "content_type": 12,
+        "codename": "add_site"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 46,
+      "fields": {
+        "name": "Can change site",
+        "content_type": 12,
+        "codename": "change_site"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 47,
+      "fields": {
+        "name": "Can delete site",
+        "content_type": 12,
+        "codename": "delete_site"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 48,
+      "fields": {
+        "name": "Can view site",
+        "content_type": 12,
+        "codename": "view_site"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 49,
+      "fields": {
+        "name": "Can add email address",
+        "content_type": 13,
+        "codename": "add_emailaddress"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 50,
+      "fields": {
+        "name": "Can change email address",
+        "content_type": 13,
+        "codename": "change_emailaddress"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 51,
+      "fields": {
+        "name": "Can delete email address",
+        "content_type": 13,
+        "codename": "delete_emailaddress"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 52,
+      "fields": {
+        "name": "Can view email address",
+        "content_type": 13,
+        "codename": "view_emailaddress"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 53,
+      "fields": {
+        "name": "Can add email confirmation",
+        "content_type": 14,
+        "codename": "add_emailconfirmation"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 54,
+      "fields": {
+        "name": "Can change email confirmation",
+        "content_type": 14,
+        "codename": "change_emailconfirmation"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 55,
+      "fields": {
+        "name": "Can delete email confirmation",
+        "content_type": 14,
+        "codename": "delete_emailconfirmation"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 56,
+      "fields": {
+        "name": "Can view email confirmation",
+        "content_type": 14,
+        "codename": "view_emailconfirmation"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 57,
+      "fields": {
+        "name": "Can add social account",
+        "content_type": 15,
+        "codename": "add_socialaccount"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 58,
+      "fields": {
+        "name": "Can change social account",
+        "content_type": 15,
+        "codename": "change_socialaccount"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 59,
+      "fields": {
+        "name": "Can delete social account",
+        "content_type": 15,
+        "codename": "delete_socialaccount"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 60,
+      "fields": {
+        "name": "Can view social account",
+        "content_type": 15,
+        "codename": "view_socialaccount"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 61,
+      "fields": {
+        "name": "Can add social application",
+        "content_type": 16,
+        "codename": "add_socialapp"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 62,
+      "fields": {
+        "name": "Can change social application",
+        "content_type": 16,
+        "codename": "change_socialapp"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 63,
+      "fields": {
+        "name": "Can delete social application",
+        "content_type": 16,
+        "codename": "delete_socialapp"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 64,
+      "fields": {
+        "name": "Can view social application",
+        "content_type": 16,
+        "codename": "view_socialapp"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 65,
+      "fields": {
+        "name": "Can add social application token",
+        "content_type": 17,
+        "codename": "add_socialtoken"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 66,
+      "fields": {
+        "name": "Can change social application token",
+        "content_type": 17,
+        "codename": "change_socialtoken"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 67,
+      "fields": {
+        "name": "Can delete social application token",
+        "content_type": 17,
+        "codename": "delete_socialtoken"
+      }
+    },
+    {
+      "model": "auth.permission",
+      "pk": 68,
+      "fields": {
+        "name": "Can view social application token",
+        "content_type": 17,
+        "codename": "view_socialtoken"
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$390000$ZDOSptVa3em6cLEZG25QZE$2h7nihFdCMzK6RgT8JAuHkQ9fgmFYSm5LnYs466vmN8=",
+        "last_login": "2022-11-23T03:47:23.562Z",
+        "is_superuser": true,
+        "username": "admin01",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-13T04:07:03.056Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 2,
+      "fields": {
+        "password": "pbkdf2_sha256$390000$Fd4kJXSp6tCNGY7KR6aWhe$uSGTpdy0u14lIvtMFGasS4DgE5+o9BlTfJpIIqsRJrw=",
+        "last_login": "2022-11-23T03:18:33.560Z",
+        "is_superuser": false,
+        "username": "user01",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-11-23T03:18:33.435Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 3,
+      "fields": {
+        "password": "pbkdf2_sha256$390000$sgHVJfdc0zPrURWosdgFKL$OLvqhRLGT9OZjhWDbIKJFNtZYEnQ4UprkHmkwyUnqlY=",
+        "last_login": "2022-11-23T03:19:03.727Z",
+        "is_superuser": false,
+        "username": "user02",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-11-23T03:19:03.608Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 4,
+      "fields": {
+        "password": "pbkdf2_sha256$390000$sS4HwDYdC5xHESFmUqs2uo$biQ41EffMK25juT09dyQgwjbnZEAQLw5UqteNC3ePGo=",
+        "last_login": "2022-11-23T03:19:40.710Z",
+        "is_superuser": false,
+        "username": "user03",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-11-23T03:19:40.590Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 1,
+      "fields": {
+        "app_label": "foods",
+        "model": "menu"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 2,
+      "fields": {
+        "app_label": "foods",
+        "model": "foodofday"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 3,
+      "fields": {
+        "app_label": "foods",
+        "model": "menurating"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 4,
+      "fields": {
+        "app_label": "foods",
+        "model": "cookbook"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 5,
+      "fields": {
+        "app_label": "foods",
+        "model": "comment"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 6,
+      "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 7,
+      "fields": {
+        "app_label": "auth",
+        "model": "permission"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 8,
+      "fields": {
+        "app_label": "auth",
+        "model": "group"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 9,
+      "fields": {
+        "app_label": "auth",
+        "model": "user"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 10,
+      "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 11,
+      "fields": {
+        "app_label": "sessions",
+        "model": "session"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 12,
+      "fields": {
+        "app_label": "sites",
+        "model": "site"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 13,
+      "fields": {
+        "app_label": "account",
+        "model": "emailaddress"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 14,
+      "fields": {
+        "app_label": "account",
+        "model": "emailconfirmation"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 15,
+      "fields": {
+        "app_label": "socialaccount",
+        "model": "socialaccount"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 16,
+      "fields": {
+        "app_label": "socialaccount",
+        "model": "socialapp"
+      }
+    },
+    {
+      "model": "contenttypes.contenttype",
+      "pk": 17,
+      "fields": {
+        "app_label": "socialaccount",
+        "model": "socialtoken"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "ppx4ghbqpf8waiyvat68igq95vj9k8lq",
+      "fields": {
+        "session_data": ".eJxVjk1vwjAMhv-Lz6hKSrMEbiDthDgiNE1T5TjpBytJ1aSXVf3vSxAHuNl-Hr_2AjXOsavnYKe6N7AHDpvXmUb6tS4Dc0PX-oK8i1Ovi6wUTxqKszd2OD7dt4AOQ5e2pUJsxFaXjRFcCiX5VktthLDIyopxpkTJq2qnZWmajG1qiFFDO2YUUQoNnnockMjPLtYhYrSw_15gnDzZENKRwbe9yyb5MTFI5eORESe8ZwHWDVyVPHxcPs-nrz-En_UfyzxUKg:1oxgjs:6JQm9Ju-ouLGzu8FgSSYFVI0uvyaqaq1qq4YP8DScsk",
+        "expire_date": "2022-12-07T03:47:56.010Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "vm4jdj3fd01dmr2ne795fghcfgpnq2va",
+      "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyFA2UA9evcbyLILUjU0Ke2p8d8tSQ96nHlvZhcBt7WEraUlTCyuQovLbxeRXql2wE-sj1nSXNdlirIr8qRN3mdO79vp_h0UbOVYO4-YYYgmM2gH3ukhusgACZWxSisPRls7Rmc4d5yOQIoyjYo9kfh8AczfN3A:1oxgKE:DmJODMlqS0RpD0YiGq7SCwseDCyFDMosSWKD_5IxmGo",
+        "expire_date": "2022-12-07T03:21:26.869Z"
+      }
+    },
+    {
+      "model": "sites.site",
+      "pk": 1,
+      "fields": {
+        "domain": "localhost:8000",
+        "name": "localhost:8000"
+      }
+    },
+    {
+      "model": "socialaccount.socialapp",
+      "pk": 1,
+      "fields": {
+        "provider": "google",
+        "name": "Google API",
+        "client_id": "384312367871-irh9b5qfrefiln84kcfra0t2tebue9tu.apps.googleusercontent.com",
+        "secret": "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",
+        "key": "",
+        "sites": [
+          1
+        ]
+      }
+    }
+    ]
+    

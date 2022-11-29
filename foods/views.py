@@ -408,12 +408,3 @@ def delete(request, cook_name):
     member = CookBook.objects.get(cook_name=cook_name)
     member.delete()
     return redirect("/My_cook_book/")
-
-
-def community(request):
-    feed = api_response()
-    for entry in feed:
-        pass
-
-    context = {}
-    return render(request, '../templates/foods/community.html', context)

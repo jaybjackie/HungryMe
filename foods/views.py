@@ -13,6 +13,8 @@ from foods.models import Menu ,FoodOfDay, MenuRating,CookBook,Comment
 import random
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from .forms import *
+from django.db import IntegrityError
 
 
 @cache_page(60 * 60)
@@ -255,6 +257,13 @@ def rate(request, menu_id, rating):
     MenuRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
 
+@login_required
+def ratecookbook(request, cook_name, rating):
+    menu = CookBook.objects.get(cook_name=cook_name)
+    CookbookRating.objects.filter(menu=menu, user=request.user).delete()
+    CookbookRating.objects.update_or_create(user=request.user, rate=rating, menu=menu)
+    return show_food(request,cook_name)
+
 
 @login_required
 def review(request, menu_id, reviewing):
@@ -262,6 +271,13 @@ def review(request, menu_id, reviewing):
     Comment.objects.filter(menu=menu, user=request.user).delete()
     Comment.objects.update_or_create(user=request.user, review=reviewing, menu=menu)
     return detail(request, menu_id)
+
+@login_required
+def reviewcookbook(request, cook_name, reviewing):
+    menu = CookBook.objects.get(cook_name=cook_name)
+    CommentCookbook.objects.filter(menu=menu, user=request.user).delete()
+    CommentCookbook.objects.update_or_create(user=request.user, review=reviewing, menu=menu)
+    return show_food(request,cook_name)
 
     
 @login_required
@@ -300,6 +316,24 @@ def cook_create(request):
     context = {}
     return render(request, '../templates/foods/createmenu.html', context)
 
+def create_food(request):
+    if request.method == 'POST':
+        topic_form = CreateFoodFrom(request.POST, request.FILES)
+        if topic_form.is_valid():
+            topic = topic_form.cleaned_data['topic_name']
+            try:
+                event = topic_form.save()
+            except IntegrityError:
+                messages.warning(request, f'Food {topic} is already exists.')
+                return redirect('main')
+            event.user = request.user
+            event.save()
+            messages.success(request, f'{topic} has been created.')
+            return redirect('main')
+    else:
+        topic_form = CreateFoodFrom()
+    return render(request, 'templates/foods/createmenu.html', {'topic_form': topic_form})
+
 def top_rate_foods(request):
     menu_list = Menu.objects.all()
     rated_menu = [Menu.objects.get(pk=menu.id) for menu in menu_list if Menu.objects.get(pk=menu.id).avg_menurating != None][:10]
@@ -319,3 +353,10 @@ def community(request):
     
     context = {}
     return render(request, '../templates/foods/community.html', context)
+
+def show_food(request,cook_name):
+    all_my_food = CookBook.objects.filter(cook_name=cook_name)
+    context = {
+        'all_food': all_my_food,
+    }
+    return render(request, '../templates/foods/show_detail.html', context)

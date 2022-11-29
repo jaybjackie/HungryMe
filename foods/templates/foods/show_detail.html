@@ -1,0 +1,269 @@
+{% extends "foods/base.html" %}
+{% block content %}
+<style>
+    h1 {
+        font-family: 'Lemon';font-size: 32px;
+    }
+    .menuName {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    .creatorName {
+        padding-left: 20px;
+        padding-top: 5;
+        color: slategray;
+    }
+    .menuImage{
+        float: right;
+        padding-left: 50px;
+        padding-top: 0px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+    }
+    .description {
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .brief-info {
+        text-align: center;
+        padding-top: 30px;
+    }
+    .ingredient p {
+        padding-left: 20px;
+    }
+    body {font-family: 'Roboto';}
+    body h3{
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    .nutrition h6{
+        padding-left: 20px;
+    }
+    .main{
+        padding: 0px;
+    }
+    .right{
+        padding: 20px;
+    }
+    span.inline{
+        display: inline-block;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+        padding: 5px;
+        font-weight: bolder;
+    }
+    /* Use a media query to add a break point at 800px: */
+    @media screen and (max-width: 800px) {
+       .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      }
+    }
+    .rating-list li {
+        float: right;
+        color: #ddd;
+        padding: 10px 5px;
+    }
+    
+    .rating-list li:hover,
+    .rating-list li:hover ~ li {
+        color: orange;
+    }
+    
+    .rating-list {
+        display: inline-block;
+        list-style: none;
+    }
+    .checked {
+        color: orange;
+    }
+    </style>
+{% if all_food %}
+<ul>
+    {% for each_food in all_food %}
+    <div class="main">
+        <div class="menuName">
+            <h1><b>{{ each_food.cook_name }}</b></h1>
+        </div>
+        <div class="creatorName">
+            <h5 ><b>By {{ each_food.user}}</b></h5>
+        </div>
+    </div>
+    <div class="right">
+        <div class="menuImage">
+            <img src= "{{each_food.picture_url}}" alt=menu.id>
+        </div>
+        </div>
+        <div class="main">
+            <div class="description">
+                <p>{{ each_food.description }}</p>
+                      <div class="card-body">
+                          
+                        <h5 class="card-title">Avg rating:
+                            <span class="fa fa-star {% if avg_rate > 0 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if avg_rate > 1 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if avg_rate > 2 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if avg_rate > 3 %} checked {% endif %}" ></span>
+                            <span class="fa fa-star {% if avg_rate > 4 %} checked {% endif %}"></span>
+                        </h5>
+                        {% if user.is_authenticated %}
+                        <ul class="btn btn-light list-inline rating-list">
+                            <li onclick="rate(5, {{ menu.id }})">
+                                <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i></li>
+                            <li onclick="rate(4, {{ menu.id }})">
+                                <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i></li>
+                            <li onclick="rate(3, {{ menu.id }})">
+                                <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i></li>
+                            <li onclick="rate(2, {{ menu.id }})">
+                                <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i></li>
+                            <li onclick="rate(1, {{ menu.id }})">
+                                <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i></li>
+                          </ul>
+                        {% else %}
+                        <ul class="btn btn-light list-inline rating-list">
+                            <li onclick="location.href='{% url 'login' %}'">
+                                <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                            </li>
+                            <li onclick="location.href='{% url 'login' %}'">
+                                <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                            </li>
+                            <li onclick="location.href='{% url 'login' %}'">
+                                <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                            </li>
+                            <li onclick="location.href='{% url 'login' %}'">
+                                <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                            </li>
+                            <li onclick="location.href='{% url 'login' %}'">
+                                <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                            </li>
+                          </ul>
+                          {% endif %}
+                </div>
+                <script>
+                    const rate = (rating, menu_id) => {
+                        console.log(`rating: ${rating}, menu: ${menu_id}`)
+                        fetch(`/rate/${menu_id}/${rating}/`, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(rest => {
+                            window.location.reload();
+                        })
+                    }
+                </script>
+            </div>
+            
+            <ul>
+                <h4>Comment List</h4>
+            </ul>
+            {% if comment_object %}
+            <ul>
+                {% for each_comment in comment_object %}
+                <a>{{ each_comment.text }}</a>
+                <a>Date {{ each_name_blog.pub_date }}</a>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No any comments.</p>
+            {% endif %}
+            
+            <div id="Comment">
+                <form action='.' method="POST">
+                    {% csrf_token %}
+                    <div id="Create_blog_bar">
+                        <input type='text' name="newtext" placeholder="Add Your comment"/>
+                    </div>
+                    <div style="margin-top:200px;">
+                        <button type="submit" class="btn btn-success btn-lg">Send</button>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="brief-info">
+                {% if each_food.number_of_ingredients != -99 and each_food.total_cooking_time != -99 and each_food.energy_kcal != -99%}
+                <p>{{ each_food.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ each_food.energy_kcal }} calories</p>
+                {% elif each_food.number_of_ingredients != -99 %}
+                <p>{{ each_food.number_of_ingredients }} Ingredients</p>
+                {% elif each_food.energy_kcal != -99%}
+                <p>{{ each_food.energy_kcal }} calories</p>
+                {% endif %}
+            </div>
+            <div class=ingredient>        
+                <h3><b>Ingredients</b></h3>
+                <p>{{each_food.ingredients}}</p>
+            </div>
+            <div class="nutrition">
+                <h3><b>Nutrition</b></h3>
+                {% if each_food.energy_kcal != -99 and each_food.fat_kcal != -99 and each_food.sugar != -99%}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ each_food.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ each_food.fat_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ each_food.sugar }} grams
+                </span>
+                {% elif each_food.energy_kcal != -99 and  each_food.fat_kcal != -99 %}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ each_food.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ each_food.fat_kcal }} calories
+                </span>
+                {% elif each_food.energy_kcal != -99 and  each_food.sugar != -99%}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ each_food.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ each_food.sugar }} grams
+                </span>
+                {% elif each_food.fat_kcal != -99 and  each_food.sugar != -99%}
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ each_food.fat_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ each_food.sugar }} grams
+                </span>
+                {% elif each_food.energy_kcal != -99 %}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ each_food.energy_kcal }} calories
+                </span>
+                {% elif each_food.fat_kcal != -99%}
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ each_food.fat_kcal }} calories
+                </span>
+                {% elif each_food.sugar != -99%}
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ each_food.sugar }} grams
+                </span>
+                {% else %}
+                <span class="inline">
+                    <h6> Nutrition are not available for this menu.</h6>
+                </span>
+                </b>
+                {% endif %}
+                
+            </div>
+        </div>
+        </body>
+        </html>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No any blogs.</p>
+{% endif %}
+{% endblock %}

@@ -79,6 +79,7 @@ h1{
     margin-bottom: 16px;
 }
 
+
 </style>
     <div class="header1">
         <h1>Create Your Food</h1>
@@ -101,7 +102,7 @@ h1{
                 <div id="preview-file" class="preview-file">
                     <p>Choose file to upload the Image</p>
                 </div>
-                <input type='file' accept="image/png,image/jpeg" name="upfile" id="upfile" />
+                <input type='url' name="upfile" placeholder="Enter URL"/>
             </div>
         </div>
         <p>Ingredients</p>
@@ -136,10 +137,11 @@ h1{
             <option value="Advance">Advance</option>
         </select>
 
-        <div style="margin-top:200px;">
-            <button type="submit" class="btn btn-success btn-lg">Create menu</button>
+        <div style="margin-inline:0px;">
+            <button type="submit" class='btn'>Create Food</button>
         </div>
     </form>
+
 
 </div>
 <script >
@@ -187,9 +189,9 @@ h1{
         table.innerHTML = `
             <tr>
                 <td>
-                    <input type='text' name="ingredients" id="ingredients" placeholder="name"/>  
-                    <input type='number' name="quantity" placeholder="quantity" id="quantity"/> 
-                    <input type='text' name="quantityunit" placeholder="quantity Unit" id="quantityunit" />
+                    <input type='text' name="ingredients" id="ingredients" size="60px" style="height: 40px;" placeholder="name"/>  
+                    <input type='number' name="quantity" placeholder="quantity" size="30px" style="height: 40px;" id="quantity"/> 
+                    <input type='text' name="quantityunit" placeholder="quantity Unit" size="30px" style="height: 40px;" id="quantityunit" />
                 </td>
             </tr>
         `
@@ -197,9 +199,9 @@ h1{
             let template = `
                 <tr>
                     <td>
-                        <input type='text' value=${ingredient.name} disabled />
-                        <input type='number' value=${ingredient.quantity} disabled /> 
-                        <input type='text' value=${ingredient.quantityUnit} disabled />
+                        <input type='text' size="60px" style="height: 40px;" value=${ingredient.name} disabled />
+                        <input type='number' size="30px" style="height: 40px;" value=${ingredient.quantity} disabled /> 
+                        <input type='text' size="30px" style="height: 40px;" value=${ingredient.quantityUnit} disabled />
                         <span onclick="removeIngredient('${ingredient.name}')">X</span>
                     </td>
                 </tr>

@@ -156,6 +156,7 @@ h1{
                     </tr>
                 </table>
             </div>
+        <input type="hidden" id="ingredientHidden" name="ingredientHidden" />
         <p id="add-more" onclick="addIngredient()" class="bn30">Add Ingredient</p>
 
         <div class="calories-wrapper">
@@ -226,6 +227,7 @@ h1{
             quantityUnit: quantityUnit,
         })
         renderIngredients(ingredients)
+        document.getElementById("ingredientHidden").value = JSON.stringify(ingredients)
     }
 
     function removeIngredient(name) {

@@ -393,13 +393,18 @@ def cook_create(request):
     if request.method == "POST":
         name = request.POST.get("title")
         des = request.POST.get("description")
-        ing = request.POST.get("ingredients")
+        ing = {"ingredient": []}
+        print(request.POST)
+        parsedIngredient = json.loads(request.POST.get("ingredientHidden"))
+        for data in parsedIngredient:
+            # dumps = '{ "name": {}, "quantity": {}, "quantityUnit": {} }'.format(
+            #         data["name"], data["quantity"], data["quantityUnit"])
+            ing["ingredient"].append(data)
         totalcal = request.POST.get("totalcalories")
         fatcal = request.POST.get("fatcalories")
         sugargrams = request.POST.get("sugargrams")
         file = request.POST.get("upfile")
         create = CookBook(
-<<<<<<< HEAD
                             pub_date=timezone.now(),
                             cook_name=name,
                             user=request.user,
@@ -410,18 +415,6 @@ def cook_create(request):
                             sugar=sugargrams,
                             picture_url=file,
                             )
-=======
-            pub_date=timezone.now(),
-            cook_name=name,
-            user=request.user,
-            description=des,
-            ingredients=Ing,
-            energy_kcal=totalcal,
-            fat_kcal=fatcal,
-            sugar=sugargrams,
-            picture_url=file,
-        )
->>>>>>> 4d9f39014cef29e81477e66074017f2c303263fe
         create.save()
         return redirect("/My_cook_book")
     context = {}

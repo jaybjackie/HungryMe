@@ -198,11 +198,16 @@
                 <p>{{ each_food.energy_kcal }} calories</p>
                 {% endif %}
             </div>
-            <div class=ingredient>        
+            <div class="ingredient">        
                 <h3><b>Ingredients</b></h3>
-                {% for i in each_food.ingredients %}
-                    <p>{{ i }}</p>
+                {% for key, data in each_food.ingredients.items %}
+                    <div class="ingredient-item">
+                        {% for value in data %}
+                            <p>{{ value.quantity }} {{ value.quantityUnit }} {{ value.name }}</p>
+                        {% endfor %}
+                    </div>
                 {% endfor %}
+
 
             </div>
             <div class="nutrition">
@@ -271,6 +276,9 @@
                 
             </div>
         </div>
+        <script>
+
+        </script>
         </body>
         </html>
     {% endfor %}

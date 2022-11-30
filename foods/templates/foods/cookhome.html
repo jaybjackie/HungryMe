@@ -160,9 +160,9 @@ a:hover{
         {% for each_items in cook_book %}
             <a class="added-block" href="/My_cook_book/{{ each_items.cook_name }}">
                 <img class="added-pic" src="{{menu.picture_url}}" height="175px" width="289px"></img>
-                <form action="delete/{{each_items.cook_name}}">
+                <!-- <form action="delete/{{each_items.cook_name}}">
                     <input class="x-delete" type="submit" value="X">
-                </form>
+                </form> -->
                 <div class="created-menu">
                     <p>{{ each_items.cook_name }}</p>
                 </div>

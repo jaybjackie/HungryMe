@@ -5,8 +5,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:menu_id>/', views.detail, name='detail'),
-    path('signup/', views.signup, name='signup'),
     path('filter/', views.filter, name='filter'),
+    path('filter/result/', views.filter_result, name='result'),
     path('rate/<int:menu_id>/<int:rating>/', views.rate),
     path('ratecookbook/<str:cook_name>/<int:rating>/', views.ratecookbook),
     path('My_cook_book/', views.cook_home, name='cook'),
@@ -14,5 +14,4 @@ urlpatterns = [
     path('My_cook_book/create_menu/', views.cook_create, name='create'),
     path('top-rated-foods/', views.top_rate_foods, name='top-rated'),
     path('My_cook_book/delete/<str:cook_name>', views.delete, name='delete'),
-    path('community/', views.community, name='community')
 ]

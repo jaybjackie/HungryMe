@@ -13,6 +13,8 @@ from foods.models import Menu, FoodOfDay, MenuRating, CookBook, Comment
 import random
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from .forms import *
+from django.db import IntegrityError
 # from .forms import CommentFrom
 from django.http import JsonResponse
 import json
@@ -321,6 +323,8 @@ def signup(request):
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
+        print("#######################")
+        print(form)
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
@@ -347,6 +351,17 @@ def rate(request, menu_id, rating):
         user=request.user, rate=rating, menu=menu)
     return detail(request, menu_id)
 
+@login_required
+def ratecookbook(request, cook_name, rating):
+    menu = CookBook.objects.get(cook_name=cook_name)
+    menu.rating = float(rating)
+    menu.save()
+    print(cook_name)
+    print(menu.rating)
+    CookbookRating.objects.filter(menu=menu, user=request.user).delete()
+    CookbookRating.objects.update_or_create(user=request.user, rate=float(rating), menu=menu)
+    return show_food(request,cook_name)
+
 
 @login_required
 def review(request, menu_id, reviewing):
@@ -356,6 +371,12 @@ def review(request, menu_id, reviewing):
         user=request.user, review=reviewing, menu=menu)
     return detail(request, menu_id)
 
+@login_required
+def reviewcookbook(request, cook_name, reviewing):
+    menu = CookBook.objects.get(cook_name=cook_name)
+    CommentCookbook.objects.filter(menu=menu, user=request.user).delete()
+    CommentCookbook.objects.update_or_create(user=request.user, review=reviewing, menu=menu)
+    return show_food(request,cook_name)
 
 @login_required
 def cook_home(request):
@@ -372,27 +393,50 @@ def cook_create(request):
     if request.method == "POST":
         name = request.POST.get("title")
         des = request.POST.get("description")
-        Ing = request.POST.get("Ingredients")
+        ing = {"ingredient": []}
+        print(request.POST)
+        parsedIngredient = json.loads(request.POST.get("ingredientHidden"))
+        for data in parsedIngredient:
+            # dumps = '{ "name": {}, "quantity": {}, "quantityUnit": {} }'.format(
+            #         data["name"], data["quantity"], data["quantityUnit"])
+            ing["ingredient"].append(data)
         totalcal = request.POST.get("totalcalories")
         fatcal = request.POST.get("fatcalories")
         sugargrams = request.POST.get("sugargrams")
         file = request.POST.get("upfile")
         create = CookBook(
-            pub_date=timezone.now(),
-            cook_name=name,
-            user=request.user,
-            description=des,
-            ingredients=Ing,
-            energy_kcal=totalcal,
-            fat_kcal=fatcal,
-            sugar=sugargrams,
-            picture_url=file,
-        )
+                            pub_date=timezone.now(),
+                            cook_name=name,
+                            user=request.user,
+                            description=des,
+                            ingredients=ing,
+                            energy_kcal=totalcal,
+                            fat_kcal=fatcal,
+                            sugar=sugargrams,
+                            picture_url=file,
+                            )
         create.save()
         return redirect("/My_cook_book")
     context = {}
     return render(request, '../templates/foods/createmenu.html', context)
 
+def create_food(request):
+    if request.method == 'POST':
+        topic_form = CreateFoodFrom(request.POST, request.FILES)
+        if topic_form.is_valid():
+            topic = topic_form.cleaned_data['topic_name']
+            try:
+                event = topic_form.save()
+            except IntegrityError:
+                messages.warning(request, f'Food {topic} is already exists.')
+                return redirect('main')
+            event.user = request.user
+            event.save()
+            messages.success(request, f'{topic} has been created.')
+            return redirect('main')
+    else:
+        topic_form = CreateFoodFrom()
+    return render(request, 'templates/foods/createmenu.html', {'topic_form': topic_form})
 
 def top_rate_foods(request):
     menu_list = Menu.objects.all()
@@ -403,8 +447,17 @@ def top_rate_foods(request):
 
     return render(request, 'foods/top_foods.html', {"rated_chart": sort_rated})
 
-
 def delete(request, cook_name):
     member = CookBook.objects.get(cook_name=cook_name)
     member.delete()
     return redirect("/My_cook_book/")
+
+def show_food(request,cook_name):
+    all_my_food = CookBook.objects.filter(cook_name=cook_name)
+
+    print(all_my_food[0].rating)
+    context = {
+        'all_food': all_my_food,
+
+    }
+    return render(request, '../templates/foods/show_detail.html', context)

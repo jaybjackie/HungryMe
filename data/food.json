@@ -1,7 +1,7 @@
 [
     {
       "model": "foods.menu",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "menu_name": "Dry Rub Baked Chicken Wings",
         "creator_name": "Official HungryMe",
@@ -524,7 +524,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 2,
+      "id": 2,
       "fields": {
         "menu_name": "Hoisin Glazed Brussels Sprouts",
         "creator_name": "Official HungryMe",
@@ -532,7 +532,7 @@
         "energy_kcal": 123,
         "fat_kcal": 45,
         "sugar": 6,
-        "picture_url": "https://lh3.googleusercontent.com/IPKraGZNKODO4hT2ceq9t_uFnJlF8fB5XgE6v2hWYfD4k5HuVIbc_gHp4rREqAhn0OYrqfvcYF9QvdQM1ah5",
+        "picture_url": "https://lh3.googleusercontent.com/IidraGZNKODO4hT2ceq9t_uFnJlF8fB5XgE6v2hWYfD4k5HuVIbc_gHp4rREqAhn0OYrqfvcYF9QvdQM1ah5",
         "rating": 4.0,
         "difficulty": "intermediate",
         "description": "Hoisin Glazed Brussels Sprouts With Brussels Sprouts, Peanut Oil, Onion, Minced Ginger, Garlic Clove, Seasoned Rice Vinegar, Soy Sauce, Hoisin Sauce, Dark Sesame Oil, Salt",
@@ -1005,7 +1005,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 3,
+      "id": 3,
       "fields": {
         "menu_name": "Cheesy Garlicky Breadsticks",
         "creator_name": "Official HungryMe",
@@ -1402,7 +1402,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 4,
+      "id": 4,
       "fields": {
         "menu_name": "Black and Blue Cobbler",
         "creator_name": "Official HungryMe",
@@ -2261,7 +2261,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 5,
+      "id": 5,
       "fields": {
         "menu_name": "Pozole Blanco! Red or Green?",
         "creator_name": "Official HungryMe",
@@ -3834,7 +3834,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 6,
+      "id": 6,
       "fields": {
         "menu_name": "Venison Bolognese",
         "creator_name": "Official HungryMe",
@@ -4567,7 +4567,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 7,
+      "id": 7,
       "fields": {
         "menu_name": "Rachael Ray's Southwestern Chili Con Queso Pasta Bake",
         "creator_name": "Official HungryMe",
@@ -5258,7 +5258,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 8,
+      "id": 8,
       "fields": {
         "menu_name": "Orecchiette with Broccoli Rabe and Sweet Italian Sausage",
         "creator_name": "Official HungryMe",
@@ -5781,7 +5781,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 9,
+      "id": 9,
       "fields": {
         "menu_name": "Cuban Ropa Vieja",
         "creator_name": "Official HungryMe",
@@ -6388,7 +6388,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 10,
+      "id": 10,
       "fields": {
         "menu_name": "HEALING AYURVEDIC KITCHARI",
         "creator_name": "Official HungryMe",
@@ -7079,7 +7079,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 11,
+      "id": 11,
       "fields": {
         "menu_name": "Swedish Meatballs",
         "creator_name": "Official HungryMe",
@@ -7980,7 +7980,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 12,
+      "id": 12,
       "fields": {
         "menu_name": "Ottolenghi's Roasted Baby Carrots with Harissa and Pomegranate",
         "creator_name": "Official HungryMe",
@@ -8419,7 +8419,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 13,
+      "id": 13,
       "fields": {
         "menu_name": "Fried Chicken",
         "creator_name": "Official HungryMe",
@@ -8427,7 +8427,7 @@
         "energy_kcal": 948,
         "fat_kcal": 690,
         "sugar": 22,
-        "picture_url": "https://lh3.googleusercontent.com/Qr6TYafFMqQX_nOmyLIFc4jizUKVjICOJirf7ixA49zfwKuE0pkLWPVGNUJ0BnvLYmubOJYhDOx2i7fUrqXfWg",
+        "picture_url": "https://lh3.googleusercontent.com/Qr6TYafFMqQX_nOmyLIFc4jizUKVjICOJirf7ixA49zfwKuE0idLWPVGNUJ0BnvLYmubOJYhDOx2i7fUrqXfWg",
         "rating": 3.0,
         "difficulty": "intermediate",
         "description": "A curious brine of hot peppers and pickle juice paves the way to juicy fried chicken with crispy browned skin. Use Carla's tips to carve, dredge and fry your way to a truly celebratory meal.",
@@ -9026,7 +9026,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 14,
+      "id": 14,
       "fields": {
         "menu_name": "Hawaiian Pizza Pasta Bake",
         "creator_name": "Official HungryMe",
@@ -9339,7 +9339,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 15,
+      "id": 15,
       "fields": {
         "menu_name": "Small Batch Triple Coconut Loaf Cake",
         "creator_name": "Official HungryMe",
@@ -9778,7 +9778,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 16,
+      "id": 16,
       "fields": {
         "menu_name": "Chicken Marsala",
         "creator_name": "Official HungryMe",
@@ -10343,7 +10343,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 17,
+      "id": 17,
       "fields": {
         "menu_name": "Banana Muffins",
         "creator_name": "Official HungryMe",
@@ -10908,7 +10908,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 18,
+      "id": 18,
       "fields": {
         "menu_name": "Orange Chestnut Salad",
         "creator_name": "Official HungryMe",
@@ -11263,7 +11263,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 19,
+      "id": 19,
       "fields": {
         "menu_name": "No-Knead Crusty Bread",
         "creator_name": "Official HungryMe",
@@ -11576,7 +11576,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 20,
+      "id": 20,
       "fields": {
         "menu_name": "Easy Leftover Turkey Noodle Soup",
         "creator_name": "Official HungryMe",
@@ -12225,7 +12225,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 21,
+      "id": 21,
       "fields": {
         "menu_name": "Martina Mcbride's Creamy Chicken Tortilla Soup ",
         "creator_name": "Official HungryMe",
@@ -13168,7 +13168,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 22,
+      "id": 22,
       "fields": {
         "menu_name": "Keto Mexican Cauliflower Rice And Chicken",
         "creator_name": "Official HungryMe",
@@ -13943,18 +13943,18 @@
     },
     {
       "model": "foods.menu",
-      "pk": 23,
+      "id": 23,
       "fields": {
-        "menu_name": "Pumpkin Pancakes",
+        "menu_name": "Pumidin Pancakes",
         "creator_name": "Official HungryMe",
         "number_of_ingredients": 10,
         "energy_kcal": 377,
         "fat_kcal": 50,
         "sugar": 15,
-        "picture_url": "https://lh3.googleusercontent.com/KQJXCRuE9zTyJaC9fa91Vzn_t-hjoIpKE4ysFNbsBLEkZpH4w92-pXwmcblFRPtQbARwoh5qN5rbulUr3hLJk1Y",
+        "picture_url": "https://lh3.googleusercontent.com/KQJXCRuE9zTyJaC9fa91Vzn_t-hjoIidE4ysFNbsBLEkZpH4w92-pXwmcblFRPtQbARwoh5qN5rbulUr3hLJk1Y",
         "rating": 4.0,
         "difficulty": "intermediate",
-        "description": "Pumpkin Pancakes With Flour, Baking Powder, Baking Soda, Salt, Pumpkin, Sugar, Brown Sugar, Eggs, Vanilla Extract, Buttermilk",
+        "description": "Pumidin Pancakes With Flour, Baking Powder, Baking Soda, Salt, Pumidin, Sugar, Brown Sugar, Eggs, Vanilla Extract, Buttermilk",
         "ingredients": [
           {
             "category": "Baking & Cooking",
@@ -14157,14 +14157,14 @@
             "categoryId": "48480f6a-6064-11e9-8647-d663bd873d93",
             "relatedRecipeSearchTerm": [
               {
-                "allowedIngredient": "pumpkin"
+                "allowedIngredient": "pumidin"
               }
             ],
-            "ingredient": "pumpkin",
+            "ingredient": "pumidin",
             "id": "17b24f2b-5db4-40b5-b6cc-fa7e60b5371d",
             "remainder": "",
             "quantity": 0.5,
-            "wholeLine": "1/2 cup pumpkin"
+            "wholeLine": "1/2 cup pumidin"
           },
           {
             "category": "Baking & Cooking",
@@ -14424,7 +14424,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 24,
+      "id": 24,
       "fields": {
         "menu_name": "Vanilla Latte Protein Smoothie",
         "creator_name": "Official HungryMe",
@@ -14821,7 +14821,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 25,
+      "id": 25,
       "fields": {
         "menu_name": "Fluffy Almond Flour Pancakes",
         "creator_name": "Official HungryMe",
@@ -15176,7 +15176,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 26,
+      "id": 26,
       "fields": {
         "menu_name": "Healthy Granola",
         "creator_name": "Official HungryMe",
@@ -15699,7 +15699,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 27,
+      "id": 27,
       "fields": {
         "menu_name": "Perfect Blueberry Pancakes",
         "creator_name": "Official HungryMe",
@@ -16138,7 +16138,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 28,
+      "id": 28,
       "fields": {
         "menu_name": "Easy Pork Roast In Oven",
         "creator_name": "Official HungryMe",
@@ -16146,7 +16146,7 @@
         "energy_kcal": 311,
         "fat_kcal": 180,
         "sugar": 0,
-        "picture_url": "https://lh3.googleusercontent.com/ElB1cBPK2h-XhqOTHMZ4QraAc9KwY9ycWI4m6CRAvMQ0tDY4Hj-MEh_numGQDY3PlDJqH7YkCYUpgAll6e81",
+        "picture_url": "https://lh3.googleusercontent.com/ElB1cBid2h-XhqOTHMZ4QraAc9KwY9ycWI4m6CRAvMQ0tDY4Hj-MEh_numGQDY3PlDJqH7YkCYUpgAll6e81",
         "rating": 4.0,
         "difficulty": "beginner",
         "description": "Easy Pork Roast In Oven With Pork Butt Roast, Garlic Powder, Onion Powder, Paprika, Cumin, Salt, Pepper",
@@ -16493,7 +16493,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 29,
+      "id": 29,
       "fields": {
         "menu_name": "Cilantro Lime Salmon",
         "creator_name": "Official HungryMe",
@@ -17016,7 +17016,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 30,
+      "id": 30,
       "fields": {
         "menu_name": "Jamie Oliver's Vegetarian Pithivier Pie",
         "creator_name": "Official HungryMe",
@@ -17623,7 +17623,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 31,
+      "id": 31,
       "fields": {
         "menu_name": "Copycat Cafe Rio Sweet Pulled Pork {Crock Pot}",
         "creator_name": "Official HungryMe",
@@ -18146,7 +18146,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 32,
+      "id": 32,
       "fields": {
         "menu_name": "Caldo Verde (Portuguese Soup with Cauliflower)",
         "creator_name": "Official HungryMe",
@@ -18837,7 +18837,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 33,
+      "id": 33,
       "fields": {
         "menu_name": "Cottage Pie",
         "creator_name": "Official HungryMe",
@@ -19612,7 +19612,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 34,
+      "id": 34,
       "fields": {
         "menu_name": "Tamales",
         "creator_name": "Official HungryMe",
@@ -19967,7 +19967,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 35,
+      "id": 35,
       "fields": {
         "menu_name": "Voodoo Pasta",
         "creator_name": "Official HungryMe",
@@ -19987,9 +19987,9 @@
                 "unit": {
                   "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                   "name": "package",
-                  "abbreviation": "pkg.",
+                  "abbreviation": "idg.",
                   "plural": "packages",
-                  "pluralAbbreviation": "pkg.",
+                  "pluralAbbreviation": "idg.",
                   "kind": "count",
                   "decimal": false
                 },
@@ -19999,9 +19999,9 @@
                 "unit": {
                   "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                   "name": "package",
-                  "abbreviation": "pkg.",
+                  "abbreviation": "idg.",
                   "plural": "packages",
-                  "pluralAbbreviation": "pkg.",
+                  "pluralAbbreviation": "idg.",
                   "kind": "count",
                   "decimal": false
                 },
@@ -20241,9 +20241,9 @@
               "unit": {
                 "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                 "name": "package",
-                "abbreviation": "pkg.",
+                "abbreviation": "idg.",
                 "plural": "packages",
-                "pluralAbbreviation": "pkg.",
+                "pluralAbbreviation": "idg.",
                 "kind": "count",
                 "decimal": false
               },
@@ -20253,9 +20253,9 @@
               "unit": {
                 "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                 "name": "package",
-                "abbreviation": "pkg.",
+                "abbreviation": "idg.",
                 "plural": "packages",
-                "pluralAbbreviation": "pkg.",
+                "pluralAbbreviation": "idg.",
                 "kind": "count",
                 "decimal": false
               },
@@ -20280,7 +20280,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 36,
+      "id": 36,
       "fields": {
         "menu_name": "Three Cheese Broken Lasagna",
         "creator_name": "Official HungryMe",
@@ -20761,7 +20761,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 37,
+      "id": 37,
       "fields": {
         "menu_name": "Frozen Hot Chocolate",
         "creator_name": "Official HungryMe",
@@ -20823,9 +20823,9 @@
                 "unit": {
                   "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                   "name": "package",
-                  "abbreviation": "pkg.",
+                  "abbreviation": "idg.",
                   "plural": "packages",
-                  "pluralAbbreviation": "pkg.",
+                  "pluralAbbreviation": "idg.",
                   "kind": "count",
                   "decimal": false
                 },
@@ -20835,9 +20835,9 @@
                 "unit": {
                   "id": "124921f2-6e69-102c-9a8a-0030485841f8",
                   "name": "package",
-                  "abbreviation": "pkg.",
+                  "abbreviation": "idg.",
                   "plural": "packages",
-                  "pluralAbbreviation": "pkg.",
+                  "pluralAbbreviation": "idg.",
                   "kind": "count",
                   "decimal": false
                 },
@@ -21200,7 +21200,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 38,
+      "id": 38,
       "fields": {
         "menu_name": "Drunken Noodles",
         "creator_name": "Official HungryMe",
@@ -21891,7 +21891,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 39,
+      "id": 39,
       "fields": {
         "menu_name": "Gluten-Free, Dairy-Free Chocolate Chip Cookies",
         "creator_name": "Official HungryMe",
@@ -22372,7 +22372,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 40,
+      "id": 40,
       "fields": {
         "menu_name": "Quick & Easy Strawberry Jam",
         "creator_name": "Official HungryMe",
@@ -22517,7 +22517,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 41,
+      "id": 41,
       "fields": {
         "menu_name": "Easy Key Lime Pie",
         "creator_name": "Official HungryMe",
@@ -22788,7 +22788,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 42,
+      "id": 42,
       "fields": {
         "menu_name": "No-Knead Artisan Bread",
         "creator_name": "Official HungryMe",
@@ -22796,7 +22796,7 @@
         "energy_kcal": 276,
         "fat_kcal": 25,
         "sugar": -99,
-        "picture_url": "https://lh3.googleusercontent.com/nPVN3JaBMs8NDKQHb0OmMdBswMJ0cy7y4D9b9KqhIAi-S_jkZup-lpKt4CWd5Qoqa23j3QWxmYA7GAc7LuCI",
+        "picture_url": "https://lh3.googleusercontent.com/nPVN3JaBMs8NDKQHb0OmMdBswMJ0cy7y4D9b9KqhIAi-S_jkZup-lidt4CWd5Qoqa23j3QWxmYA7GAc7LuCI",
         "rating": 3.0,
         "difficulty": "beginner",
         "description": "Become a bread baker with this fast and delicious master bread dough recipe from the book that made Zoë and co-author Jeff Hertzberg famous. From there, make pizza, baguettes, buns, and more.",
@@ -23101,7 +23101,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 43,
+      "id": 43,
       "fields": {
         "menu_name": "Hash Brown-crusted Quiche With Sausage",
         "creator_name": "Official HungryMe",
@@ -23582,7 +23582,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 44,
+      "id": 44,
       "fields": {
         "menu_name": "Encharcada (Portuguese Soaked Eggs)",
         "creator_name": "Official HungryMe",
@@ -23811,7 +23811,7 @@
     },
     {
       "model": "foods.menu",
-      "pk": 45,
+      "id": 45,
       "fields": {
         "menu_name": "Classic Lo Mein Noodles",
         "creator_name": "Official HungryMe",
@@ -24376,7 +24376,7 @@
     },
     {
       "model": "foods.foodofday",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "range_date": "2022-11-23T03:05:44Z",
         "menu": 1
@@ -24384,7 +24384,7 @@
     },
     {
       "model": "admin.logentry",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "action_time": "2022-11-23T03:05:49.311Z",
         "user": 1,
@@ -24397,7 +24397,7 @@
     },
     {
       "model": "admin.logentry",
-      "pk": 2,
+      "id": 2,
       "fields": {
         "action_time": "2022-11-23T03:06:34.061Z",
         "user": 1,
@@ -24410,7 +24410,7 @@
     },
     {
       "model": "admin.logentry",
-      "pk": 3,
+      "id": 3,
       "fields": {
         "action_time": "2022-11-23T03:08:18.796Z",
         "user": 1,
@@ -24423,7 +24423,7 @@
     },
     {
       "model": "admin.logentry",
-      "pk": 4,
+      "id": 4,
       "fields": {
         "action_time": "2022-11-23T03:47:39.820Z",
         "user": 1,
@@ -24436,7 +24436,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "name": "Can add menu",
         "content_type": 1,
@@ -24445,7 +24445,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 2,
+      "id": 2,
       "fields": {
         "name": "Can change menu",
         "content_type": 1,
@@ -24454,7 +24454,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 3,
+      "id": 3,
       "fields": {
         "name": "Can delete menu",
         "content_type": 1,
@@ -24463,7 +24463,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 4,
+      "id": 4,
       "fields": {
         "name": "Can view menu",
         "content_type": 1,
@@ -24472,7 +24472,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 5,
+      "id": 5,
       "fields": {
         "name": "Can add food of day",
         "content_type": 2,
@@ -24481,7 +24481,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 6,
+      "id": 6,
       "fields": {
         "name": "Can change food of day",
         "content_type": 2,
@@ -24490,7 +24490,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 7,
+      "id": 7,
       "fields": {
         "name": "Can delete food of day",
         "content_type": 2,
@@ -24499,7 +24499,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 8,
+      "id": 8,
       "fields": {
         "name": "Can view food of day",
         "content_type": 2,
@@ -24508,7 +24508,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 9,
+      "id": 9,
       "fields": {
         "name": "Can add menu rating",
         "content_type": 3,
@@ -24517,7 +24517,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 10,
+      "id": 10,
       "fields": {
         "name": "Can change menu rating",
         "content_type": 3,
@@ -24526,7 +24526,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 11,
+      "id": 11,
       "fields": {
         "name": "Can delete menu rating",
         "content_type": 3,
@@ -24535,7 +24535,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 12,
+      "id": 12,
       "fields": {
         "name": "Can view menu rating",
         "content_type": 3,
@@ -24544,7 +24544,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 13,
+      "id": 13,
       "fields": {
         "name": "Can add cook book",
         "content_type": 4,
@@ -24553,7 +24553,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 14,
+      "id": 14,
       "fields": {
         "name": "Can change cook book",
         "content_type": 4,
@@ -24562,7 +24562,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 15,
+      "id": 15,
       "fields": {
         "name": "Can delete cook book",
         "content_type": 4,
@@ -24571,7 +24571,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 16,
+      "id": 16,
       "fields": {
         "name": "Can view cook book",
         "content_type": 4,
@@ -24580,7 +24580,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 17,
+      "id": 17,
       "fields": {
         "name": "Can add comment",
         "content_type": 5,
@@ -24589,7 +24589,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 18,
+      "id": 18,
       "fields": {
         "name": "Can change comment",
         "content_type": 5,
@@ -24598,7 +24598,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 19,
+      "id": 19,
       "fields": {
         "name": "Can delete comment",
         "content_type": 5,
@@ -24607,7 +24607,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 20,
+      "id": 20,
       "fields": {
         "name": "Can view comment",
         "content_type": 5,
@@ -24616,7 +24616,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 21,
+      "id": 21,
       "fields": {
         "name": "Can add log entry",
         "content_type": 6,
@@ -24625,7 +24625,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 22,
+      "id": 22,
       "fields": {
         "name": "Can change log entry",
         "content_type": 6,
@@ -24634,7 +24634,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 23,
+      "id": 23,
       "fields": {
         "name": "Can delete log entry",
         "content_type": 6,
@@ -24643,7 +24643,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 24,
+      "id": 24,
       "fields": {
         "name": "Can view log entry",
         "content_type": 6,
@@ -24652,7 +24652,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 25,
+      "id": 25,
       "fields": {
         "name": "Can add permission",
         "content_type": 7,
@@ -24661,7 +24661,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 26,
+      "id": 26,
       "fields": {
         "name": "Can change permission",
         "content_type": 7,
@@ -24670,7 +24670,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 27,
+      "id": 27,
       "fields": {
         "name": "Can delete permission",
         "content_type": 7,
@@ -24679,7 +24679,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 28,
+      "id": 28,
       "fields": {
         "name": "Can view permission",
         "content_type": 7,
@@ -24688,7 +24688,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 29,
+      "id": 29,
       "fields": {
         "name": "Can add group",
         "content_type": 8,
@@ -24697,7 +24697,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 30,
+      "id": 30,
       "fields": {
         "name": "Can change group",
         "content_type": 8,
@@ -24706,7 +24706,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 31,
+      "id": 31,
       "fields": {
         "name": "Can delete group",
         "content_type": 8,
@@ -24715,7 +24715,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 32,
+      "id": 32,
       "fields": {
         "name": "Can view group",
         "content_type": 8,
@@ -24724,7 +24724,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 33,
+      "id": 33,
       "fields": {
         "name": "Can add user",
         "content_type": 9,
@@ -24733,7 +24733,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 34,
+      "id": 34,
       "fields": {
         "name": "Can change user",
         "content_type": 9,
@@ -24742,7 +24742,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 35,
+      "id": 35,
       "fields": {
         "name": "Can delete user",
         "content_type": 9,
@@ -24751,7 +24751,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 36,
+      "id": 36,
       "fields": {
         "name": "Can view user",
         "content_type": 9,
@@ -24760,7 +24760,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 37,
+      "id": 37,
       "fields": {
         "name": "Can add content type",
         "content_type": 10,
@@ -24769,7 +24769,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 38,
+      "id": 38,
       "fields": {
         "name": "Can change content type",
         "content_type": 10,
@@ -24778,7 +24778,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 39,
+      "id": 39,
       "fields": {
         "name": "Can delete content type",
         "content_type": 10,
@@ -24787,7 +24787,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 40,
+      "id": 40,
       "fields": {
         "name": "Can view content type",
         "content_type": 10,
@@ -24796,7 +24796,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 41,
+      "id": 41,
       "fields": {
         "name": "Can add session",
         "content_type": 11,
@@ -24805,7 +24805,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 42,
+      "id": 42,
       "fields": {
         "name": "Can change session",
         "content_type": 11,
@@ -24814,7 +24814,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 43,
+      "id": 43,
       "fields": {
         "name": "Can delete session",
         "content_type": 11,
@@ -24823,7 +24823,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 44,
+      "id": 44,
       "fields": {
         "name": "Can view session",
         "content_type": 11,
@@ -24832,7 +24832,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 45,
+      "id": 45,
       "fields": {
         "name": "Can add site",
         "content_type": 12,
@@ -24841,7 +24841,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 46,
+      "id": 46,
       "fields": {
         "name": "Can change site",
         "content_type": 12,
@@ -24850,7 +24850,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 47,
+      "id": 47,
       "fields": {
         "name": "Can delete site",
         "content_type": 12,
@@ -24859,7 +24859,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 48,
+      "id": 48,
       "fields": {
         "name": "Can view site",
         "content_type": 12,
@@ -24868,7 +24868,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 49,
+      "id": 49,
       "fields": {
         "name": "Can add email address",
         "content_type": 13,
@@ -24877,7 +24877,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 50,
+      "id": 50,
       "fields": {
         "name": "Can change email address",
         "content_type": 13,
@@ -24886,7 +24886,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 51,
+      "id": 51,
       "fields": {
         "name": "Can delete email address",
         "content_type": 13,
@@ -24895,7 +24895,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 52,
+      "id": 52,
       "fields": {
         "name": "Can view email address",
         "content_type": 13,
@@ -24904,7 +24904,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 53,
+      "id": 53,
       "fields": {
         "name": "Can add email confirmation",
         "content_type": 14,
@@ -24913,7 +24913,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 54,
+      "id": 54,
       "fields": {
         "name": "Can change email confirmation",
         "content_type": 14,
@@ -24922,7 +24922,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 55,
+      "id": 55,
       "fields": {
         "name": "Can delete email confirmation",
         "content_type": 14,
@@ -24931,7 +24931,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 56,
+      "id": 56,
       "fields": {
         "name": "Can view email confirmation",
         "content_type": 14,
@@ -24940,7 +24940,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 57,
+      "id": 57,
       "fields": {
         "name": "Can add social account",
         "content_type": 15,
@@ -24949,7 +24949,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 58,
+      "id": 58,
       "fields": {
         "name": "Can change social account",
         "content_type": 15,
@@ -24958,7 +24958,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 59,
+      "id": 59,
       "fields": {
         "name": "Can delete social account",
         "content_type": 15,
@@ -24967,7 +24967,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 60,
+      "id": 60,
       "fields": {
         "name": "Can view social account",
         "content_type": 15,
@@ -24976,7 +24976,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 61,
+      "id": 61,
       "fields": {
         "name": "Can add social application",
         "content_type": 16,
@@ -24985,7 +24985,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 62,
+      "id": 62,
       "fields": {
         "name": "Can change social application",
         "content_type": 16,
@@ -24994,7 +24994,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 63,
+      "id": 63,
       "fields": {
         "name": "Can delete social application",
         "content_type": 16,
@@ -25003,7 +25003,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 64,
+      "id": 64,
       "fields": {
         "name": "Can view social application",
         "content_type": 16,
@@ -25012,7 +25012,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 65,
+      "id": 65,
       "fields": {
         "name": "Can add social application token",
         "content_type": 17,
@@ -25021,7 +25021,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 66,
+      "id": 66,
       "fields": {
         "name": "Can change social application token",
         "content_type": 17,
@@ -25030,7 +25030,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 67,
+      "id": 67,
       "fields": {
         "name": "Can delete social application token",
         "content_type": 17,
@@ -25039,7 +25039,7 @@
     },
     {
       "model": "auth.permission",
-      "pk": 68,
+      "id": 68,
       "fields": {
         "name": "Can view social application token",
         "content_type": 17,
@@ -25048,7 +25048,7 @@
     },
     {
       "model": "auth.user",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "password": "pbkdf2_sha256$390000$ZDOSptVa3em6cLEZG25QZE$2h7nihFdCMzK6RgT8JAuHkQ9fgmFYSm5LnYs466vmN8=",
         "last_login": "2022-11-23T03:47:23.562Z",
@@ -25066,7 +25066,7 @@
     },
     {
       "model": "auth.user",
-      "pk": 2,
+      "id": 2,
       "fields": {
         "password": "pbkdf2_sha256$390000$Fd4kJXSp6tCNGY7KR6aWhe$uSGTpdy0u14lIvtMFGasS4DgE5+o9BlTfJpIIqsRJrw=",
         "last_login": "2022-11-23T03:18:33.560Z",
@@ -25084,7 +25084,7 @@
     },
     {
       "model": "auth.user",
-      "pk": 3,
+      "id": 3,
       "fields": {
         "password": "pbkdf2_sha256$390000$sgHVJfdc0zPrURWosdgFKL$OLvqhRLGT9OZjhWDbIKJFNtZYEnQ4UprkHmkwyUnqlY=",
         "last_login": "2022-11-23T03:19:03.727Z",
@@ -25102,7 +25102,7 @@
     },
     {
       "model": "auth.user",
-      "pk": 4,
+      "id": 4,
       "fields": {
         "password": "pbkdf2_sha256$390000$sS4HwDYdC5xHESFmUqs2uo$biQ41EffMK25juT09dyQgwjbnZEAQLw5UqteNC3ePGo=",
         "last_login": "2022-11-23T03:19:40.710Z",
@@ -25120,7 +25120,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "app_label": "foods",
         "model": "menu"
@@ -25128,7 +25128,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 2,
+      "id": 2,
       "fields": {
         "app_label": "foods",
         "model": "foodofday"
@@ -25136,7 +25136,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 3,
+      "id": 3,
       "fields": {
         "app_label": "foods",
         "model": "menurating"
@@ -25144,7 +25144,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 4,
+      "id": 4,
       "fields": {
         "app_label": "foods",
         "model": "cookbook"
@@ -25152,7 +25152,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 5,
+      "id": 5,
       "fields": {
         "app_label": "foods",
         "model": "comment"
@@ -25160,7 +25160,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 6,
+      "id": 6,
       "fields": {
         "app_label": "admin",
         "model": "logentry"
@@ -25168,7 +25168,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 7,
+      "id": 7,
       "fields": {
         "app_label": "auth",
         "model": "permission"
@@ -25176,7 +25176,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 8,
+      "id": 8,
       "fields": {
         "app_label": "auth",
         "model": "group"
@@ -25184,7 +25184,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 9,
+      "id": 9,
       "fields": {
         "app_label": "auth",
         "model": "user"
@@ -25192,7 +25192,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 10,
+      "id": 10,
       "fields": {
         "app_label": "contenttypes",
         "model": "contenttype"
@@ -25200,7 +25200,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 11,
+      "id": 11,
       "fields": {
         "app_label": "sessions",
         "model": "session"
@@ -25208,7 +25208,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 12,
+      "id": 12,
       "fields": {
         "app_label": "sites",
         "model": "site"
@@ -25216,7 +25216,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 13,
+      "id": 13,
       "fields": {
         "app_label": "account",
         "model": "emailaddress"
@@ -25224,7 +25224,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 14,
+      "id": 14,
       "fields": {
         "app_label": "account",
         "model": "emailconfirmation"
@@ -25232,7 +25232,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 15,
+      "id": 15,
       "fields": {
         "app_label": "socialaccount",
         "model": "socialaccount"
@@ -25240,7 +25240,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 16,
+      "id": 16,
       "fields": {
         "app_label": "socialaccount",
         "model": "socialapp"
@@ -25248,7 +25248,7 @@
     },
     {
       "model": "contenttypes.contenttype",
-      "pk": 17,
+      "id": 17,
       "fields": {
         "app_label": "socialaccount",
         "model": "socialtoken"
@@ -25256,15 +25256,15 @@
     },
     {
       "model": "sessions.session",
-      "pk": "ppx4ghbqpf8waiyvat68igq95vj9k8lq",
+      "id": "ppx4ghbqpf8waiyvat68igq95vj9k8lq",
       "fields": {
-        "session_data": ".eJxVjk1vwjAMhv-Lz6hKSrMEbiDthDgiNE1T5TjpBytJ1aSXVf3vSxAHuNl-Hr_2AjXOsavnYKe6N7AHDpvXmUb6tS4Dc0PX-oK8i1Ovi6wUTxqKszd2OD7dt4AOQ5e2pUJsxFaXjRFcCiX5VktthLDIyopxpkTJq2qnZWmajG1qiFFDO2YUUQoNnnockMjPLtYhYrSw_15gnDzZENKRwbe9yyb5MTFI5eORESe8ZwHWDVyVPHxcPs-nrz-En_UfyzxUKg:1oxgjs:6JQm9Ju-ouLGzu8FgSSYFVI0uvyaqaq1qq4YP8DScsk",
+        "session_data": ".eJxVjk1vwjAMhv-Lz6hKSrMEbiDthDgiNE1T5TjpBytJ1aSXVf3vSxAHuNl-Hr_2AjXOsavnYKe6N7AHDpvXmUb6tS4Dc0PX-oK8i1Ovi6wUTxqKszd2OD7dt4AOQ5e2pUJsxFaXjRFcCiX5VktthLDIyopxidTJq2qnZWmajG1qiFFDO2YUUQoNnnockMjPLtYhYrSw_15gnDzZENKRwbe9yyb5MTFI5eORESe8ZwHWDVyVPHxcPs-nrz-En_UfyzxUKg:1oxgjs:6JQm9Ju-ouLGzu8FgSSYFVI0uvyaqaq1qq4YP8DScsk",
         "expire_date": "2022-12-07T03:47:56.010Z"
       }
     },
     {
       "model": "sessions.session",
-      "pk": "vm4jdj3fd01dmr2ne795fghcfgpnq2va",
+      "id": "vm4jdj3fd01dmr2ne795fghcfgpnq2va",
       "fields": {
         "session_data": ".eJxVjMEOwiAQRP-FsyFA2UA9evcbyLILUjU0Ke2p8d8tSQ96nHlvZhcBt7WEraUlTCyuQovLbxeRXql2wE-sj1nSXNdlirIr8qRN3mdO79vp_h0UbOVYO4-YYYgmM2gH3ukhusgACZWxSisPRls7Rmc4d5yOQIoyjYo9kfh8AczfN3A:1oxgKE:DmJODMlqS0RpD0YiGq7SCwseDCyFDMosSWKD_5IxmGo",
         "expire_date": "2022-12-07T03:21:26.869Z"
@@ -25272,7 +25272,7 @@
     },
     {
       "model": "sites.site",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "domain": "localhost:8000",
         "name": "localhost:8000"
@@ -25280,7 +25280,7 @@
     },
     {
       "model": "socialaccount.socialapp",
-      "pk": 1,
+      "id": 1,
       "fields": {
         "provider": "google",
         "name": "Google API",

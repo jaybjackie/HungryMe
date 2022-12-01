@@ -3,10 +3,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
+
 <style>
 
 body{
     font-family: 'Roboto Slab', serif;
+    overflow-x: hidden;
+    background-color: #fceccc;
 }
 
 .header1{
@@ -24,54 +27,25 @@ h1{
     font-style: italic;
     font-weight: bold;
     color: #F8BE28;
-    top: 10px;
+    top: 8px;
 
 }
 
 .bn30 {
-  border: 5em;
   cursor: pointer;
-  outline: none;
-  font-size: 16px;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-  background-image: linear-gradient(45deg, #d3c41f, #c66b1a);
-  padding: 0.7em 2em;
-  border-radius: 65px;
-  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
-  -webkit-transition: box-shadow 0.25s;
-  transition: box-shadow 0.25s;
+  background-color: #5E1689;
   color: white;
-  width: max-content;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.2s;
 }
 
-.bn30 .text {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(45deg, #d3c41f, #c66b1a);
-}
-
-.bn30:after {
-  content: "";
-  border-radius: 18px;
-  position: absolute;
-  margin: 4px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background: #0e0e10;
-}
-
-.bn30:hover {
-  background-image: linear-gradient(-45deg, #991fd6, #5939ce);
-  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
-}
-
-.bn30:hover .text {
-  background-image: linear-gradient(-45deg, #991fd6, #5939ce);
+.bn30:hover{
+    color: #fceccc;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .something {
@@ -88,6 +62,63 @@ h1{
     margin-bottom: 16px;
 }
 
+.calories-wrapper{
+    width: 65%;
+    height: fit-content;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%)
+    
+}
+
+#total-calories{
+    position: relative;
+    float: left;
+}
+
+#fat-calories{
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%)
+}
+
+#sugar{
+    position: relative;
+    float: right;
+}
+
+.diffy{
+    position: relative;
+    margin: 10px;
+    top: 18px;
+    text-align: center;
+}
+
+#add-more{
+    position: relative;
+    margin: 10px;
+}
+
+#create-b{
+    color: #F8BE28;
+    position: relative;
+    padding: 10px;
+    background-color: #5E1689;
+    transition: 0.2s;
+    left: 50%;
+    margin-right: -50%;
+    transform: translateX(-50%);
+    top: 20px;
+}
+
+#create-b:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
 </style>
     <div class="header1">
         <h1>Create Your Food</h1>
@@ -99,18 +130,18 @@ h1{
             <div style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div id="Create_menu">
                     <p>Menu Name*</p>
-                    <input type='text' size="90px" style="height: 40px;" name="title" placeholder="must be less than or equal to 50 letters" />
+                    <input type='text' size="90px" style="height: 40px;" name="title" placeholder="Must be less than or equal to 50 letters" />
                 </div>
                 <div id="Description">
                     <p>Description</p>
-                    <input  type='text' size="90px" style="height: 250px;" name="description" placeholder="must be less than or equal to 250 letters" />
+                    <input  type='text' size="90px" style="height: 250px;" name="description" placeholder="Must be less than or equal to 250 letters" />
                 </div>
             </div>
             <div id="File" style="margin: 44px 0 0 144px">
                 <div id="preview-file" class="preview-file">
                     <p>Choose file to upload the Image</p>
                 </div>
-                <input type='file' accept="image/png,image/jpeg" name="upfile" id="upfile" />
+                <input type='url' name="upfile" placeholder="Enter URL"/>
             </div>
         </div>
         <p>Ingredients</p>
@@ -118,37 +149,49 @@ h1{
                 <table>
                     <tr>
                         <td>
-                            <input type='text' name="ingredients" id="ingredients" size="60px" style="height: 40px;" placeholder="name"/>  
-                            <input type='number' name="quantity" placeholder="quantity" size="30px" style="height: 40px;" id="quantity"/> 
-                            <input type='text' name="quantityunit" placeholder="quantity Unit" size="30px" style="height: 40px;" id="quantityunit" />
+                            <input type='text' name="ingredients" id="ingredients" size="60px" style="height: 40px;" placeholder="Name"/>  
+                            <input type='number' name="quantity" placeholder="Quantity" size="30px" style="height: 40px;" id="quantity"/> 
+                            <input type='text' name="quantityunit" placeholder="Quantity Unit" size="30px" style="height: 40px;" id="quantityunit" />
                         </td>
                     </tr>
                 </table>
             </div>
+        <input type="hidden" id="ingredientHidden" name="ingredientHidden" />
         <p id="add-more" onclick="addIngredient()" class="bn30">Add Ingredient</p>
-        <p>Total calories</p>
-            <div id="Total calories">
+
+        <div class="calories-wrapper">
+
+            <div id="total-calories">
+                <p>Total calories</p>
                 <input type='text' name="totalcalories" placeholder="Calories" />
             </div>
-        <p>Fat calories</p>
-            <div id="Fat calories">
+
+            <div id="fat-calories">
+                <p>Fat calories</p>
                 <input type='text' name="fatcalories" placeholder="Calories" />
             </div>
-        <p>Sugar(grams)</p>
-            <div id="Sugar">
-                <input type='text' name="sugargrams" placeholder="grams" />
-            </div>
-        <label for="cars">Difficulty:</label>
-        <select name="Difficulty" id="Difficulty">
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advance">Advance</option>
-        </select>
 
-        <div style="margin-top:200px;">
-            <button type="submit" class="btn btn-success btn-lg">Create menu</button>
+            <div id="sugar">
+                <p>Sugar (grams)</p>
+                <input type='text' name="sugargrams" placeholder="Grams" />
+            </div>
+
+        </div>
+
+        <div class="diffy">
+            <label for="cars">Difficulty:</label>
+            <select name="Difficulty" id="Difficulty">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advance">Advance</option>
+            </select>
+        </div>
+
+        <div style="margin-inline:0px;">
+            <button id="create-b" type="submit" class='btn'>Create Food</button>
         </div>
     </form>
+
 
 </div>
 <script >
@@ -184,6 +227,7 @@ h1{
             quantityUnit: quantityUnit,
         })
         renderIngredients(ingredients)
+        document.getElementById("ingredientHidden").value = JSON.stringify(ingredients)
     }
 
     function removeIngredient(name) {
@@ -196,9 +240,9 @@ h1{
         table.innerHTML = `
             <tr>
                 <td>
-                    <input type='text' name="ingredients" id="ingredients" placeholder="name"/>  
-                    <input type='number' name="quantity" placeholder="quantity" id="quantity"/> 
-                    <input type='text' name="quantityunit" placeholder="quantity Unit" id="quantityunit" />
+                    <input type='text' name="ingredients" id="ingredients" size="60px" style="height: 40px;" placeholder="name"/>  
+                    <input type='number' name="quantity" placeholder="quantity" size="30px" style="height: 40px;" id="quantity"/> 
+                    <input type='text' name="quantityunit" placeholder="quantity Unit" size="30px" style="height: 40px;" id="quantityunit" />
                 </td>
             </tr>
         `
@@ -206,9 +250,9 @@ h1{
             let template = `
                 <tr>
                     <td>
-                        <input type='text' value=${ingredient.name} disabled />
-                        <input type='number' value=${ingredient.quantity} disabled /> 
-                        <input type='text' value=${ingredient.quantityUnit} disabled />
+                        <input type='text' size="60px" style="height: 40px;" value=${ingredient.name} disabled />
+                        <input type='number' size="30px" style="height: 40px;" value=${ingredient.quantity} disabled /> 
+                        <input type='text' size="30px" style="height: 40px;" value=${ingredient.quantityUnit} disabled />
                         <span onclick="removeIngredient('${ingredient.name}')">X</span>
                     </td>
                 </tr>

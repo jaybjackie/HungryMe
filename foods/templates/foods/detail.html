@@ -149,7 +149,61 @@ span.inline{
 }
 
 .comment-section {
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    /* background-color: #fff2d8; */
+    padding: 10px;
+}
+
+.comment-text-wrapper{
+    line-height: 50px;
+}
+
+.comment-text{
+    position: relative;
+    background-color: #dadada;
+    padding: 5px 10px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+#comment-box{
+    display: inline-block;
+    position: relative;
+    max-width: 400px;
+    max-height: 35px;
+    margin-left: 25px;
+}
+
+#comment-bar[type=text]{
+    background-color: white;
+    width: 400px;
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 20px;
+    outline: 0;
+    border: 2px solid #5E1689;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#send-button[type=submit]{
+    float: right;
+    color: #5E1689;
+    position: relative;
+    padding: 10px;
+    background-color: #f9c133;
+    transition: 0.2s;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 1px 15px;
+    outline: 0;
+    border: 0;
+    font-size: 17px;
+    bottom: 31.3120px;
+    right: 4px;
+}
+
+#send-button[type=submit]:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 </style>
@@ -314,32 +368,28 @@ span.inline{
 
         <div class="comment-section">
             <ul>
-                <h4>Comment List</h4>
+                <h4>Comments</h4>
             </ul>
             {% if comment_object %}
-            <ul>
+            <ul class="comment-text-wrapper">
                 {% for each_comment in comment_object %}
-                <a>{{ each_comment.text }}</a>
-                <a>Date {{ each_name_blog.pub_date }}</a>
+                <a class="comment-text">{{ each_comment.text }}</a>
+                <!-- <a>Date {{ each_name_blog.pub_date }}</a> -->
                 {% endfor %}
             </ul>
             {% else %}
             <p>No any comments.</p>
             {% endif %}
             
-            <div id="Comment">
+            <div id="comment-box">
                 <form action='.' method="POST">
                     {% csrf_token %}
-                    <div id="Create_blog_bar">
-                        <input type='text' name="newtext" placeholder="Add Your comment"/>
-                    </div>
-                    <div style="margin-top:200px;">
-                        <button type="submit" class="btn btn-success btn-lg">Send</button>
-                    </div>
+                    <input id="comment-bar" type='text' name="newtext" placeholder="Add Your comment"/>
+                    <button id="send-button" type="submit" class="btn btn-success btn-lg">Send</button>
                 </form>
             </div>
-        </div>
-        
+
+        </div>  
     </div>
 </body>
 </html>

@@ -38,13 +38,6 @@ h1{
     margin-top: 20px;
     margin-bottom: 20px;
     outline: 20px;
-    /* border-style: solid;
-    border-width: 0 70px;
-    border-color: black #FFB21E black #5E1689; */
-}
-
-p{
-    font-family: 'Roboto Slab', serif;
 }
 
 .cookbook-container{
@@ -128,10 +121,9 @@ a:hover{
     position: relative;
     margin-left: 13px;
     margin-top: 7px;
-    bottom: 35px;
     height: 50px;
     max-width: 220px;
-    /* overflow: hidden; */
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -139,11 +131,19 @@ a:hover{
     -webkit-box-orient: vertical;
     color: black;
 }
+
 .checked {
         color: orange;
 }
+
 .created-menu:hover{
     text-decoration: none;
+}
+
+.rating{
+    color: #999999;
+    margin-left: 13px;
+    font-size: 16px;
 }
 
 </style>
@@ -164,19 +164,18 @@ a:hover{
 
                 <img class="added-pic" src="{{each_items.picture_url}}" height="175px" width="289px"></img>
                 <!-- <form action="delete/{{each_items.cook_name}}">
-
                     <input class="x-delete" type="submit" value="X">
                 </form> -->
                 <div class="created-menu">
                     <p>{{ each_items.cook_name }}</p>
-                    <h5 class="card-title">:
-                        <span class="fa fa-star {% if each_items.rating > 0 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if each_items.rating > 1 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if each_items.rating > 2 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if each_items.rating > 3 %} checked {% endif %}" ></span>
-                        <span class="fa fa-star {% if each_items.rating > 4 %} checked {% endif %}"></span>
-                    </h5>
                 </div>
+                <h5 class="rating">
+                    <span class="fa fa-star {% if each_items.rating > 0 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if each_items.rating > 1 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if each_items.rating > 2 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if each_items.rating > 3 %} checked {% endif %}"></span>
+                    <span class="fa fa-star {% if each_items.rating > 4 %} checked {% endif %}"></span>
+                </h5>
             </a>
         {% endfor %}
     {% endif %}

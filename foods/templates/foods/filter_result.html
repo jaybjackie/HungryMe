@@ -1,13 +1,39 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 {% extends "foods/base.html" %}
 {% block content %}
 
 <style>
-.blocks-zone{
-    background-color: #FEDA94;
+
+body{
+    font-family: 'Roboto Slab', serif;
+    background-color: #fceccc;
 }
+
+.header{
+    background-color: #36213E;
+    width: 375px;
+    height: 70px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 60px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+h1{
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+    color: #F8BE28;
+    top: 8px;
+}
+
 .blocks{
     margin: 40px;
 }
+
 .one-block{
     display: inline-table;
     margin: 20px;
@@ -23,7 +49,9 @@
     transform: translateY(-10px);
     text-decoration-line: none;
 }
+
 .menu-text{
+    color: black;
     margin-left: 13px;
     margin-top: 7px;
     height: 50px;
@@ -35,14 +63,23 @@
     line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+
 .ratings{
     color: #999999;
     margin-left: 13px;
 }
+
+.images{
+    object-fit: cover;
+    border-radius: 18px 18px 0px 0px;
+}
+
 </style>
 
 <div class="blocks-zone">
-    <h1>Result</h1>
+    <div class="header">
+        <h1>Filtered Results</h1>
+    </div>
     <div class="blocks">
         {% for menu in filter_menu_list %}
         <a class="one-block" href="{% url 'detail' menu.id %}">
@@ -55,7 +92,7 @@
                     <span class="fa fa-star {% if menu.avg_menurating > 0 %} checked {% endif %}"></span>
                     <span class="fa fa-star {% if menu.avg_menurating > 1 %} checked {% endif %}"></span>
                     <span class="fa fa-star {% if menu.avg_menurating > 2 %} checked {% endif %}"></span>
-                    <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}" ></span>
+                    <span class="fa fa-star {% if menu.avg_menurating > 3 %} checked {% endif %}"></span>
                     <span class="fa fa-star {% if menu.avg_menurating > 4 %} checked {% endif %}"></span>
                 </div>
             {% endif %}

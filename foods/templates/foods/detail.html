@@ -11,34 +11,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
 <style>
-h1 {
-    font-family: 'Lemon';font-size: 32px;
-}
-.menuName {
-    padding-top: 10px;
-}
-.creatorName {
-    padding-top: 5;
-    color: slategray;
-}
-.menuImage{
-    float: right;
-    padding-left: 120px;
-    padding-top: 0px;
-    padding-right: 550px;
-    padding-bottom: 50px;
-    width: 200px;
-}
-.description {
-    padding-top: 30px;
-    padding-bottom: 50px;
-}
-.brief-info {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+
+/* Use a media query to add a break point at 800px:
+@media screen and (max-width: 800px) {
+   .main, .right {
+    width: 100%;
+  }
+} */
+
 body {
     font-family: 'Roboto Slab', serif;
 }
@@ -47,8 +29,94 @@ body h3{
     padding-bottom: 10px;
 }
 
-.main{
-    /* padding: 0px; */
+h1 {
+    font-family: 'Lemon';font-size: 32px;
+}
+
+.detail-wrapper{
+    position: relative;
+    margin: 20px;
+}
+
+.menuName {
+    padding-top: 10px;
+}
+
+.creatorName {
+    padding-top: 5;
+    color: slategray;
+}
+
+.menuImage{
+    float: right;
+    position: relative;
+    left: -30px;
+    object-fit: cover;
+    width: 500px;
+    height: 350px;
+}
+
+.card-body{
+    display: inline-block;
+    width: 250px;
+}
+
+.card-title{
+    display: inline-flex;
+    position: relative;
+    color: #999999;
+    width: 230px;
+    height: 40px;
+    align-items: center;
+}
+
+.desc-n-rate{
+    width: 850px;
+    text-align: center;
+}
+
+.description {
+    padding: 40px;
+    width: 850px;
+}
+
+.desc-info{
+    line-height: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    min-height: 100px;
+}
+
+.avg-text{
+    color: black;
+    margin-top: 5px;
+}
+
+.avg-star{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.rating-list {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    left: 12px;
+}
+
+.rating-list li {
+    float: right;
+    color: rgb(192, 192, 192);
+    padding: 3px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li {
+    color: orange;
+}
+
+.checked {
+    color: orange;
 }
 
 span.inline{
@@ -60,228 +128,272 @@ span.inline{
     font-weight: bolder;
 }
 
-/* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 800px) {
-   .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-}
-.rating-list li {
-    float: right;
-    color: #ddd;
-    padding: 10px 5px;
+.in-n-nu{
+    text-align: center;
 }
 
-.rating-list li:hover,
-.rating-list li:hover ~ li {
-    color: orange;
-}
-
-.rating-list {
-    display: inline-block;
-    list-style: none;
-}
-.checked {
-    color: orange;
-}
-.comment-section {
+.ingredient{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-top: 30px;
     padding-bottom: 10px;
+    border-top: 2px solid #7c7b7b;
+    border-bottom: 2px solid #7c7b7b;
 }
-.container-fluid {
-    padding-left: 120px;
-    padding-top: 20px;
-    padding-bottom: 80px;
+
+.nutrition{
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #7c7b7b;
 }
+
+.comment-section {
+    padding-bottom: 8px;
+    /* background-color: #fff2d8; */
+    padding: 10px;
+}
+
+.comment-text-wrapper{
+    line-height: 50px;
+}
+
+.comment-text{
+    position: relative;
+    background-color: #dadada;
+    padding: 5px 10px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+#comment-box{
+    display: inline-block;
+    position: relative;
+    max-width: 400px;
+    max-height: 35px;
+    margin-left: 25px;
+}
+
+#comment-bar[type=text]{
+    background-color: white;
+    width: 400px;
+    height: 35px;
+    border-radius: 20px;
+    padding: 0 20px;
+    outline: 0;
+    border: 2px solid #5E1689;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#send-button[type=submit]{
+    float: right;
+    color: #5E1689;
+    position: relative;
+    padding: 10px;
+    background-color: #f9c133;
+    transition: 0.2s;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 1px 15px;
+    outline: 0;
+    border: 0;
+    font-size: 17px;
+    bottom: 31.3120px;
+    right: 4px;
+}
+
+#send-button[type=submit]:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.no-comment{
+    margin-left: 35px;
+}
+
 </style>
+
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="main" >
-            <div class="menuName">
-                <h1><b>{{ menu.menu_name }}</b></h1>
-                
-            </div>
-                <div class="creatorName">
-                    <h5 ><b>By {{ menu.creator_name}}</b></h5>
-                </div>
+    <div class="detail-wrapper">
+
+        <h1 class="menuName"><b>{{ menu.menu_name }}</b></h1>
             
-            <div class="menuImage">
-                <img src= "{{menu.picture_url}}" alt=menu.id >
-            </div>
-            <div class="main"></div>
-                <div class="description">
-                    
-                    <p>{{ menu.description }}</p>
+        <h5 class="creatorName"><b>By {{ menu.creator_name}}</b></h5>
+        
+        <img class="menuImage" src= "{{menu.picture_url}}" alt=menu.id >
 
-                    <div class="brief-info">
-                        {% if menu.number_of_ingredients != -99 and menu.energy_kcal != -99%}
-                        <h5>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }} calories</h5>
-                        {% elif menu.number_of_ingredients != -99 %}
-                        <h5>{{ menu.number_of_ingredients }} Ingredients</h5>
-                        {% elif menu.energy_kcal != -99%}
-                        <h5>{{ menu.energy_kcal }} calories</h5>
-                        {% endif %}
-                    </div>
-
-                </div>
-
-                <div class="card-body">   
-                    <h5 class="card-title">Avg rating:
-                                <span class="fa fa-star {% if avg_rate > 0 %} checked {% endif %}"></span>
-                                <span class="fa fa-star {% if avg_rate > 1 %} checked {% endif %}"></span>
-                                <span class="fa fa-star {% if avg_rate > 2 %} checked {% endif %}"></span>
-                                <span class="fa fa-star {% if avg_rate > 3 %} checked {% endif %}" ></span>
-                                <span class="fa fa-star {% if avg_rate > 4 %} checked {% endif %}"></span>
-                        </h5>
-                        {% if user.is_authenticated %}
-                        <ul class="btn btn-light list-inline rating-list">
-                                <li onclick="rate(5, {{ menu.id }})">
-                                    <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i></li>
-                                <li onclick="rate(4, {{ menu.id }})">
-                                    <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i></li>
-                                <li onclick="rate(3, {{ menu.id }})">
-                                    <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i></li>
-                                <li onclick="rate(2, {{ menu.id }})">
-                                    <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i></li>
-                                <li onclick="rate(1, {{ menu.id }})">
-                                    <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i></li>
-                        </ul>
-                        {% else %}
-                        <ul class="btn btn-light list-inline rating-list">
-                                <li onclick="location.href='{% url 'login' %}'">
-                                    <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i>
-                                </li>
-                                <li onclick="location.href='{% url 'login' %}'">
-                                    <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i>
-                                </li>
-                                <li onclick="location.href='{% url 'login' %}'">
-                                    <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i>
-                                </li>
-                                <li onclick="location.href='{% url 'login' %}'">
-                                    <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i>
-                                </li>
-                                <li onclick="location.href='{% url 'login' %}'">
-                                    <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i>
-                                </li>
-                        </ul>
-                        {% endif %}
-                </div>
-                    <script>
-                        const rate = (rating, menu_id) => {
-                            console.log(`rating: ${rating}, menu: ${menu_id}`)
-                            fetch(`/rate/${menu_id}/${rating}/`, {
-                                method: 'GET',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                }
-                            }).then(rest => {
-                                window.location.reload();
-                            })
-                        }
-                    </script>
-                
-                <div class="comment-section">
-                    <ul>
-                        <h4>Comment List</h4>
-                    </ul>
-                    {% if comment_object %}
-                    <ul>
-                        {% for each_comment in comment_object %}
-                        <a>{{ each_comment.text }}</a>
-                        <a>Date {{ each_name_blog.pub_date }}</a>
-                        {% endfor %}
-                    </ul>
-                    {% else %}
-                    <p>No any comments.</p>
+        <div class="desc-n-rate">
+            <div class="description">
+                <p class="desc-info">{{ menu.description }}</p>
+                <div class="brief-info">
+                    {% if menu.number_of_ingredients != -99 and menu.energy_kcal != -99%}
+                    <h5>{{ menu.number_of_ingredients }} Ingredients&emsp;|&emsp;{{ menu.energy_kcal }} calories</h5>
+                    {% elif menu.number_of_ingredients != -99 %}
+                    <h5>{{ menu.number_of_ingredients }} Ingredients</h5>
+                    {% elif menu.energy_kcal != -99%}
+                    <h5>{{ menu.energy_kcal }} calories</h5>
                     {% endif %}
-                    
-                    <div id="Comment">
-                        <form action='.' method="POST">
-                            {% csrf_token %}
-                            <div id="Create_blog_bar">
-                                <input type='text' name="newtext" placeholder="Add Your comment"/>
-                            </div>
-                            <div style="margin-top:200px;">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </form>
+                </div>
+            </div>
+
+            <div class="card-body">   
+                <div class="card-title">
+                    <h5 class="avg-text">Avg rating:</h5>
+                    <div class="avg-star">
+                        <span class="fa fa-star {% if avg_rate > 0 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if avg_rate > 1 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if avg_rate > 2 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if avg_rate > 3 %} checked {% endif %}"></span>
+                        <span class="fa fa-star {% if avg_rate > 4 %} checked {% endif %}"></span>
                     </div>
                 </div>
-
-                <div class=ingredient>        
-                    <h3><b>Ingredients</b></h3>
-                    {% for ingredients in menu.ingredients %}
-                        <p>{{ingredients.wholeLine}}</p>
-                    {% endfor %} 
-                </div>
-
-                <div class="nutrition">
-                    <h3><b>Nutrition</b></h3>
-                    {% if menu.energy_kcal != -99 and menu.fat_kcal != -99 and menu.sugar != -99%}
-                    <span class="inline">
-                        <h6>Total calories<br></h6>
-                        {{ menu.energy_kcal }} calories
-                    </span>
-                    <span class="inline">
-                        <h6>Fat<br></h6>
-                        {{ menu.fat_kcal }} calories
-                    </span>
-                    <span class="inline">
-                        <h6>Sugar<br></h6>
-                        {{ menu.sugar }} grams
-                    </span>
-                    {% elif menu.energy_kcal != -99 and  menu.fat_kcal != -99 %}
-                    <span class="inline">
-                        <h6>Total calories<br></h6>
-                        {{ menu.energy_kcal }} calories
-                    </span>
-                    <span class="inline">
-                        <h6>Fat<br></h6>
-                        {{ menu.fat_kcal }} calories
-                    </span>
-                    {% elif menu.energy_kcal != -99 and  menu.sugar != -99%}
-                    <span class="inline">
-                        <h6>Total calories<br></h6>
-                        {{ menu.energy_kcal }} calories
-                    </span>
-                    <span class="inline">
-                        <h6>Sugar<br></h6>
-                        {{ menu.sugar }} grams
-                    </span>
-                    {% elif menu.fat_kcal != -99 and  menu.sugar != -99%}
-                    <span class="inline">
-                        <h6>Fat<br></h6>
-                        {{ menu.fat_kcal }} calories
-                    </span>
-                    <span class="inline">
-                        <h6>Sugar<br></h6>
-                        {{ menu.sugar }} grams
-                    </span>
-                    {% elif menu.energy_kcal != -99 %}
-                    <span class="inline">
-                        <h6>Total calories<br></h6>
-                        {{ menu.energy_kcal }} calories
-                    </span>
-                    {% elif menu.fat_kcal != -99%}
-                    <span class="inline">
-                        <h6>Fat<br></h6>
-                        {{ menu.fat_kcal }} calories
-                    </span>
-                    {% elif menu.sugar != -99%}
-                    <span class="inline">
-                        <h6>Sugar<br></h6>
-                        {{ menu.sugar }} grams
-                    </span>
-                    {% else %}
-                    <span class="inline">
-                        <h6> Nutrition are not available for this menu.</h6>
-                    </span>
-                    </b>
-                    {% endif %}
-                    
-                </div>
-            
+                {% if user.is_authenticated %}
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="rate(5, {{ menu.id }})">
+                        <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i></li>
+                    <li onclick="rate(4, {{ menu.id }})">
+                        <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i></li>
+                    <li onclick="rate(3, {{ menu.id }})">
+                        <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i></li>
+                    <li onclick="rate(2, {{ menu.id }})">
+                        <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i></li>
+                    <li onclick="rate(1, {{ menu.id }})">
+                        <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i></li>
+                </ul>
+                {% else %}
+                <ul class="btn btn-light list-inline rating-list">
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 4 %} checked {% endif %}" title="Rate 5"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 3 %} checked {% endif %}" title="Rate 4"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 2 %} checked {% endif %}" title="Rate 3"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 1 %} checked {% endif %}" title="Rate 2"></i>
+                    </li>
+                    <li onclick="location.href='{% url 'login' %}'">
+                        <i class="fa fa-star {% if menu.rating > 0 %} checked {% endif %}" title="Rate 1"></i>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+                <script>
+                    const rate = (rating, menu_id) => {
+                        console.log(`rating: ${rating}, menu: ${menu_id}`)
+                        fetch(`/rate/${menu_id}/${rating}/`, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(rest => {
+                            window.location.reload();
+                        })
+                    }
+                </script>
         </div>
+
+        <div class="in-n-nu">
+            <div class=ingredient>        
+                <h3><b>Ingredients</b></h3>
+                {% for ingredients in menu.ingredients %}
+                    <p>{{ingredients.wholeLine}}</p>
+                {% endfor %} 
+            </div>
+
+            <div class="nutrition">
+                <h3><b>Nutrition</b></h3>
+                {% if menu.energy_kcal != -99 and menu.fat_kcal != -99 and menu.sugar != -99%}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ menu.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ menu.fat_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ menu.sugar }} grams
+                </span>
+                {% elif menu.energy_kcal != -99 and  menu.fat_kcal != -99 %}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ menu.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ menu.fat_kcal }} calories
+                </span>
+                {% elif menu.energy_kcal != -99 and  menu.sugar != -99%}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ menu.energy_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ menu.sugar }} grams
+                </span>
+                {% elif menu.fat_kcal != -99 and  menu.sugar != -99%}
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ menu.fat_kcal }} calories
+                </span>
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ menu.sugar }} grams
+                </span>
+                {% elif menu.energy_kcal != -99 %}
+                <span class="inline">
+                    <h6>Total calories<br></h6>
+                    {{ menu.energy_kcal }} calories
+                </span>
+                {% elif menu.fat_kcal != -99%}
+                <span class="inline">
+                    <h6>Fat<br></h6>
+                    {{ menu.fat_kcal }} calories
+                </span>
+                {% elif menu.sugar != -99%}
+                <span class="inline">
+                    <h6>Sugar<br></h6>
+                    {{ menu.sugar }} grams
+                </span>
+                {% else %}
+                <span class="inline">
+                    <h6> Nutrition are not available for this menu.</h6>
+                </span>
+                </b>
+                {% endif %}
+                
+            </div>
+        </div>
+
+        <div class="comment-section">
+            <ul>
+                <h4>Comments</h4>
+            </ul>
+            {% if comment_object %}
+            <ul class="comment-text-wrapper">
+                {% for each_comment in comment_object %}
+                <a class="comment-text">{{ each_comment.text }}</a>
+                <!-- <a>Date {{ each_name_blog.pub_date }}</a> -->
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="no-comment">No comment yet.</p>
+            {% endif %}
+            
+            <div id="comment-box">
+                <form action='.' method="POST">
+                    {% csrf_token %}
+                    <input id="comment-bar" type='text' name="newtext" placeholder="Add Your comment"/>
+                    <button id="send-button" type="submit" class="btn btn-success btn-lg">Send</button>
+                </form>
+            </div>
+
+        </div>  
     </div>
 </body>
 </html>

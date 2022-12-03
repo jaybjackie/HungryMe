@@ -400,6 +400,7 @@ def cook_create(request):
             # dumps = '{ "name": {}, "quantity": {}, "quantityUnit": {} }'.format(
             #         data["name"], data["quantity"], data["quantityUnit"])
             ing["ingredient"].append(data)
+        num = len(ing["ingredient"])
         totalcal = request.POST.get("totalcalories")
         fatcal = request.POST.get("fatcalories")
         sugargrams = request.POST.get("sugargrams")
@@ -414,6 +415,7 @@ def cook_create(request):
                             fat_kcal=fatcal,
                             sugar=sugargrams,
                             picture_url=file,
+                            number_of_ingredients= num,
                             )
         create.save()
         return redirect("/My_cook_book")

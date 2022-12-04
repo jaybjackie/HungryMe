@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY", default="missing-secret-key")
 
 DEBUG = config("DEBUG", cast=bool, default=False)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv(), default="localhost")
+ALLOWED_HOSTS = ["jaybjackie.pythonanywhere.com"]
 
 
 # Application definition

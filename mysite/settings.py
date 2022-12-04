@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY", default="missing-secret-key")
 
 DEBUG = config("DEBUG", cast=bool, default=False)
 
-ALLOWED_HOSTS = ["jaybjackie.pythonanywhere.com"]
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]', 'jaybjackie.pythonanywhere.com']
 
 
 # Application definition

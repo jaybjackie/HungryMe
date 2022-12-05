@@ -8,5 +8,5 @@ urlpatterns = [
     path('foods/', RedirectView.as_view(url="/")),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('accounts/account_login/', include('allauth.urls')),
 ]
